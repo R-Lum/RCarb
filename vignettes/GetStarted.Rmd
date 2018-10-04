@@ -1,0 +1,141 @@
+---
+title: "Get started with RCarb"
+author: "Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine, France"
+date: "Last modified: `r Sys.Date()` ('RCarb' version: `r packageVersion('RCarb')`)"
+output: 
+  rmarkdown::html_vignette:
+  self-contained: yes
+  toc: yes
+  toc_depth: 4
+  number_sections: yes
+standalone: yes
+vignette: >
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, fig.align='center', out.width=100}
+knitr::include_graphics("../docs/img/Logo_RCarb.png")
+```
+
+# Scope
+
+Getting started with a new R package can be a very tedious business (if not to say annoying). 
+This document was written with the intention to make the first steps as painless as possible. 
+
+# Quick start with the example dataset
+
+If you have no idea what a function does and how it works, it is always a good idea to have a 
+closer look into the example sections of the package functions. The package 'RCarb' has 
+one central function named `model_DoseRate()`. The example given in the example section in 
+the manual will be used in the following to illustrate the central package functionality in three steps.
+
+##Load RCarb
+```{r}
+library(RCarb)
+```
+
+## Load example data
+
+```{r}
+##load example data
+data("Example_Data", envir = environment())
+```
+
+To get a first impression on how the example dataset looks like, you call the function `head()` to
+print the first five rows of a `data.frame` on the terminal.
+
+```{r}
+head(Example_Data)
+```
+
+Unfortunately, the naming of the table columns is not straightforward to understand. The good news 
+is that each column carries additional information that can be seen in the R terminal by 
+typing, e.g., for the column 'K' (which is the 2nd column):
+
+```{r}
+attributes(Example_Data$K)
+```
+
+It reveals that the numbers in the column correspond to the potassium concentration and are
+given in '%'. Similar all other columns can be inspected.
+
+## Run dose rate modelling
+
+Now we want to start the modelling using the data given for the first sample only.
+
+```{r, fig.height=7, fig.width=5, fig.align='center'}
+##extract only the first row 
+data <- Example_Data[1,]
+
+##run model 
+results <- model_DoseRate(
+  data = data,
+  n.MC = 10, 
+  txtProgressBar = FALSE)
+```
+
+The function returns a terminal output along with two plots, which are mostly similar to the
+original graphical output provided by the MATLAB program 'Carb'. 
+
+*Please note: In the example above the function `model_DoseRate()` was called with two additional 
+arguments, `n.MC = 10` and `txtProgressBar = FALSE`. The first argument limits the number of Monte Carlo runs
+for the error estimation to 10 and the second argument prevents the plotting of the progress bar, 
+indicating the progression of the calculation. Both arguments were solely set to reduce calculation 
+time and output in this vignette.*
+
+Obviously, you do not want to run each row in the input table, separately, to model the dose rate
+for all samples given in the example dataset you can call the model without subsetting the dataset first.
+**Be careful, the calculation may take some time**.
+
+```{r, eval = FALSE}
+results <- model_DoseRate(
+  data = Example_Data)
+```
+
+# Using your own dataset
+
+Running only the example dataset is somewhat dissatisfactory, and the usual case will be that
+you provide your own dataset as input. While you can enter all data directly using R, the package
+offers another way, using external spreadsheet software such as 'Libre Office' (or, of course, MS Excel).
+The procedure is sketched in the following. 
+
+## Create template table
+
+The function `write_InputTemplate()` was written to create a template table (a CSV-file) that 
+can be subsequently opened and filled. Using the function ensures that your input data have the 
+correct structure, e.g., the correct number for columns and column names. 
+
+```{r}
+write_InputTemplate(file = "files/RCarb_Input.csv")
+```
+
+
+The path given with the argument `file` can be modified as needed.
+
+## Enter own data &back import into R
+
+Own data are added using an external spreadsheet program and then save again as CSV-file. 
+
+```{r, fig.align='center', echo = FALSE, out.width = "400px"}
+knitr::include_graphics(path = "files/Screenshot.png")
+```
+
+For re-importing, the data standard R functionality can be used. 
+
+```{r}
+data <- read.csv(file = "files/RCarb_Input.csv")
+```
+
+## Model the dose rate
+
+The final modelling does not differ from the call already show above (here without a plot output):
+
+```{r, fig.height=7, fig.width=5, fig.align='center'}
+##run model 
+results <- model_DoseRate(
+  data = data,
+  n.MC = 10, 
+  txtProgressBar = FALSE, 
+  plot = FALSE)
+```
+

@@ -1,0 +1,17 @@
+
+##R stuff
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+RCarb.Rproj
+
+
+##package related local stuff
+cran-comments.html
+vignettes/*_cache/
+vignettes/*_files/
+
+##Internal helpers
+helpers/*
+
