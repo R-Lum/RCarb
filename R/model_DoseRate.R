@@ -150,8 +150,11 @@ model_DoseRate <- function(
    rm(Example_Data)
 
    ##check n.MC
-   if(is.null(n.MC) || n.MC[1] < 1)
+   if(is.null(n.MC) || n.MC[1] < 1){
      n.MC <- 1
+     txtProgressBar <- FALSE
+
+   }
 
 # Rewrite variables names to match the MATLAB code --------------------------------------------
   ERROR <- n.MC[1]
@@ -350,7 +353,6 @@ if(verbose){
 }
 
 # Plotting ------------------------------------------------------------------------------------
-
 if(plot){
 
   ##par settings; including restoring them
