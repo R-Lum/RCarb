@@ -150,8 +150,8 @@ model_DoseRate <- function(
    rm(Example_Data)
 
    ##check n.MC
-   if(n.MC[1] < 2)
-     n.MC <- 2
+   if(is.null(n.MC) || n.MC[1] < 1)
+     n.MC <- 1
 
 # Rewrite variables names to match the MATLAB code --------------------------------------------
   ERROR <- n.MC[1]
@@ -269,7 +269,6 @@ model_DoseRate <- function(
 
   ##start loop
   for(i in 1:n.MC){
-
     DATE_MC <- nlminb(
       start = STEP1,
       objective = .calc_DoseRate,
@@ -318,7 +317,7 @@ model_DoseRate <- function(
     AGE = DATE$AGE,
     AGE_X = sd(AGE_),
     DR_CONV = DATE$DRA[1],
-    DR_CONVX = sd(DRA_),
+    DR_CONV_X = sd(DRA_),
     DR_ONSET = rowMeans(DR_)[nrow(DR_)],
     DR_ONSET_X = sd(DR_[nrow(DR_),1:n.MC]),
     DR_FINAL = rowMeans(DR_)[1],
@@ -370,7 +369,11 @@ if(plot){
     NA,
     NA,
     xlim = c(0, max(c(DATE[["AGE"]], DATE[["AGEA"]])) * 1.1),
-    ylim = range(c(DR_rowMeans - DR_rowSds, DR_rowMeans + DR_rowSds)),
+    ylim = if(n.MC > 2){
+      range(c(DR_rowMeans - DR_rowSds, DR_rowMeans + DR_rowSds))
+      }else{
+      range(DR_rowMeans)
+      },
     xlab = "Time [ka]",
     ylab = "Dose rate [Gy/ka]",
     main = data[["SAMP_NAME"]]
