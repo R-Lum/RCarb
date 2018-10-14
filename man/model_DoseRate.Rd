@@ -28,7 +28,7 @@ the modelling. See details for further information.}
 
 \item{plot}{\link{logical} (with default): enables/disables plot output}
 
-\item{...}{further arguments passed to the underyling plot functions, see also details for further information}
+\item{...}{further arguments passed to the underyling plot functions, see also details for further information. Supported standard arguments are \code{mfrow}, \code{xlim}, \code{xlab}.}
 }
 \value{
 The function returns numerical and graphical output
