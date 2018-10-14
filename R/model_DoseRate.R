@@ -24,7 +24,7 @@
 #'
 #' @param plot [logical] (with default): enables/disables plot output
 #'
-#' @param ... further arguments passed to the underyling plot functions, see also details for further information
+#' @param ... further arguments passed to the underyling plot functions, see also details for further information. Supported standard arguments are `mfrow`, `xlim`, `xlab`.
 #'
 #' @return The function returns numerical and graphical output
 #'
@@ -150,7 +150,7 @@ model_DoseRate <- function(
    rm(Example_Data)
 
    ##check n.MC
-   if(is.null(n.MC) || n.MC[1] < 1){
+   if(is.null(n.MC) || n.MC[1] <= 1){
      n.MC <- 1
      txtProgressBar <- FALSE
 
@@ -355,10 +355,19 @@ if(verbose){
 # Plotting ------------------------------------------------------------------------------------
 if(plot){
 
+  ##set plot settings
+  plot_settings <- modifyList(x = list(
+    mfrow = c(2,1),
+    xlim = c(0, max(c(DATE[["AGE"]], DATE[["AGEA"]])) * 1.1),
+    xlab = "Time [ka]"
+
+  ),
+  val = list(...))
+
   ##par settings; including restoring them
   par.default <- list(mfrow = par()$mfrow)
   on.exit(do.call(par, args = par.default))
-  par(mfrow = c(2,1))
+  par(mfrow = plot_settings$mfrow)
 
   ##calculate some variables needed later
   DR_rowMeans <- rowMeans(DR_)
@@ -370,13 +379,13 @@ if(plot){
   plot(
     NA,
     NA,
-    xlim = c(0, max(c(DATE[["AGE"]], DATE[["AGEA"]])) * 1.1),
+    xlim = plot_settings$xlim,
     ylim = if(n.MC > 2){
       range(c(DR_rowMeans - DR_rowSds, DR_rowMeans + DR_rowSds))
       }else{
       range(DR_rowMeans)
       },
-    xlab = "Time [ka]",
+    xlab = plot_settings$xlab,
     ylab = "Dose rate [Gy/ka]",
     main = data[["SAMP_NAME"]]
   )
@@ -401,9 +410,9 @@ if(plot){
   plot(
     NA,
     NA,
-    xlim = c(0, max(c(DATE[["AGE"]], DATE[["AGEA"]])) * 1.1),
+    xlim = plot_settings$xlim,
     ylim = c(DATE[["CUMDR"]][1],DATE[["CUMDR"]][floor(max(c(DATE[["AGE"]], DATE[["AGEA"]])))] * 1.1),
-    xlab = "Time [ka]",
+    xlab = plot_settings$xlab,
     ylab = "Absorbed dose [Gy]",
     main = data[["SAMP_NAME"]],
     sub = paste0("(n.MC = ",n.MC,")")
