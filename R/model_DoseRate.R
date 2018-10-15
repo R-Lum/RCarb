@@ -330,7 +330,7 @@ model_DoseRate <- function(
 
 # Terminal output -----------------------------------------------------------------------------
 if(verbose){
-  cat("\n[model_DataRate()]\n\n")
+  cat("\n[model_DoseRate()]\n\n")
   cat(" Sample ID:\t\t", data[["SAMP_NAME"]], "\n")
   cat(" Equivalent dose:\t", round(data[["DE"]],2), " \u00b1 ", round(data[["DE_X"]],2), "Gy\n")
   cat(" Diameter:\t\t", data[["DIAM"]], "\u00b5m \n")
