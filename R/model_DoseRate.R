@@ -43,9 +43,10 @@
 #' ##load example data
 #' data("Example_Data", envir = environment())
 #'
-#' ##run the function for the first sample
+#' ##run the function for one sample from
+#' ##the dataset
 #' model_DoseRate(
-#' data = Example_Data[1,],
+#' data = Example_Data[14,],
 #' n.MC = 2,
 #' txtProgressBar = FALSE
 #' )
