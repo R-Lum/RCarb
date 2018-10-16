@@ -98,8 +98,21 @@ model_DoseRate <- function(
     args$data <- NULL
 
     ##run function
-    results_list <- lapply(data_list, function(x) do.call(model_DoseRate, c(list(data = x),args)))
+    results_list <- lapply(data_list, function(x){
+      temp <- try(do.call(model_DoseRate, c(list(data = x),args)))
 
+      if(class(temp) == "try-error"){
+        message(paste0("[model_DoseRate()] Calculation for sample ", x[[1]], " failed. NULL returned!"))
+        return(NULL)
+
+      }else{
+        return(temp)
+
+      }
+    })
+
+    ##remove NULL elements from failed attempts
+    results_list <- results_list[!sapply(results_list, is.null)]
 
     ##combine into one single data.frame
     results <- do.call(rbind, results_list)
