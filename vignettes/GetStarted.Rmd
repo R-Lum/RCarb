@@ -112,7 +112,7 @@ write_InputTemplate(file = "files/RCarb_Input.csv")
 
 The path given with the argument `file` can be modified as needed.
 
-## Enter own data &back import into R
+## Enter own data & back import into R
 
 Own data are added using an external spreadsheet program and then save again as CSV-file. 
 
