@@ -1,6 +1,6 @@
 ---
 title: "Get started with RCarb"
-author: "Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine, France"
+author: "Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine (France) & <br> Barbara Mauz, Department of Geography and Geology, University of Salzburg, Salzburg (Austria)"
 date: "Last modified: `r Sys.Date()` ('RCarb' version: `r packageVersion('RCarb')`)"
 output: 
   rmarkdown::html_vignette:
@@ -29,7 +29,7 @@ closer look into the example sections of the package functions. The package 'RCa
 one central function named `model_DoseRate()`. The example given in the example section in 
 the manual will be used in the following to illustrate the central package functionality in three steps.
 
-##Load RCarb
+## Load 'RCarb'
 ```{r}
 library(RCarb)
 ```
