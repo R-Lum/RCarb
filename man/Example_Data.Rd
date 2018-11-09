@@ -4,9 +4,20 @@
 \name{Example_Data}
 \alias{Example_Data}
 \title{Example data}
-\format{\code{Example_Data}: \link{data.frame}}
+\format{\code{Example_Data}: \link{data.frame} (28 x 29)
+
+Each column has two attributes:
+\itemize{
+\item \code{UNIT}: the unit, so far applicable, e.g. "ppm"
+\item \code{DESCRIPTION}: the column description
+}}
 \description{
-Example data
+Example data as shipped with \emph{Carb} by Mauz & Hoffmann (2014). In contrast to the original
+data, \code{NA} values have been replaced by 0 and columns and rows have been transposed. Samples
+are now organised in rows and parameters in columns.
+
+The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
+Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz & Hoffmann (2014).
 }
 \section{Version}{
  0.1.0
@@ -14,9 +25,20 @@ Example data
 
 \examples{
 
-## show first 5 elements of the METADATA and DATA elements in the terminal
+## show first elements of the example data
 data(Example_Data, envir = environment())
 head(Example_Data)
 
+##show only column U230
+Example_Data$U238
+
+}
+\references{
+Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model
+for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.
+}
+\author{
+Mauz & Hoffmann (2014), with minor modifcations by Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
+CNRS-Université Bordeaux Montaigne (France)
 }
 \keyword{datasets}

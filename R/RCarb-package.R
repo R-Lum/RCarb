@@ -50,19 +50,45 @@ NULL
 #'
 #' @name Example_Data
 #'
+#' @description
+#' Example data as shipped with *Carb* by Mauz \& Hoffmann (2014). In contrast to the original
+#' data, `NA` values have been replaced by 0 and columns and rows have been transposed. Samples
+#' are now organised in rows and parameters in columns.
+#'
+#' The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
+#' Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz \& Hoffmann (2014).
+#'
+#'
 #' @format
 #'
-#' `Example_Data`: [data.frame]
+#' `Example_Data`: [data.frame] (28 x 29)
+#'
+#' Each column has two attributes:
+#'
+#' - `UNIT`: the unit, so far applicable, e.g. "ppm"
+#' - `DESCRIPTION`: the column description
 #'
 #' @section Version: 0.1.0
 #'
 #' @keywords datasets
 #'
+#' @author Mauz \& Hoffmann (2014), with minor modifcations by Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
+#' CNRS-Université Bordeaux Montaigne (France)
+#'
+#'
+#' @references
+#'
+#' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model
+#' for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.
+#'
 #' @examples
 #'
-#' ## show first 5 elements of the METADATA and DATA elements in the terminal
+#' ## show first elements of the example data
 #' data(Example_Data, envir = environment())
 #' head(Example_Data)
+#'
+#' ##show only column U230
+#' Example_Data$U238
 #'
 #' @docType data
 #' @md
@@ -73,13 +99,42 @@ NULL
 #'
 #' @name Reference_Data
 #'
+#' @description Reference values used for internal calculations.
+#'
 #' @format
 #'
-#' `ref`: [data.frame]
+#' `Reference_Data`: [list] \cr
+#'
+#' \tabular{llll}{
+#' **NAME** \tab **TYPE** \tab **DIM** \tab **DESCRIPTION** \cr
+#' DATAek \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' DATAet \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' DATAet230 	\tab `matrix` \tab 4 x 4 \tab \cr
+#' DATAeu 	\tab `matrix` \tab 4 x 4 \tab \cr
+#' DATAeu234 	\tab `matrix` \tab 4 x 4 \tab \cr
+#' DATAeu238 	\tab `matrix` \tab 4 x 4 \tab \cr
+#' DATApk \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' DATApt \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' DATApt230 \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' DATApu \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' DATApu234 \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' DATApu238 \tab	 `matrix` \tab 4 x 4 \tab \cr
+#' mejdahl \tab	 `data.frame` \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979)
+#' }
 #'
 #' @section Version: 0.1.0
 #'
 #' @keywords datasets
+#'
+#' @references
+#'
+#' Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
+#'
+#' @examples
+#'
+#' data(Reference_Data, envir = environment())
+#' str(Reference_Data)
+#' Reference_Data$DATAek
 #'
 #' @docType data
 #' @md

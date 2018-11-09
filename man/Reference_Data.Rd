@@ -4,12 +4,39 @@
 \name{Reference_Data}
 \alias{Reference_Data}
 \title{Reference data}
-\format{\code{ref}: \link{data.frame}}
+\format{\code{Reference_Data}: \link{list} \cr
+
+\tabular{llll}{
+\strong{NAME} \tab \strong{TYPE} \tab \strong{DIM} \tab \strong{DESCRIPTION} \cr
+DATAek \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATAet \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATAet230 	\tab \code{matrix} \tab 4 x 4 \tab \cr
+DATAeu 	\tab \code{matrix} \tab 4 x 4 \tab \cr
+DATAeu234 	\tab \code{matrix} \tab 4 x 4 \tab \cr
+DATAeu238 	\tab \code{matrix} \tab 4 x 4 \tab \cr
+DATApk \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATApt \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATApt230 \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATApu \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATApu234 \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATApu238 \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+mejdahl \tab	 \code{data.frame} \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979)
+}}
 \description{
-Reference data
+Reference values used for internal calculations.
 }
 \section{Version}{
  0.1.0
 }
 
+\examples{
+
+data(Reference_Data, envir = environment())
+str(Reference_Data)
+Reference_Data$DATAek
+
+}
+\references{
+Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
+}
 \keyword{datasets}
