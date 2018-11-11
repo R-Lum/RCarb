@@ -67,7 +67,7 @@
 }
 
 #+++++++++++++++++++++
-#+ .griddate()     +
+#+ .griddata()     +
 #+++++++++++++++++++++
 #' @title Point interpolation on for irregular surface data
 #'

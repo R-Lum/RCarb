@@ -217,7 +217,7 @@ model_DoseRate <- function(
 
   ##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   ##AGE
-  ##find minium
+  ##find minimum
   DATE <- nlminb(
     start = STEP1,
     objective = .calc_DoseRate,
@@ -231,7 +231,7 @@ model_DoseRate <- function(
     mode_optim = TRUE
   )
 
-  ##calculate values with minium value
+  ##calculate values with minimum value
   DATE <- .calc_DoseRate(x = DATE$par, data = data, ref = ref, length_step = STEP1, max_time = max_time)
 
   ##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -303,7 +303,7 @@ model_DoseRate <- function(
 
   ##start loop
   for(i in 1:n.MC){
-    DATE_MC <- nlminb(
+    DATE_MC <- suppressWarnings(nlminb(
       start = STEP1,
       objective = .calc_DoseRate,
       control = list(
@@ -314,7 +314,7 @@ model_DoseRate <- function(
       ref = ref,
       length_step = STEP1,
       mode_optim = TRUE
-    )
+    ))
 
     ##calculate values with minium value
     DATE_MC <-

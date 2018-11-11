@@ -20,13 +20,13 @@
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France) based
 #' on the MATLAB code in the file 'datalu1.m' from Carb_2007a
 #'
-#' @section Function version: 0.1.0
+#' @section Function version: 0.1.1
 #'
 #' @example
 #' ## the function can be run manually, however, this is not recommended, example:
 #' data("Example_Data", envir = environment())
 #' RCarb:::.calc_DoseRate(
-#' x = 10
+#' x = 10,
 #' data = Example_Data[1,]
 #' )
 #'
@@ -199,6 +199,7 @@
   XT230GA = 1.14
 
   DRKB <- MK * K * handles.KB / (1 + XKB * WF)
+
   DRTB <- MT * T * handles.TB / (1 + XTB * WF)
   DRUB <- MU * U * handles.UB / (1 + XUB * WF)
   DRKG <- MK * K * handles.KG / (1 + XKG * WF)
@@ -234,15 +235,22 @@
     DRKBA + DRTBA + DRUBA + DRKGA + DRTGA + DRUGA + data[["COSMIC"]] + data[["INTERNAL"]] +
     DRU238BA + DRU234BA + DRT230BA + DRU238GA + DRU234GA + DRT230GA
 
+  ##replace NA values by 0, otherwise the function crashes
+  ##The NA values come from the surface (line 175) interpolation and replacing them by 0
+  ##does not affect the results, but allows the code to run without taking other precautions.
+  DR[is.na(DR)] <- 0
+  DRA[is.na(DRA)] <- 0
+
 # STEP 5: Calculate date ----------------------------------------------------------------------
+
   CUMDR <- cumsum(c(0, (DR[1:(length(DR) - 1)] + DR[2:length(DR)]) * STEP1 / 2))
   CUMDRA <- cumsum(c(0, (DRA[1:(length(DRA) - 1)] + DRA[2:length(DRA)]) * STEP1 / 2))
 
-  if(data[["DE"]] > max(CUMDR)) ##THIS IS SOMEHOW WEIRD
-      stop("[calc_DoseRate()] Ages greater than 500 ka!", call. = FALSE)
+  if(data[["DE"]] > max(CUMDR)) ##I modified this, before it was Age > 500 ka, which did not fit.
+      warning("[calc_DoseRate()] Extrem case: DE > max cumulative dose rate!", call. = FALSE)
 
-  AGE <- approx(x = CUMDR, y = as.numeric(TIME), data[["DE"]])$y
-  AGEA <- approx(x = CUMDRA, y = as.numeric(TIME), data[["DE"]])$y
+  AGE <- approx(x = CUMDR, y = as.numeric(TIME), data[["DE"]], method = "constant")$y
+  AGEA <- approx(x = CUMDRA, y = as.numeric(TIME), data[["DE"]], method = "constant")$y
   ABS <- abs(AGE - TIMEMAX)
 
 # RETURN --------------------------------------------------------------------------------------
