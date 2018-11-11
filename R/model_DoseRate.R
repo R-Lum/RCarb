@@ -62,7 +62,13 @@
 #' dose rate of carbonate-rich samples. Ancient TL 32, 24–32.
 #'
 #' Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-#' Radiation Measurements 43, 14–25. doi:10.1016/j.radmeas.2007.12.012
+#' Radiation Measurements 43, 14–25. doi:10.1016/j.radmeas.2007.12.012 \cr
+#'
+#' **Further reading**
+#'
+#' Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
+#' DPhil thesis, St Hugh’s College, Oxford.
+#'
 #'
 #' @md
 #' @export

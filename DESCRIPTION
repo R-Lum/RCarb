@@ -12,7 +12,7 @@ Authors@R: c(
     person("Roger P.", "Nathan", role = c("aut", "cph")),
     person("Barbara", "Mauz", role = c("aut", "cph"), comment = c(ORCID = "0000-0003-1504-333X")))
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@u-bordeaux-montaigne.fr>
-Description: Dose rate modelling for carbonate-rich samples in the context of trapped charged dating (e.g., luminescence dating) applications. 
+Description: Translation for the MATLAB program 'Carb' for dose rate modelling for carbonate-rich samples in the context of trapped charged dating (e.g., luminescence dating) applications. 
 Depends: 
   R (>= 3.3.0),
   utils

@@ -8,22 +8,30 @@
 
 \tabular{llll}{
 \strong{NAME} \tab \strong{TYPE} \tab \strong{DIM} \tab \strong{DESCRIPTION} \cr
-DATAek \tab	 \code{matrix} \tab 4 x 4 \tab \cr
-DATAet \tab	 \code{matrix} \tab 4 x 4 \tab \cr
-DATAet230 	\tab \code{matrix} \tab 4 x 4 \tab \cr
-DATAeu 	\tab \code{matrix} \tab 4 x 4 \tab \cr
-DATAeu234 	\tab \code{matrix} \tab 4 x 4 \tab \cr
-DATAeu238 	\tab \code{matrix} \tab 4 x 4 \tab \cr
-DATApk \tab	 \code{matrix} \tab 4 x 4 \tab \cr
-DATApt \tab	 \code{matrix} \tab 4 x 4 \tab \cr
-DATApt230 \tab	 \code{matrix} \tab 4 x 4 \tab \cr
-DATApu \tab	 \code{matrix} \tab 4 x 4 \tab \cr
-DATApu234 \tab	 \code{matrix} \tab 4 x 4 \tab \cr
-DATApu238 \tab	 \code{matrix} \tab 4 x 4 \tab \cr
+DATAek \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for K\cr
+DATAet \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th \cr
+DATAet230 	\tab \code{matrix} \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th-230\cr
+DATAeu 	\tab \code{matrix} \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U\cr
+DATAeu234 	\tab \code{matrix} \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U-234\cr
+DATAeu238 	\tab \code{matrix} \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U-238\cr
+DATApk \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for K\cr
+DATApt \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for T\cr
+DATApt230 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for Th-230\cr
+DATApu \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U\cr
+DATApu234 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-234\cr
+DATApu238 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-238\cr
 mejdahl \tab	 \code{data.frame} \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979)
 }}
 \description{
-Reference values used for internal calculations.
+Correction factors for beta and gamma radiation used for internal calculations.
+These values are used instead of the correction factors given in Aitken (1985) for the carbonate model.
+}
+\details{
+The reference values are used internally to account for: (1) grain size depend beta-attenuation
+factors (Mejdahl, 1979) and (2) to correct nuclide dependent beta and gamma radiation for water/carbonate proportions.
+The latter values are given as matrix and precise values are interpolated during the modelling process.
+
+Different values quoted for U-238 and U-234 accounts for different activity ratios.
 }
 \section{Version}{
  0.1.0
@@ -38,5 +46,15 @@ Reference_Data$DATAek
 }
 \references{
 Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
+
+Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
+Radiation Measurements 43, 14-25. doi:10.1016/j.radmeas.2007.12.012
+
+Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
+DPhil thesis, St Hugh’s College, Oxford. \cr
+
+\strong{Further reading}
+
+Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
 }
 \keyword{datasets}
