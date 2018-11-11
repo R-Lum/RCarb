@@ -106,7 +106,8 @@ NULL
 #' factors (Mejdahl, 1979) and (2) to correct nuclide dependent beta and gamma radiation for water/carbonate proportions.
 #' The latter values are given as matrix and precise values are interpolated during the modelling process.
 #'
-#' Different values quoted for U-238 and U-234 accounts for different activity ratios.
+#' Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
+#' on the origin of these data we refer to Nathan \& Mauz (2008) and Nathan (2010).
 #'
 #'
 #' @format

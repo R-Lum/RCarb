@@ -69,7 +69,7 @@
 #' Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
 #' DPhil thesis, St Hugh’s College, Oxford.
 #'
-#'
+#' @keywords dplot manip
 #' @md
 #' @export
 model_DoseRate <- function(
