@@ -3,7 +3,11 @@
 #' @description This function models the dose rate evolution in carbonate enrich environments. For the
 #' calculation internal functions are called.
 #'
-#' @details TODO
+#' @details This function is the starting point for the dose rate modelling for carbonat enrich
+#' environments. It provides basically the same functionality as the original version of 'Carb', i.e.
+#' you should be also aware of the limitations of this modelling approach. In particular: The model
+#' assumes a linear carbonate mass increase due to post-depositional processes. Please read the
+#' references cited blow.
 #'
 #' @param data [data.frame] (**required**): input data following the structure given
 #' in the example data set `data(Example_Data)`. The input [data.frame] should have at least
@@ -37,7 +41,14 @@
 #' `[ GRAPHICAL OUTPUT ]`\cr
 #' -----------------------------------\cr
 #'
-#' * Two plots are returned: ##TODO
+#' **Upper plot:** Dose rate evolution over time backwards. The solid black line is the calculation
+#' output, the grey shaded area indicates the 2-sigma error margins. The dashed blue line is an indicator
+#' of the quality of the error estimations based on Monte Carlo (MC) runs.The closer it follows the
+#' black line, the more reliable are the given error margins. \cr
+#'
+#' **Lower plot:** Totally absorbed dose over time. The plot is an representation of the 'new'
+#' age based on the carbonat modelling.
+#'
 #'
 #' @examples
 #' ##load example data

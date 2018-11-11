@@ -43,16 +43,25 @@ The function returns numerical and graphical output
 -----------------------------------\cr
 \code{[ GRAPHICAL OUTPUT ]}\cr
 -----------------------------------\cr
-\itemize{
-\item Two plots are returned: ##TODO
-}
+
+\strong{Upper plot:} Dose rate evolution over time backwards. The solid black line is the calculation
+output, the grey shaded area indicates the 2-sigma error margins. The dashed blue line is an indicator
+of the quality of the error estimations based on Monte Carlo (MC) runs.The closer it follows the
+black line, the more reliable are the given error margins. \cr
+
+\strong{Lower plot:} Totally absorbed dose over time. The plot is an representation of the 'new'
+age based on the carbonat modelling.
 }
 \description{
 This function models the dose rate evolution in carbonate enrich environments. For the
 calculation internal functions are called.
 }
 \details{
-TODO
+This function is the starting point for the dose rate modelling for carbonat enrich
+environments. It provides basically the same functionality as the original version of 'Carb', i.e.
+you should be also aware of the limitations of this modelling approach. In particular: The model
+assumes a linear carbonate mass increase due to post-depositional processes. Please read the
+references cited blow.
 }
 \section{Function version}{
  0.1.0
