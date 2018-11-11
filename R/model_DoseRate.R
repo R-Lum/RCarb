@@ -180,6 +180,15 @@ model_DoseRate <- function(
    ##remove example data
    rm(Example_Data)
 
+   ##check DE
+   if(data[["DE"]] <= 1){
+     try(
+       stop("[model_DoseRate()] De values < 1 Gy cannot be handled. NULL returned!",
+            call. = FALSE))
+     return(NULL)
+
+   }
+
    ##check n.MC
    if(is.null(n.MC) || n.MC[1] <= 1){
      n.MC <- 1
@@ -232,7 +241,13 @@ model_DoseRate <- function(
   )
 
   ##calculate values with minimum value
-  DATE <- .calc_DoseRate(x = DATE$par, data = data, ref = ref, length_step = STEP1, max_time = max_time)
+  DATE <- .calc_DoseRate(
+    x = DATE$par,
+    data = data,
+    ref = ref,
+    length_step = STEP1,
+    max_time = max_time
+  )
 
   ##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   ##UNCERTAINTIES
@@ -437,12 +452,12 @@ if(plot){
   ##set mean line (give a good indication whether the n.MC runs had been enough)
   lines(x = 0:max_time, y = rowMeans(DR_), lwd = 1, lty = 2, col = "blue")
 
-  ##(B) accummulated dose
+  ##(B) accummulated dose and age
   plot(
     NA,
     NA,
     xlim = plot_settings$xlim,
-    ylim = c(DATE[["CUMDR"]][1],DATE[["CUMDR"]][floor(max(c(DATE[["AGE"]], DATE[["AGEA"]])))] * 1.1),
+    ylim = c(0, data[["DE"]] * 1.1),
     xlab = plot_settings$xlab,
     ylab = "Absorbed dose [Gy]",
     main = data[["SAMP_NAME"]],
@@ -459,42 +474,37 @@ if(plot){
     border = NA
   )
 
-
-  ##add dose lines
-  ##upper horizontal error margin
-  lines(
-    x = c(0,DATE[["AGE"]] + sd(AGE_)),
-    y = rep(DATE[["CUMDR"]][round(DATE[["AGE"]] + sd(AGE_),0)], 2),
-    col = "red",
-    lty = 2
-    )
-
-  ##far right error margin
-  lines(x = rep(DATE[["AGE"]] + sd(AGE_),2),
-        y = c(0,DATE[["CUMDR"]][round(DATE[["AGE"]] + sd(AGE_),0)]), col = "red", lty = 2)
-
   ##center lines horizontal
   lines(
     x = c(0,DATE[["AGE"]]),
-    y = rep(DATE[["CUMDR"]][round(DATE[["AGE"]],0)], 2), col = "red")
+    y = rep(data[["DE"]], 2), col = "red")
 
   ##center lines vertical
-  lines(x = rep(DATE[["AGE"]],2), y = c(0,DATE[["CUMDR"]][round(DATE[["AGE"]],0)]), col = "red")
+  lines(x = rep(DATE[["AGE"]], 2),
+        y = c(0, data[["DE"]]),
+        col = "red")
 
-  ##lower horizontal error margin
-  lines(
-    x = c(0,DATE[["AGE"]] - sd(AGE_)),
-    y = rep(DATE[["CUMDR"]][round(DATE[["AGE"]] - sd(AGE_),0)], 2),
-    col = "red",
-    lty = 2
+  ##add density
+  temp_density <- density(AGE_)
+  polygon(
+    x = c(temp_density$x, rev(temp_density$x)),
+    y = c((temp_density$y * data[["DE"]]) / max(temp_density$y), rep(0,length(temp_density$x))),
+    lty = 1,
+    density = 10,
+    col = "grey"
   )
-
-  ##far left error margin
-  lines(x = rep(DATE[["AGE"]] - sd(AGE_),2),
-        y = c(0,DATE[["CUMDR"]][round(DATE[["AGE"]] - sd(AGE_),0)]), col = "red", lty = 2)
+  polygon(
+    x = c(temp_density$x, rev(temp_density$x)),
+    y = c((temp_density$y * data[["DE"]]) / max(temp_density$y), rep(0,length(temp_density$x))),
+    lty = 0,
+    col = rgb(1,0,0,.2)
+  )
 
   ##add lines of absorbed dose
   lines(x = 0:max_time, y = DATE[["CUMDR"]])
+
+  ##add central point
+  points(x = DATE[["AGE"]], y = data[["DE"]], cex = 1.4, pch = 21, col = "red", bg = "grey")
 
   ##add mtext
   mtext(side = 3, text = paste0("Age: ", round(DATE$AGE,2), " \u00b1 ", round(sd(AGE_),2), " ka"))
@@ -519,3 +529,15 @@ if(plot){
   return(results)
 
 }
+
+##load example data
+data("Example_Data", envir = environment())
+
+##run the function for one sample from
+##the dataset
+model_DoseRate(
+  data = Example_Data,
+  n.MC = 10,
+  txtProgressBar = FALSE
+)
+

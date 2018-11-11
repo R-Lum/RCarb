@@ -181,7 +181,7 @@
   XU238B <- .griddata(x_grid, y_grid, ref$DATAeu238, xo, yo)
   XU234B <- .griddata(x_grid, y_grid, ref$DATAeu234, xo, yo)
   XT230B <- .griddata(x_grid, y_grid, ref$DATAet230, xo, yo)
-  # XU238G <- .griddata(x_grid, y_grid, ref$DATApu238, xo, yo) ##TODO: this variables were not used ...
+  # XU238G <- .griddata(x_grid, y_grid, ref$DATApu238, xo, yo) ##TODO: this variables are not used ...
   # XU234G <- .griddata(x_grid, y_grid, ref$DATApu234, xo, yo)
   # XT230G <- .griddata(x_grid, y_grid, ref$DATApt230, xo, yo)
 
@@ -246,11 +246,11 @@
   CUMDR <- cumsum(c(0, (DR[1:(length(DR) - 1)] + DR[2:length(DR)]) * STEP1 / 2))
   CUMDRA <- cumsum(c(0, (DRA[1:(length(DRA) - 1)] + DRA[2:length(DRA)]) * STEP1 / 2))
 
-  if(data[["DE"]] > max(CUMDR)) ##I modified this, before it was Age > 500 ka, which did not fit.
-      warning("[calc_DoseRate()] Extrem case: DE > max cumulative dose rate!", call. = FALSE)
+  if(data[["DE"]] > max(CUMDR)) ##modified before it was Age > 500 ka, which did not fit.
+      warning("[.calc_DoseRate()] Extrem case detected: DE > max cumulative dose rate!", call. = FALSE)
 
-  AGE <- approx(x = CUMDR, y = as.numeric(TIME), data[["DE"]], method = "constant")$y
-  AGEA <- approx(x = CUMDRA, y = as.numeric(TIME), data[["DE"]], method = "constant")$y
+  AGE <- approx(x = CUMDR, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y
+  AGEA <- approx(x = CUMDRA, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y
   ABS <- abs(AGE - TIMEMAX)
 
 # RETURN --------------------------------------------------------------------------------------
