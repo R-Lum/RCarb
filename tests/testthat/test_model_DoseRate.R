@@ -17,5 +17,22 @@ test_that("Full function test", {
     txtProgressBar = FALSE
   ), type = "list")
 
+  ##run two example
+  expect_type(model_DoseRate(
+    data = Example_Data[13:14, ],
+    n.MC = 2,
+    txtProgressBar = TRUE
+  ),
+  type = "list")
+
+  ##run with n.MC == 1
+  expect_type(model_DoseRate(
+    data = Example_Data[14, ],
+    n.MC = 1,
+    txtProgressBar = FALSE
+  ),
+  type = "list")
+
+
 
 })

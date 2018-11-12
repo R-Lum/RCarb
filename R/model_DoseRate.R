@@ -488,6 +488,7 @@ if(plot){
   density_De_x[density_De_x <= par()$usr[1]] <-  par()$usr[1] - 0.2
   lines(x = density_De_x, density_De_y, col = "red")
 
+
   ##centre lines horizontal (De)
   lines(
     x = c(0, DATE[["AGE"]]),
@@ -503,20 +504,22 @@ if(plot){
         lty = 2)
 
   ##add density (two times, 1st density lines, then colour)
-  temp_density <- density(AGE_)
-  polygon(
-    x = c(temp_density$x, rev(temp_density$x)),
-    y = c((temp_density$y * data[["DE"]]) / max(temp_density$y), rep(0,length(temp_density$x))),
-    lty = 1,
-    density = 10,
-    col = "grey"
-  )
-  polygon(
-    x = c(temp_density$x, rev(temp_density$x)),
-    y = c((temp_density$y * data[["DE"]]) / max(temp_density$y), rep(0,length(temp_density$x))),
-    lty = 0,
-    col = rgb(1,0,0,.2)
-  )
+  if(n.MC > 1){
+    temp_density <- density(AGE_)
+    polygon(
+      x = c(temp_density$x, rev(temp_density$x)),
+      y = c((temp_density$y * data[["DE"]]) / max(temp_density$y), rep(0,length(temp_density$x))),
+      lty = 1,
+      density = 10,
+      col = "grey"
+    )
+    polygon(
+      x = c(temp_density$x, rev(temp_density$x)),
+      y = c((temp_density$y * data[["DE"]]) / max(temp_density$y), rep(0,length(temp_density$x))),
+      lty = 0,
+      col = rgb(1,0,0,.2)
+    )
+  }
 
   ##add lines of absorbed dose
   lines(x = 0:max_time, y = DATE[["CUMDR"]])
