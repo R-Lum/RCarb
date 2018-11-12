@@ -1,3 +1,4 @@
+^_pkgdown\.yml$
 ## GitHub stuff
 LICENSE$
 README\.md
@@ -13,20 +14,16 @@ R/README\.md
 ## RStudio things
 ^.*\.Rproj$
 ^\.Rproj\.user$
-
 ## Vignette and other pacakge stuff
 RCarb.BuildResults
 RCarb.BuildScripts
 RCarb.CHECK_AND_BUILD_macOS.sh
 vignettes/files/*
-
 ##TRAVIS and AppVeyor
 .travis.yml
 appveyor.yml
 codecov.yml
-
 ##Exclude helpers
 helpers/*
-
 ##TODO
 TODO.md
