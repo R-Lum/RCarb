@@ -1,3 +1,3 @@
-## RCarb 0.1.0 (Release date: 2018-10-03)
+## RCarb 0.1.0 (Release date: 2018-11-12)
 
-* Initial version on CRAN
+* Initial version
