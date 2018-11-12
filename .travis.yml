@@ -1,0 +1,38 @@
+language: r
+cache: packages
+warnings_are_errors: true
+sudo: required
+
+r_packages:
+  - devtools
+  - covr
+  - interp
+  - matrixStats
+
+## test different platforms
+matrix:
+  include:
+  - os: linux
+    r: oldrel
+    env: CACHE_NAME=JOB1
+  - os: linux
+    r: release
+    env: CACHE_NAME=JOB2
+  - os: linux
+    r: devel
+    env: CACHE_NAME=JOB3
+  - os: osx
+    r: release
+    env: CACHE_NAME=JOB4
+
+##create notifications
+notifications:
+  email:
+    recipients:
+      - sk@r-luminescence.de
+    on_success: change
+    on_failure: change
+
+##grep data from testthat
+after_success:
+- Rscript -e 'covr::codecov()'

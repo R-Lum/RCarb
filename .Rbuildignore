@@ -19,6 +19,9 @@ RCarb.BuildScripts
 RCarb.CHECK_AND_BUILD_macOS.sh
 vignettes/files/*
 
+##TRAVIS and AppVeyor
+.travis.yml
+
 ##Exclude helpers
 helpers/*
 
