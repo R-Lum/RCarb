@@ -249,9 +249,17 @@
   if(data[["DE"]] > max(CUMDR)) ##modified before it was Age > 500 ka, which did not fit.
       warning("[.calc_DoseRate()] Extrem case detected: DE > max cumulative dose rate!", call. = FALSE)
 
-  AGE <- approx(x = CUMDR, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y
-  AGEA <- approx(x = CUMDRA, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y
+  AGE <- try(approx(x = CUMDR, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y, silent = TRUE)
+  AGEA <- try(approx(x = CUMDRA, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y, silent = TRUE)
+
+  ##sometimes the input values are not meaningful (for example data row 23 in the example dataset) and the approximation failed,
+  ##we here provide a clean crash
+  if(class(AGE) == 'try-error' || class(AGEA) == 'try-error')
+    stop("[.calc_DoseRate()] Modelling failed, please check your input data, they may not be meaningful!", call. = FALSE)
+
+  ##calculate age
   ABS <- abs(AGE - TIMEMAX)
+
 
 # RETURN --------------------------------------------------------------------------------------
   if(mode_optim){

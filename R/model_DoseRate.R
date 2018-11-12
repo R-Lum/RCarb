@@ -7,7 +7,13 @@
 #' environments. It provides basically the same functionality as the original version of 'Carb', i.e.
 #' you should be also aware of the limitations of this modelling approach. In particular: The model
 #' assumes a linear carbonate mass increase due to post-depositional processes. Please read the
-#' references cited blow.
+#' references cited blow.\cr
+#'
+#' **Uncertainty estimation**
+#'
+#' For estimating the uncertainties, Monte-Carloe (MC) simulation runs are used. For very
+#' small values (close to 0) this can, however, lead to edge effects (similar in 'Carb') since
+#' values below 0 are set to 0.
 #'
 #' @param data [data.frame] (**required**): input data following the structure given
 #' in the example data set `data(Example_Data)`. The input [data.frame] should have at least
@@ -49,6 +55,7 @@
 #' **Lower plot:** Totally absorbed dose over time. The plot is an representation of the 'new'
 #' age based on the carbonat modelling.
 #'
+#' @note This function cannot handle equivalent doses < 1 Gy.
 #'
 #' @examples
 #' ##load example data
@@ -119,7 +126,8 @@ model_DoseRate <- function(
       temp <- try(do.call(model_DoseRate, c(list(data = x),args)))
 
       if(class(temp) == "try-error"){
-        message(paste0("[model_DoseRate()] Calculation for sample ", x[[1]], " failed. NULL returned!"))
+        try(stop(paste0("[model_DoseRate()] Calculation for sample ", x[[1]], " failed. NULL returned!"),
+                 call. = FALSE))
         return(NULL)
 
       }else{
@@ -179,15 +187,6 @@ model_DoseRate <- function(
 
    ##remove example data
    rm(Example_Data)
-
-   ##check DE
-   if(data[["DE"]] <= 1){
-     try(
-       stop("[model_DoseRate()] De values < 1 Gy cannot be handled. NULL returned!",
-            call. = FALSE))
-     return(NULL)
-
-   }
 
    ##check n.MC
    if(is.null(n.MC) || n.MC[1] <= 1){
@@ -260,6 +259,8 @@ model_DoseRate <- function(
   AGEA_ <- numeric(ERROR)
 
   ##create variables we want to use (we do not do this in the loop as in MATLAB)
+  ##TODO: We should evtl. set all values below 0 as NA and remove such lines; this might
+  ##be better than setting it to 0. However, for the moment this is precisely what Carb did before
   DE <- data[["DE"]] + rnorm(n.MC) * data[["DE_X"]]
   DE[DE < 0] <- 0
 
@@ -421,6 +422,7 @@ if(plot){
   CUMDR_rowMeans <- rowMeans(CUMDR_)
   CUMDR_rowSds <- matrixStats::rowSds(CUMDR_)
 
+  ## =============================================================================================
   ##(A) dose rate plot
   plot(
     NA,
@@ -452,12 +454,13 @@ if(plot){
   ##set mean line (give a good indication whether the n.MC runs had been enough)
   lines(x = 0:max_time, y = rowMeans(DR_), lwd = 1, lty = 2, col = "blue")
 
+  ## =============================================================================================
   ##(B) accummulated dose and age
   plot(
     NA,
     NA,
     xlim = plot_settings$xlim,
-    ylim = c(0, data[["DE"]] * 1.1),
+    ylim = c(0, data[["DE"]] * 1.2),
     xlab = plot_settings$xlab,
     ylab = "Absorbed dose [Gy]",
     main = data[["SAMP_NAME"]],
@@ -474,17 +477,33 @@ if(plot){
     border = NA
   )
 
-  ##center lines horizontal
-  lines(
-    x = c(0,DATE[["AGE"]]),
-    y = rep(data[["DE"]], 2), col = "red")
+  ##lines showing the De distribution used for MC runs
+  density_De_y <- seq(0, data[["DE"]] * 1.2, length.out = 100)
+  density_De_x <- (1 / sqrt(2 * pi * data[["DE_X"]]^2)) *
+    exp(-(density_De_y - data[["DE"]])^2 / 2 * data[["DE_X"]]^2)
 
-  ##center lines vertical
+  ##this looks weird, otherwise the plot is not really right and we have overplotting
+  ##issues
+  density_De_x <- (density_De_x * -par()$usr[1])/ max(density_De_x) + par()$usr[1]
+  density_De_x[which.min(density_De_x)] <- min(density_De_x)
+  density_De_x[density_De_x <= par()$usr[1]] <-  par()$usr[1] - 0.2
+  lines(x = density_De_x, density_De_y, col = "red")
+
+  ##centre lines horizontal (De)
+  lines(
+    x = c(0, DATE[["AGE"]]),
+    y = rep(data[["DE"]], 2),
+    col = "red",
+    lty = 2
+  )
+
+  ##center lines vertical (age)
   lines(x = rep(DATE[["AGE"]], 2),
         y = c(0, data[["DE"]]),
-        col = "red")
+        col = "red",
+        lty = 2)
 
-  ##add density
+  ##add density (two times, 1st density lines, then colour)
   temp_density <- density(AGE_)
   polygon(
     x = c(temp_density$x, rev(temp_density$x)),
@@ -537,7 +556,7 @@ data("Example_Data", envir = environment())
 ##the dataset
 model_DoseRate(
   data = Example_Data,
-  n.MC = 10,
+  n.MC = 100,
   txtProgressBar = FALSE
 )
 
