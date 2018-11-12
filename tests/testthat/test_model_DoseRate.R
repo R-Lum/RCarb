@@ -9,7 +9,10 @@ test_that("Full function test", {
   ##break function
   expect_error(model_DoseRate(data = "test"), regexp = "'data' is not a 'data.frame'")
   expect_error(model_DoseRate(data = data.frame(x = 1)), regexp = "The column names of your input data.frame do not match the requirements.")
-  ##expect_warning(model_DoseRate(data = Example_Data[23,], n.MC = 10),regexp = "Extrem case: DE > max cumulative dose rate!")
+  expect_error(
+    model_DoseRate(data = Example_Data[23,], n.MC = 10),regexp = "Modelling failed, please check your input data, they may not be meaningful!")
+  expect_type(
+    model_DoseRate(data = Example_Data[23:24,], n.MC = 10), type = "list")
 
   ##run simple example
   expect_type(model_DoseRate(data = Example_Data[14,],
@@ -20,7 +23,7 @@ test_that("Full function test", {
   ##run two example
   expect_type(model_DoseRate(
     data = Example_Data[13:14, ],
-    n.MC = 2,
+    n.MC = 5,
     txtProgressBar = TRUE
   ),
   type = "list")
