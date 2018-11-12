@@ -21,6 +21,7 @@ vignettes/files/*
 
 ##TRAVIS and AppVeyor
 .travis.yml
+appveyor.yml
 
 ##Exclude helpers
 helpers/*
