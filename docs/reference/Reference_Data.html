@@ -32,7 +32,8 @@
 
 <meta property="og:title" content="Reference data — Reference_Data" />
 
-<meta property="og:description" content="Reference data" />
+<meta property="og:description" content="Correction factors for beta and gamma radiation used for internal calculations.
+These values are used instead of the correction factors given in Aitken (1985) for the carbonate model." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,20 +115,117 @@
 
     <div class="ref-description">
     
-    <p>Reference data</p>
+    <p>Correction factors for beta and gamma radiation used for internal calculations.
+These values are used instead of the correction factors given in Aitken (1985) for the carbonate model.</p>
     
     </div>
 
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p><code>ref</code>: data.frame</p>
+    <p><code>Reference_Data</code>: list <br /></p>
+<table class='table'>
+<tr><td><strong>NAME</strong></td><td><strong>TYPE</strong></td><td><strong>DIM</strong></td><td><strong>DESCRIPTION</strong></td></tr>
+<tr><td>DATAek</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for K</td></tr>
+<tr><td>DATAet</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for Th</td></tr>
+<tr><td>DATAet230</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for Th-230</td></tr>
+<tr><td>DATAeu</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U</td></tr>
+<tr><td>DATAeu234</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U-234</td></tr>
+<tr><td>DATAeu238</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U-238</td></tr>
+<tr><td>DATApk</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for K</td></tr>
+<tr><td>DATApt</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for T</td></tr>
+<tr><td>DATApt230</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for Th-230</td></tr>
+<tr><td>DATApu</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U</td></tr>
+<tr><td>DATApu234</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-234</td></tr>
+<tr><td>DATApu238</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-238</td></tr>
+<tr><td>mejdahl</td><td><code>data.frame</code></td><td>36 x 4</td><td>beta-dose attenuation values for quartz grains according to Mejdahl (1979)</td></tr>
+</table>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The reference values are used internally to account for: (1) grain size depend beta-attenuation
+factors (Mejdahl, 1979) and (2) to correct nuclide dependent beta and gamma radiation for water/carbonate proportions.
+The latter values are given as matrix and precise values are interpolated during the modelling process.</p>
+<p>Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
+on the origin of these data we refer to Nathan &amp; Mauz (2008) and Nathan (2010).</p>
     
     <h2 class="hasAnchor" id="version"><a class="anchor" href="#version"></a>Version</h2>
 
     <p>0.1.0</p>
     
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
+    <p>Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.</p>
+<p>Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
+Radiation Measurements 43, 14-25. doi:10.1016/j.radmeas.2007.12.012</p>
+<p>Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
+DPhil thesis, St Hugh’s College, Oxford. <br /></p>
+<p><strong>Further reading</strong></p>
+<p>Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='fu'>data</span>(<span class='no'>Reference_Data</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'>environment</span>())
+<span class='fu'>str</span>(<span class='no'>Reference_Data</span>)</div><div class='output co'>#&gt; List of 13
+#&gt;  $ DATAek   : num [1:4, 1:4] 1 1.195 1.197 1.189 0.995 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATAet   : num [1:4, 1:4] 1 1.195 1.201 1.192 0.993 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATAet230: num [1:4, 1:4] 1 1.236 1.25 1.244 0.997 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATAeu   : num [1:4, 1:4] 1 1.193 1.199 1.187 0.992 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATAeu234: num [1:4, 1:4] 1 1.248 1.256 1.249 0.997 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATAeu238: num [1:4, 1:4] 1 1.187 1.189 1.177 0.993 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATApk   : num [1:4, 1:4] 1 1.06 1.06 1.04 1.02 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATApt   : num [1:4, 1:4] 1 1.023 1.015 0.987 1.039 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATApt230: num [1:4, 1:4] 1 0.26 0.252 0.236 1.494 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATApu   : num [1:4, 1:4] 1 1.015 1.007 0.976 1.044 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATApu234: num [1:4, 1:4] 1 0.208 0.206 0.202 1.527 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ DATApu238: num [1:4, 1:4] 1 0.814 0.792 0.716 1.16 ...
+#&gt;   ..- attr(*, "dimnames")=List of 2
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
+#&gt;  $ mejdahl  :'data.frame':	36 obs. of  4 variables:
+#&gt;   ..$ D : num [1:36] 0.005 0.01 0.015 0.02 0.03 0.04 0.05 0.06 0.07 0.08 ...
+#&gt;   ..$ K : num [1:36] 0.0018 0.0035 0.0053 0.0071 0.0106 0.0141 0.0177 0.0212 0.0248 0.0283 ...
+#&gt;   ..$ Th: num [1:36] 0.0225 0.0366 0.0484 0.0582 0.0743 ...
+#&gt;   ..$ U : num [1:36] 0.012 0.0214 0.0296 0.0366 0.0475 0.0564 0.0642 0.0713 0.0779 0.084 ...</div><div class='input'><span class='no'>Reference_Data</span>$<span class='no'>DATAek</span></div><div class='output co'>#&gt;        1e-06   0.04    0.2      1
+#&gt; 1e-06 1.0000 0.9946 0.9936 0.9911
+#&gt; 0.04  1.1948 1.0944 1.0266 0.9985
+#&gt; 0.2   1.1973 1.1631 1.0922 1.0230
+#&gt; 1     1.1886 1.1808 1.1546 1.0850</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -135,15 +233,21 @@
       
       <li><a href="#format">Format</a></li>
 
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#version">Version</a></li>
-          </ul>
+
+      <li><a href="#references">References</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Sebastian Kreutzer, Barbara Mauz, Dirk Hoffmann.</p>
+  <p>Developed by Sebastian Kreutzer, Roger P. Nathan, Barbara Mauz.</p>
 </div>
 
 <div class="pkgdown">

@@ -32,7 +32,11 @@
 
 <meta property="og:title" content="Example data — Example_Data" />
 
-<meta property="og:description" content="Example data" />
+<meta property="og:description" content="Example data as shipped with Carb by Mauz &amp;amp; Hoffmann (2014). In contrast to the original
+data, NA values have been replaced by 0 and columns and rows have been transposed. Samples
+are now organised in rows and parameters in columns.
+The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
+Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz &amp;amp; Hoffmann (2014)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,23 +118,36 @@
 
     <div class="ref-description">
     
-    <p>Example data</p>
+    <p>Example data as shipped with <em>Carb</em> by Mauz &amp; Hoffmann (2014). In contrast to the original
+data, <code>NA</code> values have been replaced by 0 and columns and rows have been transposed. Samples
+are now organised in rows and parameters in columns.</p>
+<p>The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
+Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz &amp; Hoffmann (2014).</p>
     
     </div>
 
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p><code>Example_Data</code>: data.frame</p>
+    <p><code>Example_Data</code>: data.frame (28 x 29)</p>
+<p>Each column has two attributes:</p><ul>
+<li><p><code>UNIT</code>: the unit, so far applicable, e.g. "ppm"</p></li>
+<li><p><code>DESCRIPTION</code>: the column description</p></li>
+</ul>
     
     <h2 class="hasAnchor" id="version"><a class="anchor" href="#version"></a>Version</h2>
 
     <p>0.1.0</p>
     
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model
+for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'>## show first 5 elements of the METADATA and DATA elements in the terminal</span>
+<span class='co'>## show first elements of the example data</span>
 <span class='fu'>data</span>(<span class='no'>Example_Data</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'>environment</span>())
 <span class='fu'>head</span>(<span class='no'>Example_Data</span>)</div><div class='output co'>#&gt;   SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X
 #&gt; 1     BN107 0.080 0.010 1.64 0.08 1.90 0.08    0      0         0           0
@@ -153,6 +170,13 @@
 #&gt; 4   120      10     40       10  52    5
 #&gt; 5    60      10     40       10  50    4
 #&gt; 6   180      10    130       10  81    5</div><div class='input'>
+<span class='co'>##show only column U230</span>
+<span class='no'>Example_Data</span>$<span class='no'>U238</span></div><div class='output co'>#&gt;  [1] 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+#&gt; [16] 0.31 0.00 0.00 0.32 0.35 0.35 0.30 0.15 0.19 0.14 0.60 0.21 0.68
+#&gt; attr(,"UNIT")
+#&gt; [1] "ppm"
+#&gt; attr(,"DESCRIPTION")
+#&gt; [1] "U-238 concentration"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -162,16 +186,23 @@
       <li><a href="#format">Format</a></li>
 
       <li><a href="#version">Version</a></li>
+
+      <li><a href="#references">References</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
+
+    <h2>Author</h2>
+    
+Mauz &amp; Hoffmann (2014), with minor modifcations by Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
+CNRS-Université Bordeaux Montaigne (France)
 
   </div>
 </div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Sebastian Kreutzer, Barbara Mauz, Dirk Hoffmann.</p>
+  <p>Developed by Sebastian Kreutzer, Roger P. Nathan, Barbara Mauz.</p>
 </div>
 
 <div class="pkgdown">

@@ -73,9 +73,9 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Get started with RCarb</h1>
-                        <h4 class="author">Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine, France</h4>
+                        <h4 class="author">Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine (France) &amp; <br> Barbara Mauz, Department of Geography and Geology, University of Salzburg, Salzburg (Austria)</h4>
             
-            <h4 class="date">Last modified: 2018-10-03 (‘RCarb’ version: 0.1.0)</h4>
+            <h4 class="date">Last modified: 2018-11-12 (‘RCarb’ version: 0.1.0)</h4>
       
       
       <div class="hidden name"><code>GetStarted.Rmd</code></div>
@@ -94,12 +94,15 @@
 <h1 class="hasAnchor">
 <a href="#quick-start-with-the-example-dataset" class="anchor"></a>Quick start with the example dataset</h1>
 <p>If you have no idea what a function does and how it works, it is always a good idea to have a closer look into the example sections of the package functions. The package ‘RCarb’ has one central function named <code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code>. The example given in the example section in the manual will be used in the following to illustrate the central package functionality in three steps.</p>
-<p>##Load RCarb</p>
+<div id="load-rcarb" class="section level2">
+<h2 class="hasAnchor">
+<a href="#load-rcarb" class="anchor"></a>Load ‘RCarb’</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(RCarb)</a></code></pre></div>
+</div>
 <div id="load-example-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#load-example-data" class="anchor"></a>Load example data</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">##load example data</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co">##load example data</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">data</span>(<span class="st">"Example_Data"</span>, <span class="dt">envir =</span> <span class="kw">environment</span>())</a></code></pre></div>
 <p>To get a first impression on how the example dataset looks like, you call the function <code>head()</code> to print the first five rows of a <code>data.frame</code> on the terminal.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">head</span>(Example_Data)</a></code></pre></div>
@@ -137,28 +140,28 @@
 <h2 class="hasAnchor">
 <a href="#run-dose-rate-modelling" class="anchor"></a>Run dose rate modelling</h2>
 <p>Now we want to start the modelling using the data given for the first sample only.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">##extract only the first row </a>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co">##extract only the first row </span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2">data &lt;-<span class="st"> </span>Example_Data[<span class="dv">1</span>,]</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">##run model </a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">##run model </span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5">results &lt;-<span class="st"> </span><span class="kw"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span>(</a>
 <a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="dt">data =</span> data,</a>
 <a class="sourceLine" id="cb7-7" data-line-number="7">  <span class="dt">n.MC =</span> <span class="dv">10</span>, </a>
 <a class="sourceLine" id="cb7-8" data-line-number="8">  <span class="dt">txtProgressBar =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## 
-## [model_DataRate()]
+## [model_DoseRate()]
 ## 
 ##  Sample ID:       BN107 
 ##  Equivalent dose:     98  ±  9 Gy
 ##  Diameter:        180 µm 
 ##  MC runs error estim.:    10  
 ##  ------------------------------------------------ 
-##  Age (conv.):         133.451  ±  13.434  ka
-##  Age (new):       117.443  ±  8.733  ka
+##  Age (conv.):         133.451  ±  14.21  ka
+##  Age (new):       117.443  ±  8.751  ka
 ## 
-##  Dose rate (conv.):   0.734  ±   Gy/ka
-##  Dose rate (onset):   0.963  ±  0.038  Gy/ka
-##  Dose rate (final):   0.761  ±  0.034  Gy/ka
+##  Dose rate (conv.):   0.734  ±  0.05  Gy/ka
+##  Dose rate (onset):   0.998  ±  0.08  Gy/ka
+##  Dose rate (final):   0.753  ±  0.037  Gy/ka
 ##  ------------------------------------------------</code></pre>
 <p><img src="GetStarted_files/figure-html/unnamed-chunk-6-1.png" width="480" style="display: block; margin: auto;"></p>
 <p>The function returns a terminal output along with two plots, which are mostly similar to the original graphical output provided by the MATLAB program ‘Carb’.</p>
@@ -181,7 +184,7 @@
 </div>
 <div id="enter-own-data-back-import-into-r" class="section level2">
 <h2 class="hasAnchor">
-<a href="#enter-own-data-back-import-into-r" class="anchor"></a>Enter own data &amp;back import into R</h2>
+<a href="#enter-own-data-back-import-into-r" class="anchor"></a>Enter own data &amp; back import into R</h2>
 <p>Own data are added using an external spreadsheet program and then save again as CSV-file.</p>
 <p><img src="files/Screenshot.png" width="400px" style="display: block; margin: auto;"></p>
 <p>For re-importing, the data standard R functionality can be used.</p>
@@ -191,26 +194,26 @@
 <h2 class="hasAnchor">
 <a href="#model-the-dose-rate" class="anchor"></a>Model the dose rate</h2>
 <p>The final modelling does not differ from the call already show above (here without a plot output):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">##run model </a>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co">##run model </span></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2">results &lt;-<span class="st"> </span><span class="kw"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span>(</a>
 <a class="sourceLine" id="cb12-3" data-line-number="3">  <span class="dt">data =</span> data,</a>
 <a class="sourceLine" id="cb12-4" data-line-number="4">  <span class="dt">n.MC =</span> <span class="dv">10</span>, </a>
 <a class="sourceLine" id="cb12-5" data-line-number="5">  <span class="dt">txtProgressBar =</span> <span class="ot">FALSE</span>, </a>
 <a class="sourceLine" id="cb12-6" data-line-number="6">  <span class="dt">plot =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## 
-## [model_DataRate()]
+## [model_DoseRate()]
 ## 
 ##  Sample ID:       1 
 ##  Equivalent dose:     98  ±  9 Gy
 ##  Diameter:        180 µm 
 ##  MC runs error estim.:    10  
 ##  ------------------------------------------------ 
-##  Age (conv.):         133.451  ±  14.35  ka
-##  Age (new):       117.443  ±  9.44  ka
+##  Age (conv.):         133.451  ±  18.493  ka
+##  Age (new):       117.443  ±  13.089  ka
 ## 
-##  Dose rate (conv.):   0.734  ±   Gy/ka
-##  Dose rate (onset):   0.959  ±  0.053  Gy/ka
-##  Dose rate (final):   0.747  ±  0.026  Gy/ka
+##  Dose rate (conv.):   0.734  ±  0.047  Gy/ka
+##  Dose rate (onset):   0.973  ±  0.07  Gy/ka
+##  Dose rate (final):   0.75  ±  0.037  Gy/ka
 ##  ------------------------------------------------</code></pre>
 </div>
 </div>
@@ -224,14 +227,15 @@
 <li><a href="#scope">Scope</a></li>
       <li>
 <a href="#quick-start-with-the-example-dataset">Quick start with the example dataset</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#load-example-data">Load example data</a></li>
+<li><a href="#load-rcarb">Load ‘RCarb’</a></li>
+      <li><a href="#load-example-data">Load example data</a></li>
       <li><a href="#run-dose-rate-modelling">Run dose rate modelling</a></li>
       </ul>
 </li>
       <li>
 <a href="#using-your-own-dataset">Using your own dataset</a><ul class="nav nav-pills nav-stacked">
 <li><a href="#create-template-table">Create template table</a></li>
-      <li><a href="#enter-own-data-back-import-into-r">Enter own data &amp;back import into R</a></li>
+      <li><a href="#enter-own-data-back-import-into-r">Enter own data &amp; back import into R</a></li>
       <li><a href="#model-the-dose-rate">Model the dose rate</a></li>
       </ul>
 </li>
@@ -243,7 +247,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Sebastian Kreutzer, Barbara Mauz, Dirk Hoffmann.</p>
+  <p>Developed by Sebastian Kreutzer, Roger P. Nathan, Barbara Mauz.</p>
 </div>
 
 <div class="pkgdown">

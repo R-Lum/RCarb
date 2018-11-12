@@ -164,7 +164,7 @@ the modelling. See details for further information.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>further arguments passed to the underyling plot functions, see also details for further information</p></td>
+      <td><p>further arguments passed to the underyling plot functions, see also details for further information. Supported standard arguments are <code>mfrow</code>, <code>xlim</code>, <code>xlab</code>.</p></td>
     </tr>
     </table>
     
@@ -179,14 +179,25 @@ the modelling. See details for further information.</p></td>
 
 <p>-----------------------------------<br />
 <code>[ GRAPHICAL OUTPUT ]</code><br />
------------------------------------<br /></p><ul>
-<li><p>Two plots are returned: ##TODO</p></li>
-</ul>
-
+-----------------------------------<br /></p>
+<p><strong>Upper plot:</strong> Dose rate evolution over time backwards. The solid black line is the calculation
+output, the grey shaded area indicates the 2-sigma error margins. The dashed blue line is an indicator
+of the quality of the error estimations based on Monte Carlo (MC) runs.The closer it follows the
+black line, the more reliable are the given error margins. <br /></p>
+<p><strong>Lower plot:</strong> Totally absorbed dose over time. The plot is an representation of the 'new'
+age based on the carbonat modelling.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>TODO</p>
+    <p>This function is the starting point for the dose rate modelling for carbonat enrich
+environments. It provides basically the same functionality as the original version of 'Carb', i.e.
+you should be also aware of the limitations of this modelling approach. In particular: The model
+assumes a linear carbonate mass increase due to post-depositional processes. Please read the
+references cited blow.<br /></p>
+<p><strong>Uncertainty estimation</strong></p>
+<p>For estimating the uncertainties, Monte-Carloe (MC) simulation runs are used. For very
+small values (close to 0) this can, however, lead to edge effects (similar in 'Carb') since
+values below 0 are set to 0.</p>
     
     <h2 class="hasAnchor" id="function-version"><a class="anchor" href="#function-version"></a>Function version</h2>
 
@@ -197,40 +208,44 @@ the modelling. See details for further information.</p></td>
     <p>Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
 dose rate of carbonate-rich samples. Ancient TL 32, 24–32.</p>
 <p>Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-Radiation Measurements 43, 14–25. doi:10.1016/j.radmeas.2007.12.012</p>
+Radiation Measurements 43, 14–25. doi:10.1016/j.radmeas.2007.12.012 <br /></p>
+<p><strong>Further reading</strong></p>
+<p>Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
+DPhil thesis, St Hugh’s College, Oxford.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>##load example data</span>
 <span class='fu'>data</span>(<span class='st'>"Example_Data"</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'>environment</span>())
 
-<span class='co'>##run the function for the first sample</span>
+<span class='co'>##run the function for one sample from</span>
+<span class='co'>##the dataset</span>
 <span class='fu'>model_DoseRate</span>(
-<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>Example_Data</span>[<span class='fl'>1</span>,],
+<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>Example_Data</span>[<span class='fl'>14</span>,],
 <span class='kw'>n.MC</span> <span class='kw'>=</span> <span class='fl'>2</span>,
 <span class='kw'>txtProgressBar</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
 )</div><div class='output co'>#&gt; 
-#&gt; [model_DataRate()]
+#&gt; [model_DoseRate()]
 #&gt; 
-#&gt;  Sample ID:		 BN107 
-#&gt;  Equivalent dose:	 98  ±  9 Gy
-#&gt;  Diameter:		 180 µm 
+#&gt;  Sample ID:		 LV107 
+#&gt;  Equivalent dose:	 53  ±  2 Gy
+#&gt;  Diameter:		 215 µm 
 #&gt;  MC runs error estim.:	 2  
 #&gt;  ------------------------------------------------ 
-#&gt;  Age (conv.):		 133.451  ±  4.27  ka
-#&gt;  Age (new):		 117.443  ±  10.284  ka
+#&gt;  Age (conv.):		 149.73  ±  0.417  ka
+#&gt;  Age (new):		 130.642  ±  6.354  ka
 #&gt; 
-#&gt;  Dose rate (conv.):	 0.734  ±   Gy/ka
-#&gt;  Dose rate (onset):	 0.986  ±  0.023  Gy/ka
-#&gt;  Dose rate (final):	 0.749  ±  0.04  Gy/ka
-#&gt;  ------------------------------------------------ </div><div class='img'><img src='model_DoseRate-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt;   SAMP_NAME    K  K_X    T  T_X   U  U_X U238 U238_X U234_U238 U234_U238_X WCI
-#&gt; 1     BN107 0.08 0.01 1.64 0.08 1.9 0.08    0      0         0           0  20
-#&gt;   WCI_X WCF WCF_X CC CC_X DIAM DIAM_X COSMIC COSMIC_X INTERNAL INTERNAL_X ONSET
-#&gt; 1     7   7     7 62    1  180     10   0.18     0.01        0          0   100
-#&gt;   ONSET_X FINISH FINISH_X DE DE_X AGE_CONV AGE_CONV_X     AGE  AGE_X DR_CONV
-#&gt; 1      10     40       10 98    9  133.451       4.27 117.443 10.284   0.734
-#&gt;   DR_CONVX DR_ONSET DR_ONSET_X DR_FINAL DR_FINAL_X n.MC
-#&gt; 1    0.042    0.986      0.023    0.749       0.04    2</div><div class='input'>
+#&gt;  Dose rate (conv.):	 0.354  ±  0.012  Gy/ka
+#&gt;  Dose rate (onset):	 0.5  ±  0.02  Gy/ka
+#&gt;  Dose rate (final):	 0.361  ±  0.011  Gy/ka
+#&gt;  ------------------------------------------------ </div><div class='img'><img src='model_DoseRate-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt;    SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X
+#&gt; 14     LV107 0.073 0.004 0.67 0.02 0.79 0.07    0      0         0           0
+#&gt;    WCI WCI_X WCF WCF_X CC CC_X DIAM DIAM_X COSMIC COSMIC_X INTERNAL INTERNAL_X
+#&gt; 14  10     2   5     5 60    2  215     35 0.0876   0.0044        0          0
+#&gt;    ONSET ONSET_X FINISH FINISH_X DE DE_X AGE_CONV AGE_CONV_X     AGE AGE_X
+#&gt; 14   120      10     40       10 53    2   149.73      0.417 130.642 6.354
+#&gt;    DR_CONV DR_CONV_X DR_ONSET DR_ONSET_X DR_FINAL DR_FINAL_X n.MC
+#&gt; 14   0.354     0.012      0.5       0.02    0.361      0.011    2</div><div class='input'>
 
 </div></pre>
   </div>
@@ -260,7 +275,7 @@ on MATLAB code given in Carb_2007a
 
       <footer>
       <div class="copyright">
-  <p>Developed by Sebastian Kreutzer, Barbara Mauz, Dirk Hoffmann.</p>
+  <p>Developed by Sebastian Kreutzer, Roger P. Nathan, Barbara Mauz.</p>
 </div>
 
 <div class="pkgdown">
