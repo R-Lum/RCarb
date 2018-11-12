@@ -23,6 +23,7 @@ vignettes/files/*
 ##TRAVIS and AppVeyor
 .travis.yml
 appveyor.yml
+codecov.yml
 
 ##Exclude helpers
 helpers/*
