@@ -8,6 +8,7 @@ in carbonate-rich samples. The package is a translation of the MATLAB program *C
 [![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RCarb)](http://www.r-pkg.org/pkg/RCarb)
 [![Build Status](https://travis-ci.org/R-Lum/RCarb.svg?branch=master)](https://travis-ci.org/R-Lum/RCarb)
 [![Build status](https://ci.appveyor.com/api/projects/status/bjfy5lkqblrgvo15?svg=true)](https://ci.appveyor.com/project/RLumSK/rcarb)
+[![codecov](https://codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg)](https://codecov.io/gh/R-Lum/RCarb)
 
 
 ## Installation of the developer version
