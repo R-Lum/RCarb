@@ -9,6 +9,8 @@ test_that("Full function test", {
   ##break function
   expect_error(model_DoseRate(data = "test"), regexp = "'data' is not a 'data.frame'")
   expect_error(model_DoseRate(data = data.frame(x = 1)), regexp = "The column names of your input data.frame do not match the requirements.")
+  expect_error(model_DoseRate(data = data.frame()), regexp = "'data' is empty!")
+  expect_error(model_DoseRate(data = data.frame(x = NA), regexp = "'data' is empty!"))
   expect_error(
     model_DoseRate(data = Example_Data[23,], n.MC = 10),regexp = "Modelling failed, please check your input data, they may not be meaningful!")
   expect_type(
