@@ -109,7 +109,6 @@ correct structure, e.g., the correct number for columns and column names.
 write_InputTemplate(file = "files/RCarb_Input.csv")
 ```
 
-
 The path given with the argument `file` can be modified as needed.
 
 ## Enter own data & back import into R

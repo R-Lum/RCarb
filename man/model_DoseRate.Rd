@@ -61,7 +61,13 @@ This function is the starting point for the dose rate modelling for carbonat enr
 environments. It provides basically the same functionality as the original version of 'Carb', i.e.
 you should be also aware of the limitations of this modelling approach. In particular: The model
 assumes a linear carbonate mass increase due to post-depositional processes. Please read the
-references cited blow.
+references cited blow.\cr
+
+\strong{Uncertainty estimation}
+
+For estimating the uncertainties, Monte-Carloe (MC) simulation runs are used. For very
+small values (close to 0) this can, however, lead to edge effects (similar in 'Carb') since
+values below 0 are set to 0.
 }
 \section{Function version}{
  0.1.0

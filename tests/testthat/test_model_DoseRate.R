@@ -18,6 +18,4 @@ test_that("Full function test", {
   ), type = "list")
 
 
-
-
 })

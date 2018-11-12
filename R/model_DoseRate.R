@@ -55,7 +55,6 @@
 #' **Lower plot:** Totally absorbed dose over time. The plot is an representation of the 'new'
 #' age based on the carbonat modelling.
 #'
-#' @note This function cannot handle equivalent doses < 1 Gy.
 #'
 #' @examples
 #' ##load example data
@@ -548,15 +547,4 @@ if(plot){
   return(results)
 
 }
-
-##load example data
-data("Example_Data", envir = environment())
-
-##run the function for one sample from
-##the dataset
-model_DoseRate(
-  data = Example_Data,
-  n.MC = 100,
-  txtProgressBar = FALSE
-)
 
