@@ -20,6 +20,7 @@ Imports:
   interp (>= 1.0),
   matrixStats (>= 0.50.0)
 Suggests: 
+  testthat (>= 2.0.0),
   R.rsp (>= 0.42.0)
 License: GPL-3
 Encoding: UTF-8
