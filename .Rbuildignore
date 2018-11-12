@@ -8,6 +8,7 @@ revdep
 R/README\.md
 ^docs$
 .gitignore
+.github/*
 
 ## RStudio things
 ^.*\.Rproj$
