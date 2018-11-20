@@ -29,14 +29,14 @@
 #'
 #' @references
 #'
-#' This package bases on a MATLAB programme with name 'Carb', details can be found the
+#' This package bases on a 'MATLAB' programme with name 'Carb', details can be found the
 #' following references:\cr
 #'
 #' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
 #' dose rate of carbonate-rich samples. Ancient TL 32, 24–32. http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf
 #'
 #' Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-#' Radiation Measurements 43, 14–25. doi:10.1016/j.radmeas.2007.12.012
+#' Radiation Measurements 43, 14–25. https://dx.doi.org/10.1016/j.radmeas.2007.12.012
 #'
 #' **Further reading**
 #'

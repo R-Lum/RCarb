@@ -92,7 +92,7 @@ Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, th
 dose rate of carbonate-rich samples. Ancient TL 32, 24–32.
 
 Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-Radiation Measurements 43, 14–25. doi:10.1016/j.radmeas.2007.12.012 \cr
+Radiation Measurements 43, 14–25. https://dx.doi.org/10.1016/j.radmeas.2007.12.012 \cr
 
 \strong{Further reading}
 
@@ -101,7 +101,7 @@ DPhil thesis, St Hugh’s College, Oxford.
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montagine (France); based
-on MATLAB code given in Carb_2007a
+on 'MATLAB' code given in Carb_2007a.m
 }
 \keyword{dplot}
 \keyword{manip}

@@ -1,14 +1,15 @@
 ## Release summary
 
-This is a new package submission. 
+This is a new package submission. This submission 
+accounts for the issues raised by Uwe Ligges.
 
-The package itself is a translation and extension of the MATLAB program 'Carb'
-published in the article:
+> Thanks, please single quote software names such as 'MATLAB' in the Description field.
 
-Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: 
-Carb, the model for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24–32.
+Done.
 
-The authors of the original code were contacted and are part of this package. 
+> Please add DOIs to the references if available in the form <DOI:10......>.
+
+Done.
 
 ## Reverse dependency checks
 
