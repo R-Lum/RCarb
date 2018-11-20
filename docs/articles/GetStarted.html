@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
       </span>
     </div>
 
@@ -75,7 +75,7 @@
       <h1>Get started with RCarb</h1>
                         <h4 class="author">Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine (France) &amp; <br> Barbara Mauz, Department of Geography and Geology, University of Salzburg, Salzburg (Austria)</h4>
             
-            <h4 class="date">Last modified: 2018-11-12 (‘RCarb’ version: 0.1.0)</h4>
+            <h4 class="date">Last modified: 2018-11-20 (‘RCarb’ version: 0.1.1)</h4>
       
       
       <div class="hidden name"><code>GetStarted.Rmd</code></div>
@@ -156,15 +156,15 @@
 ##  Diameter:        180 µm 
 ##  MC runs error estim.:    10  
 ##  ------------------------------------------------ 
-##  Age (conv.):         133.451  ±  13.316  ka
-##  Age (new):       117.443  ±  9.581  ka
+##  Age (conv.):         133.451  ±  15.552  ka
+##  Age (new):       117.443  ±  11.379  ka
 ## 
-##  Dose rate (conv.):   0.734  ±  0.031  Gy/ka
-##  Dose rate (onset):   0.977  ±  0.071  Gy/ka
-##  Dose rate (final):   0.768  ±  0.026  Gy/ka
+##  Dose rate (conv.):   0.734  ±  0.037  Gy/ka
+##  Dose rate (onset):   0.984  ±  0.027  Gy/ka
+##  Dose rate (final):   0.746  ±  0.03  Gy/ka
 ##  ------------------------------------------------</code></pre>
 <p><img src="GetStarted_files/figure-html/unnamed-chunk-6-1.png" width="480" style="display: block; margin: auto;"></p>
-<p>The function returns a terminal output along with two plots, which are mostly similar to the original graphical output provided by the MATLAB program ‘Carb’.</p>
+<p>The function returns a terminal output along with two plots, which are mostly similar to the original graphical output provided by the ‘MATLAB’ program ‘Carb’.</p>
 <p><em>Please note: In the example above the function <code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code> was called with two additional arguments, <code>n.MC = 10</code> and <code>txtProgressBar = FALSE</code>. The first argument limits the number of Monte Carlo runs for the error estimation to 10 and the second argument prevents the plotting of the progress bar, indicating the progression of the calculation. Both arguments were solely set to reduce calculation time and output in this vignette.</em></p>
 <p>Obviously, you do not want to run each row in the input table, separately, to model the dose rate for all samples given in the example dataset you can call the model without subsetting the dataset first. <strong>Be careful, the calculation may take some time</strong>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">results &lt;-<span class="st"> </span><span class="kw"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span>(</a>
@@ -208,12 +208,12 @@
 ##  Diameter:        180 µm 
 ##  MC runs error estim.:    10  
 ##  ------------------------------------------------ 
-##  Age (conv.):         133.451  ±  13.847  ka
-##  Age (new):       117.443  ±  8.129  ka
+##  Age (conv.):         133.451  ±  15.317  ka
+##  Age (new):       117.443  ±  12.958  ka
 ## 
-##  Dose rate (conv.):   0.734  ±  0.031  Gy/ka
-##  Dose rate (onset):   0.996  ±  0.067  Gy/ka
-##  Dose rate (final):   0.745  ±  0.024  Gy/ka
+##  Dose rate (conv.):   0.734  ±  0.037  Gy/ka
+##  Dose rate (onset):   1  ±  0.072  Gy/ka
+##  Dose rate (final):   0.751  ±  0.03  Gy/ka
 ##  ------------------------------------------------</code></pre>
 </div>
 </div>

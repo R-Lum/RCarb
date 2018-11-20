@@ -75,7 +75,7 @@ results <- model_DoseRate(
 ```
 
 The function returns a terminal output along with two plots, which are mostly similar to the
-original graphical output provided by the MATLAB program 'Carb'. 
+original graphical output provided by the 'MATLAB' program 'Carb'. 
 
 *Please note: In the example above the function `model_DoseRate()` was called with two additional 
 arguments, `n.MC = 10` and `txtProgressBar = FALSE`. The first argument limits the number of Monte Carlo runs
