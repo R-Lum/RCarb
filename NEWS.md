@@ -1,3 +1,5 @@
+## RCarb 0.1.2 (Release date: 2018-11-27)
+
 ## RCarb 0.1.1 (Release date: 2018-11-20)
 
 * Internal changes only to account for CRAN comments on inital submission.

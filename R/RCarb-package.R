@@ -12,8 +12,8 @@
 #' \tabular{ll}{
 #' **Package:** \tab RCarb \cr
 #' **Type:** \tab Package \cr
-#' **Version:** \tab 0.1.0 \cr
-#' **Date:** \tab 2018-10-03 \cr
+#' **Version:** \tab 0.1.2 \cr
+#' **Date:** \tab 2018-11-27 \cr
 #' **License:** \tab GPL-3 \cr
 #' }
 #'
@@ -112,7 +112,19 @@ NULL
 #' The latter values are given as matrix and precise values are interpolated during the modelling process.
 #'
 #' Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
-#' on the origin of these data we refer to Nathan \& Mauz (2008) and Nathan (2010).
+#' on the origin of these data we refer to Nathan \& Mauz (2008) and Nathan (2010).\cr
+#'
+#' **Nuclear data origin according to Nathan \& Mauz (2008)**
+#'
+#' The gamma primary energy spectra of uranium, thorium and potassium are drawn from
+#' Evaluated Nuclear Structure Data File (ENSDF) database at http://www.nndc.bnl.gov (2002-01-16)
+#' and the beta primary energy spectra was derived from ENSDF end-point energies using a
+#' Fermi beta decay model (Evans, 1955) modified by Behrens \& Szybisz (1976).
+#' For the simulations of the collisional mass stopping powers for quartz the software ESTAR
+#' (Berger et al., 2000) was used. The mass energy-absorption coefficients for quartz were
+#' tabulated by Hubbell \& Seltzer (2004).
+#'
+#' *For further details and references please read Nathan \& Mauz (2008)*
 #'
 #'
 #' @format
@@ -153,6 +165,21 @@ NULL
 #' **Further reading**
 #'
 #' Aitken, M.J., 1985. Thermoluminescence dating. Academic Press.
+#'
+#' Berger, M.J., Coursey, J.S., Zucker, M.A., 2000. ESTAR, PSTAR, and
+#' ASTAR: Computer Programs for Calculating Stopping-Power and Range
+#' Tables for Electrons, Protons, and Helium Ions (version 1.2.2).
+#' http://physics.nist.gov/Star (2005-08-09).
+#' National Institute of Standards and Technology, Gaithersburg, MD.
+#'
+#' Behrens, H., Szybisz, L., 1976. Shapes of beta spectra. Physics Data 6-1,
+#' Zentralstelle fuer Atomkernenergie-Dokumentation (ZAED), Germany.
+#'
+#' Evans, R.D., 1955. The Atomic Nucleus. McGraw-Hill, NY.
+#'
+#' Hubbell, J.H., Seltzer, S.M., 2004. Tables of X-Ray Mass Attenuation Coefficients and Mass
+#' Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
+#' (2005-08-09). National Institute of Standards and Technology, Gaithersburg, MD.
 #'
 #'
 #' @examples
