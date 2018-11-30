@@ -10,11 +10,11 @@
 #'
 #'
 #' \tabular{ll}{
-#' **Package:** \tab RCarb \cr
-#' **Type:** \tab Package \cr
-#' **Version:** \tab 0.1.2 \cr
-#' **Date:** \tab 2018-11-27 \cr
-#' **License:** \tab GPL-3 \cr
+#' **Package:** \tab RCarb\cr
+#' **Type:** \tab Package\cr
+#' **Version:** \tab 0.1.2\cr
+#' **Date:** \tab 2018-11-27\cr
+#' **License:** \tab GPL-3
 #' }
 #'
 #' @name RCarb-package
@@ -33,15 +33,15 @@
 #' following references:\cr
 #'
 #' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
-#' dose rate of carbonate-rich samples. Ancient TL 32, 24–32. http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf
+#' dose rate of carbonate-rich samples. Ancient TL 32, 24–32. \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
 #'
 #' Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-#' Radiation Measurements 43, 14–25. https://dx.doi.org/10.1016/j.radmeas.2007.12.012
+#' Radiation Measurements 43, 14–25. \doi{10.1016/j.radmeas.2007.12.012}
 #'
 #' **Further reading**
 #'
 #' Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
-#' DPhil thesis, St Hugh’s College, Oxford.
+#' DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}
 #'
 #' @importFrom grDevices rgb
 #' @importFrom graphics plot plot.default abline lines par mtext polygon points
@@ -117,7 +117,7 @@ NULL
 #' **Nuclear data origin according to Nathan \& Mauz (2008)**
 #'
 #' The gamma primary energy spectra of uranium, thorium and potassium are drawn from
-#' Evaluated Nuclear Structure Data File (ENSDF) database at http://www.nndc.bnl.gov (2002-01-16)
+#' Evaluated Nuclear Structure Data File (ENSDF) database at \url{http://www.nndc.bnl.gov} (2002-01-16)
 #' and the beta primary energy spectra was derived from ENSDF end-point energies using a
 #' Fermi beta decay model (Evans, 1955) modified by Behrens \& Szybisz (1976).
 #' For the simulations of the collisional mass stopping powers for quartz the software ESTAR
@@ -132,7 +132,7 @@ NULL
 #' `Reference_Data`: [list] \cr
 #'
 #' \tabular{llll}{
-#' **NAME** \tab **TYPE** \tab **DIM** \tab **DESCRIPTION** \cr
+#' **NAME** \tab **TYPE** \tab **DIM** \tab **DESCRIPTION**\cr
 #' DATAek \tab	 `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for K\cr
 #' DATAet \tab	 `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th \cr
 #' DATAet230 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th-230\cr
@@ -155,12 +155,13 @@ NULL
 #' @references
 #'
 #' Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
+#' \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
 #'
 #' Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-#' Radiation Measurements 43, 14-25. doi:10.1016/j.radmeas.2007.12.012
+#' Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}
 #'
 #' Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
-#' DPhil thesis, St Hugh’s College, Oxford. \cr
+#' DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}\cr
 #'
 #' **Further reading**
 #'

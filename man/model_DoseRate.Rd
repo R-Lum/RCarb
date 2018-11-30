@@ -89,19 +89,19 @@ txtProgressBar = FALSE
 }
 \references{
 Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
-dose rate of carbonate-rich samples. Ancient TL 32, 24–32.
+dose rate of carbonate-rich samples. Ancient TL 32, 24–32. \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
 
 Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-Radiation Measurements 43, 14–25. https://dx.doi.org/10.1016/j.radmeas.2007.12.012 \cr
+Radiation Measurements 43, 14–25. \doi{10.1016/j.radmeas.2007.12.012} \cr
 
 \strong{Further reading}
 
 Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
-DPhil thesis, St Hugh’s College, Oxford.
+DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}
 }
 \author{
 Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montagine (France); based
-on 'MATLAB' code given in Carb_2007a.m
+on 'MATLAB' code given in file Carb_2007a.m of \emph{Carb}
 }
 \keyword{dplot}
 \keyword{manip}

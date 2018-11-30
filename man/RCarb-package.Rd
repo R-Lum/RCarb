@@ -14,11 +14,11 @@ context of trapped charged dating (e.g., luminescence dating) applications.
 }
 
 \tabular{ll}{
-\strong{Package:} \tab RCarb \cr
-\strong{Type:} \tab Package \cr
-\strong{Version:} \tab 0.1.2 \cr
-\strong{Date:} \tab 2018-11-27 \cr
-\strong{License:} \tab GPL-3 \cr
+\strong{Package:} \tab RCarb\cr
+\strong{Type:} \tab Package\cr
+\strong{Version:} \tab 0.1.2\cr
+\strong{Date:} \tab 2018-11-27\cr
+\strong{License:} \tab GPL-3
 }
 }
 \references{
@@ -26,14 +26,14 @@ This package bases on a 'MATLAB' programme with name 'Carb', details can be foun
 following references:\cr
 
 Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
-dose rate of carbonate-rich samples. Ancient TL 32, 24–32. http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf
+dose rate of carbonate-rich samples. Ancient TL 32, 24–32. \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
 
 Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-Radiation Measurements 43, 14–25. https://dx.doi.org/10.1016/j.radmeas.2007.12.012
+Radiation Measurements 43, 14–25. \doi{10.1016/j.radmeas.2007.12.012}
 
 \strong{Further reading}
 
 Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
-DPhil thesis, St Hugh’s College, Oxford.
+DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}
 }
 \keyword{package}
