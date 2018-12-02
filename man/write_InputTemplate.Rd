@@ -22,11 +22,14 @@ This function creates a template table that can be used as input for the functio
 }
 
 \examples{
+
+##create template without file creation
 write_InputTemplate()
 
 \dontrun{
 ##Example with file output
-write_InputTemplate(file = "~/Desktop/Input.csv")
+##To run: uncomment and modify path
+#write_InputTemplate(file = "[YOUR PATH]")
 
 }
 

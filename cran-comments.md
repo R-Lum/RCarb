@@ -1,15 +1,18 @@
 ## Release summary
 
-This is a new package submission. This submission 
-accounts for the issues raised by Uwe Ligges.
+Follow up submission to account for the issue raised by Uwe Ligges.
 
-> Thanks, please single quote software names such as 'MATLAB' in the Description field.
+> ##Example with file output
+> write_InputTemplate(file = "~/Desktop/Input.csv")
 
-Done.
+The example was already wrapped in by a `\dontrun{}` comment and with it not
+really different from the example given in, e.g., `utils::write.table()`
+Anyway, we changed it to:
 
-> Please add DOIs to the references if available in the form <DOI:10......>.
+`#write_InputTemplate(file = "[YOUR PATH]")`
 
-Done.
+(including the `#`). The suggestion `tempdir()` was not used to avoid confusion; some
+unexperienced users may think that `tempdir()` is part of the needed call. 
 
 ## Reverse dependency checks
 

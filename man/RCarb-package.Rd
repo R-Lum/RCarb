@@ -17,7 +17,7 @@ context of trapped charged dating (e.g., luminescence dating) applications.
 \strong{Package:} \tab RCarb\cr
 \strong{Type:} \tab Package\cr
 \strong{Version:} \tab 0.1.2\cr
-\strong{Date:} \tab 2018-11-27\cr
+\strong{Date:} \tab 2018-12-02\cr
 \strong{License:} \tab GPL-3
 }
 }
