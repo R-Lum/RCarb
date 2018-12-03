@@ -12,7 +12,7 @@
 #' \tabular{ll}{
 #' **Package:** \tab RCarb\cr
 #' **Type:** \tab Package\cr
-#' **Version:** \tab 0.1.2\cr
+#' **Version:** \tab 0.1.3\cr
 #' **Date:** \tab 2018-12-02\cr
 #' **License:** \tab GPL-3
 #' }

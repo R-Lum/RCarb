@@ -20,8 +20,11 @@
 #'
 #' \dontrun{
 #' ##Example with file output
-#' ##To run: uncomment and modify path
-#' #write_InputTemplate(file = "[YOUR PATH]")
+#'
+#' ## set temporary filename
+#' ## (replace by own path if needed)
+#' temp_file <- tempfile(pattern = "template", fileext = ".csv")
+#' write_InputTemplate(file = temp_file)
 #'
 #' }
 #'
