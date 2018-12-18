@@ -1,12 +1,12 @@
 ^_pkgdown\.yml$
 ## GitHub stuff
 LICENSE$
-README\.md
 README\.html
 cran-comments.md
 cran-comments.html
 revdep
-R/README\.md
+^README\.Rmd$
+^\man\figures\README-.*\.png$
 ^docs$
 .gitignore
 .github/*
