@@ -243,6 +243,10 @@
 
 # STEP 5: Calculate date ----------------------------------------------------------------------
 
+  ##calculate the cummulated absorbed dose
+  ##Is this correct, starting from index 1? Yes, it is, we have set the maximum manually to
+  ##500, if we would reverse the vector, we would pretend that we know the age of the sample
+  ##already, but then we would not need this modelling.
   CUMDR <- cumsum(c(0, (DR[1:(length(DR) - 1)] + DR[2:length(DR)]) * STEP1 / 2))
   CUMDRA <- cumsum(c(0, (DRA[1:(length(DRA) - 1)] + DRA[2:length(DRA)]) * STEP1 / 2))
 
@@ -259,7 +263,6 @@
 
   ##calculate age
   ABS <- abs(AGE - TIMEMAX)
-
 
 # RETURN --------------------------------------------------------------------------------------
   if(mode_optim){
