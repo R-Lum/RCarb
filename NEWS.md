@@ -1,6 +1,7 @@
-## RCarb 0.1.3 (Release date: 2018-12-02)
+## RCarb 0.1.3 (Release date: 2019-02-11)
 
 * Add README.md
+* Modify output graphics and add more information
 
 ## RCarb 0.1.2 (Release date: 2018-12-02)
 

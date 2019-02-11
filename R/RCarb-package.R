@@ -44,7 +44,7 @@
 #' DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}
 #'
 #' @importFrom grDevices rgb
-#' @importFrom graphics plot plot.default abline lines par mtext polygon points
+#' @importFrom graphics plot plot.default abline lines par mtext polygon points axis text
 #' @importFrom stats approx nlminb rnorm sd na.exclude density
 #'
 #' @md

@@ -70,7 +70,7 @@ small values (close to 0) this can, however, lead to edge effects (similar in 'C
 values below 0 are set to 0.
 }
 \section{Function version}{
- 0.1.0
+ 0.1.1
 }
 
 \examples{
