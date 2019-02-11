@@ -72,7 +72,7 @@
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montagine (France); based
 #' on 'MATLAB' code given in file Carb_2007a.m of *Carb*
 #'
-#' @section Function version: 0.1.0
+#' @section Function version: 0.1.1
 #'
 #' @references
 #' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
@@ -437,6 +437,16 @@ if(plot){
     main = data[["SAMP_NAME"]]
   )
 
+  ##abline
+  abline(v = 0, lty = 2)
+  text(x = 0, mean(DATE[["DR"]]), labels = "(sampling)", srt = 90, cex = .6, pos = 2)
+  axis(
+    side = 3,
+    at = c(data[["ONSET"]], data[["FINISH"]], DATE[["AGE"]]),
+    tick = FALSE,
+    labels = c(expression(t[m[0]]),expression(t[m[1]]), expression(t[0])),
+    padj = 1.2)
+
   ##error polygon
   polygon(
     x = c(0:max_time, max_time:0),
@@ -550,4 +560,3 @@ if(plot){
   return(results)
 
 }
-
