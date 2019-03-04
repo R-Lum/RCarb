@@ -1,18 +1,14 @@
 ## Release summary
 
-Follow up submission to account for the issue raised by Uwe Ligges.
+## Addressed CRAN issues
 
-> ##Example with file output
-> write_InputTemplate(file = "~/Desktop/Input.csv")
+### Warnings
 
-The example was already wrapped in by a `\dontrun{}` comment and with it not
-really different from the example given in, e.g., `utils::write.table()`
-Anyway, we changed it to:
+> Warning: unable to re-encode 'RCarb-package.R' lines 36, 39, 44, 164
+> Warning: unable to re-encode 'model_DoseRate.R' lines 79, 82, 87 
 
-`#write_InputTemplate(file = "[YOUR PATH]")`
+Fixed.
 
-(including the `#`). The suggestion `tempdir()` was not used to avoid confusion; some
-unexperienced users may think that `tempdir()` is part of the needed call. 
 
 ## Reverse dependency checks
 

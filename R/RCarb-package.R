@@ -13,7 +13,7 @@
 #' **Package:** \tab RCarb\cr
 #' **Type:** \tab Package\cr
 #' **Version:** \tab 0.1.3\cr
-#' **Date:** \tab 2018-12-02\cr
+#' **Date:** \tab 2019-03-04\cr
 #' **License:** \tab GPL-3
 #' }
 #'
