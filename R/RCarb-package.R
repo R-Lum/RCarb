@@ -33,15 +33,15 @@
 #' following references:\cr
 #'
 #' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
-#' dose rate of carbonate-rich samples. Ancient TL 32, 24–32. \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
+#' dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
 #'
 #' Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-#' Radiation Measurements 43, 14–25. \doi{10.1016/j.radmeas.2007.12.012}
+#' Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}
 #'
 #' **Further reading**
 #'
 #' Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
-#' DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}
+#' DPhil thesis, St Hugh's College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}
 #'
 #' @importFrom grDevices rgb
 #' @importFrom graphics plot plot.default abline lines par mtext polygon points axis text
@@ -161,7 +161,7 @@ NULL
 #' Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}
 #'
 #' Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
-#' DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}\cr
+#' DPhil thesis, St Hugh's College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}\cr
 #'
 #' **Further reading**
 #'
