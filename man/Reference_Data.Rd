@@ -65,7 +65,7 @@ Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sedime
 Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}
 
 Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
-DPhil thesis, St Hugh’s College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}\cr
+DPhil thesis, St Hugh's College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}\cr
 
 \strong{Further reading}
 
