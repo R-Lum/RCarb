@@ -10,14 +10,14 @@ The package provides a dose rate modelling for carbonate-rich samples in the
 context of trapped charged dating (e.g., luminescence dating) applications.
 
 \if{html}{
-\figure{Logo_RCarb.svg}{options: width="50px" alt="https://github.com/R-Lum/RCarb"}\cr
+\figure{Logo_RCarb.png}{options: width="50px" alt="https://github.com/R-Lum/RCarb"}\cr
 }
 
 \tabular{ll}{
 \strong{Package:} \tab RCarb\cr
 \strong{Type:} \tab Package\cr
 \strong{Version:} \tab 0.1.3\cr
-\strong{Date:} \tab 2019-03-04\cr
+\strong{Date:} \tab 2019-XX-XX\cr
 \strong{License:} \tab GPL-3
 }
 }
