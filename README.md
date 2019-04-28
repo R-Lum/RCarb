@@ -76,3 +76,8 @@ Ancient TL 32, 24–32.
 Nathan, R.P., 2010. Numerical modelling of environmental dose rate and
 its application to trapped-charge dating. DPhil thesis, St Hugh’s
 College, Oxford. <https://ora.ox.ac.uk/objects/ora:6421>
+
+## <span class="glyphicon glyphicon-euro"></span> Funding
+
+Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the
+package was supported by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).

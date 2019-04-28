@@ -9,6 +9,8 @@
 #' }
 #'
 #'
+#' @details
+#'
 #' \tabular{ll}{
 #' **Package:** \tab RCarb\cr
 #' **Type:** \tab Package\cr
@@ -16,6 +18,9 @@
 #' **Date:** \tab 2019-XX-XX\cr
 #' **License:** \tab GPL-3
 #' }
+#'
+#' Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the package was supported
+#' by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).
 #'
 #' @name RCarb-package
 #'
@@ -26,6 +31,9 @@
 #' @keywords package
 #'
 #' @import utils
+#'
+#'
+#'
 #'
 #' @references
 #'
