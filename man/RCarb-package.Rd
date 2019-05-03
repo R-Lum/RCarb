@@ -12,7 +12,8 @@ context of trapped charged dating (e.g., luminescence dating) applications.
 \if{html}{
 \figure{Logo_RCarb.png}{options: width="50px" alt="https://github.com/R-Lum/RCarb"}\cr
 }
-
+}
+\details{
 \tabular{ll}{
 \strong{Package:} \tab RCarb\cr
 \strong{Type:} \tab Package\cr
@@ -20,6 +21,9 @@ context of trapped charged dating (e.g., luminescence dating) applications.
 \strong{Date:} \tab 2019-XX-XX\cr
 \strong{License:} \tab GPL-3
 }
+
+Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the package was supported
+by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).
 }
 \references{
 This package bases on a 'MATLAB' programme with name 'Carb', details can be found the
