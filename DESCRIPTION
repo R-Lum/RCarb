@@ -1,7 +1,7 @@
 Package: RCarb
 Type: Package
 Title: Dose Rate Modelling of Carbonate-Rich Samples 
-Version: 0.1.3.9000-4
+Version: 0.1.3.9000-5
 Date: 2019-05-03
 Author: Sebastian Kreutzer [aut, trl, cre, dtc] (<https://orcid.org/0000-0002-0734-2199>),
   Roger P. Nathan [aut, cph],
