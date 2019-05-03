@@ -10,6 +10,7 @@
 ^cran-comments\.md$
 ^cran-comments\.html$
 ^\.Rprofile$
+^src/$
 
 # -- Exclude RStudio files --
 ^.*\.Rproj$
@@ -20,6 +21,10 @@
 ^_pkgdown\.yml$
 ^docs$
 ^.*\.sh$
+
+# -- Exclude compiled code --
+^src/.*\.o$
+^src/.*/.*\.o$
 
 # -- Exclude test suite files --
 ^\.travis\.yml$

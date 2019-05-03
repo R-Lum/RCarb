@@ -89,7 +89,7 @@ txtProgressBar = FALSE
 } 
 
 \section{How to cite}{
-Kreutzer, S. (2019). model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.1.1. In: Kreutzer, S., Nathan, R.P., Mauz, B. (2019). RCarb: Dose Rate Modelling of Carbonate-Rich Samples R package version 0.1.3.9000-2. https://CRAN.R-project.org/package=RCarb
+Kreutzer, S. (2019). model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.1.1. In: Kreutzer, S., Nathan, R.P., Mauz, B. (2019). RCarb: Dose Rate Modelling of Carbonate-Rich Samples R package version 0.1.3.9000-4. https://CRAN.R-project.org/package=RCarb
 }
 
 \references{
