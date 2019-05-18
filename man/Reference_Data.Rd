@@ -20,16 +20,24 @@ DATApt230 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for
 DATApu \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U\cr
 DATApu234 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-234\cr
 DATApu238 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-238\cr
-mejdahl \tab	 \code{data.frame} \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979)
+mejdahl \tab	 \code{data.frame} \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979) \cr
+DR_conv_factors \tab \code{data.frame} \tab 4 x 13 \tab beta and gamma dose rate conversion factors used internally (see details)
 }}
 \description{
-Correction factors for beta and gamma radiation used for internal calculations.
+Reference data and correction factors for beta and gamma radiation used for internal calculations.
 These values are used instead of the correction factors given in Aitken (1985) for the carbonate model.
 }
 \details{
 The reference values are used internally to account for: (1) grain size depend beta-attenuation
 factors (Mejdahl, 1979) and (2) to correct nuclide dependent beta and gamma radiation for water/carbonate proportions.
 The latter values are given as matrix and precise values are interpolated during the modelling process.
+
+Additionally 'RCarb' provides and own set of dose rate conversion factors to convert concentrations
+of U, Th, and K to dose rate values. Historically \emph{Carb} (and thus 'RCarb') as its own dose rate
+conversion factors, which differ slightly from other published values. To provide a consistent
+calculation approach by default the 'old' \emph{Carb} values are used, but the user can further
+switch (see \link{model_DoseRate}) to values provided by Adamiec & Aitken (1998), Guérin et al. (2011)
+or Liritzis et al (2013).
 
 Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
 on the origin of these data we refer to Nathan & Mauz (2008) and Nathan (2010).\cr
@@ -47,7 +55,7 @@ tabulated by Hubbell & Seltzer (2004).
 \emph{For further details and references please read Nathan & Mauz (2008)}
 }
 \section{Version}{
- 0.1.0
+ 0.2.0
 }
 
 \examples{
@@ -58,6 +66,17 @@ Reference_Data$DATAek
 
 }
 \references{
+Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update.
+Ancient TL 16, 37–50. \url{http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf}
+
+Guérin, G., Mercier, N., Adamiec, G., 2011. Dose-rate conversion factors: update. Ancient TL 29, 5–9.
+\url{http://ancienttl.org/ATL_29-1_2011/ATL_29-1_Guerin_p5-8.pdf}
+
+Liritzis, I., Stamoulis, K., Papachristodoulou, C., Ioannides, K., 2013.
+A Re-Evaluation of Radiation Dose-Rate Conversion Factors.
+Mediterranean Arhaeology and Archaeometry 12, 1–15.
+\url{http://maajournal.com/Issues/2012/pdf/FullTextLiritzis.pdf}
+
 Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
 \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
 

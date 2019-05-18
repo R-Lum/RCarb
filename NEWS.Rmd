@@ -11,8 +11,11 @@ header-includes:
 * If values for U-238 and U-234 were provided, for the gamma-dose rate contribution the 
 water correction factors from the beta-dose contribution were used; 
 now corrected (internal function `.calc_DoseRata()`). This bug already existed in *Carb* and was probably introduced by copy & paste actions. 
+* The reference dataset got a new dataset called `Reference_Data$DR_conv_factors` to support 
+different dose rate conversion factors
 * Add README.md
 * Modify output graphics and add more information
+* Update dependency and package version requirements
 
 ## RCarb 0.1.2 (2018-12-02)
 
