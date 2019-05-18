@@ -8,6 +8,9 @@
 #'
 #' @param data [data.frame] (**required**): input data, only a data.frame is allowed
 #'
+#' @param DR_conv_factors [character] (*optional*): select dose rate converson factors, `NULL`
+#' uses the original *Carb* values
+#'
 #' @param ref [list] (**optional**): list of reference data provided with this package, if nothing
 #' is provided the function will load package reference data via `data("Reference_Data", envir = environment())`.
 #'
@@ -35,13 +38,16 @@
 .calc_DoseRate <- function(
   x,
   data,
+  DR_conv_factors = NULL,
   ref = NULL,
   length_step = 1,
   max_time = 500,
   mode_optim = FALSE
   ){
 
-  ##load reference data if needed; we should try to load them externally, however
+  ## load reference data if needed; we should try to load them externally before,
+  ## however if this function is run internally for tests we want to have
+  ## the comfort
   if(is.null(ref)){
     Reference_Data <- NULL
     data("Reference_Data", envir = environment())
@@ -54,13 +60,21 @@
   TIMEMAX <- x
   STEP1 <- length_step[1]
 
-  ##initialise other variables we need them later
-  handles.UB <- 0.146; handles.UB_X <- 0.001 ##TODO: check whether his is really needed
-  handles.TB <- 0.027; handles.TB_X <- 0.001 ##TODO: check whether his is really needed
-  handles.KB <- 0.786; handles.KB_X <- 0.008 ##TODO: check whether his is really needed
-  handles.UG <- 0.113; handles.UG_X <- 0.002 ##TODO: check whether his is really needed
-  handles.TG <- 0.048; handles.TG_X <- 0.002 ##TODO: check whether his is really needed
-  handles.KG <- 0.245; handles.KG_X <- 0.005 ##TODO: check whether his is really needed
+  ##initialise dose rate conversion factors (error catching we do a level up)
+  if(is.null(DR_conv_factors)){
+   DR_ID <- 1
+
+  }else{
+   DR_ID <- grep(x = ref[["DR_conv_factors"]][["REFERENCE"]], pattern = DR_conv_factors, fixed = TRUE)
+
+  }
+
+  handles.UB <- ref[["DR_conv_factors"]][["UB"]][DR_ID]
+  handles.TB <- ref[["DR_conv_factors"]][["TB"]][DR_ID]
+  handles.KB <- ref[["DR_conv_factors"]][["KB"]][DR_ID]
+  handles.UG <- ref[["DR_conv_factors"]][["UG"]][DR_ID]
+  handles.TG <- ref[["DR_conv_factors"]][["TG"]][DR_ID]
+  handles.KG <- ref[["DR_conv_factors"]][["KG"]][DR_ID]
 
 # STEP 1: Find U, Th, K values for the sediment -----------------------------------------------
 
@@ -216,7 +230,6 @@
     DRKB + DRTB + DRUB + DRKG + DRTG + DRUG + data[["COSMIC"]] +
     data[["INTERNAL"]] + DRU238B + DRU234B + DRT230B + DRU238G + DRU234G + DRT230G
 
-  print(DR)
   ## +++ Conventional factors +++
   ##beta
   DRKBA <- MK * KA * handles.KB / (1 + XKBA * WFA)
@@ -297,10 +310,3 @@
 
   return(results)
 }
-
-
-data("Example_Data", envir = environment())
-.calc_DoseRate(
-x = 10,
-data = Example_Data[14,]
-)
