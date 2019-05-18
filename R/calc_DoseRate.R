@@ -20,14 +20,14 @@
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France) based
 #' on the MATLAB code in the file 'datalu1.m' from Carb_2007a
 #'
-#' @section Function version: 0.1.1
+#' @section Function version: 0.2.0
 #'
 #' @example
 #' ## the function can be run manually, however, this is not recommended, example:
 #' data("Example_Data", envir = environment())
 #' RCarb:::.calc_DoseRate(
 #' x = 10,
-#' data = Example_Data[1,]
+#' data = Example_Data[14,]
 #' )
 #'
 #' @md
@@ -101,7 +101,6 @@
   TIME_ <- c(rep(0,max_time - max(TIME_)), TIME_)
 
 # STEP 3: Derive linear uptake mode of uranium (code from Forbes Quarry work) (daterlu1.m) ---------
-
   lam_u235 <- log(2) / 703800000
   lam_u238 <- log(2) / 4.4680e+09
 
@@ -114,7 +113,7 @@
   ##note: the MATLAB code now throws all variables,
   ##namely, "N_u238", "N_u234", "N_t230", "N_u235", "N_p231"
   ##Of course we do not do this here, since this is an R package and the last thing
-  ##we want to have is a package writting unexpectedly into the Global Enviroment
+  ##we want to have is a package writting unexpectedly into the Global Environment
   ##In the following the objects are accessed by accessing the matrix
 
   ## Parent activity (Bq/mg) ... from A&A (1998)
@@ -134,12 +133,11 @@
   D_g_u234 <- conv_const * A_u238 * 0.0020 * CONST_Q_U238
   D_g_t230 <- conv_const * A_u238 * 1.7430 * CONST_Q_U238
 
-
   ## i-m dose rate - no grain size correction
   U238_b_diseq <- D_b_u238 * Aa[,"N_u238"] * data[["U238"]]
   U234_b_diseq <- D_b_u234 * Aa[,"N_u234"] * data[["U238"]]
   T230_b_diseq <- D_b_t230 * Aa[,"N_t230"] * data[["U238"]]
-  U238_g_diseq <- D_g_u238 * Aa[,"N_u238"]  * data[["U238"]]
+  U238_g_diseq <- D_g_u238 * Aa[,"N_u238"] * data[["U238"]]
   U234_g_diseq <- D_g_u234 * Aa[,"N_u234"] * data[["U238"]]
   T230_g_diseq <- D_g_t230 * Aa[,"N_t230"] * data[["U238"]]
 
@@ -171,20 +169,29 @@
   xo <- log(WC)
   yo <- log(C)
 
-  ##run surface interpolation calculation
+  ##run surface interpolation calculations to get the
+  ##water correction factors
+  ##nomenclature:
+  ##B >> beta
+  ##G >> gamma
   XKB <- .griddata(x_grid, y_grid, ref$DATAek, xo, yo)
   XTB <- .griddata(x_grid, y_grid, ref$DATAet, xo, yo)
   XUB <- .griddata(x_grid, y_grid, ref$DATAeu, xo, yo)
+
   XKG <- .griddata(x_grid, y_grid, ref$DATApk, xo, yo)
   XTG <- .griddata(x_grid, y_grid, ref$DATApt, xo, yo)
   XUG <- .griddata(x_grid, y_grid, ref$DATApu, xo, yo)
+
   XU238B <- .griddata(x_grid, y_grid, ref$DATAeu238, xo, yo)
   XU234B <- .griddata(x_grid, y_grid, ref$DATAeu234, xo, yo)
   XT230B <- .griddata(x_grid, y_grid, ref$DATAet230, xo, yo)
-  # XU238G <- .griddata(x_grid, y_grid, ref$DATApu238, xo, yo) ##TODO: this variables are not used ...
-  # XU234G <- .griddata(x_grid, y_grid, ref$DATApu234, xo, yo)
-  # XT230G <- .griddata(x_grid, y_grid, ref$DATApt230, xo, yo)
 
+  XU238G <- .griddata(x_grid, y_grid, ref$DATApu238, xo, yo)
+  XU234G <- .griddata(x_grid, y_grid, ref$DATApu234, xo, yo)
+  XT230G <- .griddata(x_grid, y_grid, ref$DATApt230, xo, yo)
+
+  ##set alternative, the commonly used water correction factors
+  ##after Zimmerman, 1971 (Archaeometry)
   XKBA <- 1.25
   XTBA <- 1.25
   XUBA <- 1.25
@@ -194,31 +201,45 @@
   XKGA <- 1.14
   XTGA <- 1.14
   XUGA <- 1.14
-  XU238GA = 1.14
-  XU234GA = 1.14
-  XT230GA = 1.14
+  XU238GA <- 1.14
+  XU234GA <- 1.14
+  XT230GA <- 1.14
 
+  ##perform dose rate correction with the before set factors
+
+  ## +++ RCarb calculation +++
+  ##beta
   DRKB <- MK * K * handles.KB / (1 + XKB * WF)
-
   DRTB <- MT * T * handles.TB / (1 + XTB * WF)
   DRUB <- MU * U * handles.UB / (1 + XUB * WF)
-  DRKG <- MK * K * handles.KG / (1 + XKG * WF)
-  DRTG <- MT * T * handles.TG / (1 + XTG * WF)
-  DRUG <- MU * U * handles.UG / (1 + XUG * WF)
-
   DRU238B <- MU238 * U238_b_diseq / (1 + XU238B * WF)
   DRU234B <- MU238 * U234_b_diseq / (1 + XU234B * WF)
   DRT230B <- MU238 * T230_b_diseq / (1 + XT230B * WF)
-  DRU238G <- MU238 * U238_b_diseq / (1 + XU238B * WF)
-  DRU234G <- MU238 * U234_b_diseq / (1 + XU234B * WF)
-  DRT230G <- MU238 * T230_b_diseq / (1 + XT230B * WF)
 
-  DRKBA <- MK*KA*handles.KB/(1 + XKBA*WFA)
-  DRTBA <- MT*TA*handles.TB/(1 + XTBA*WFA)
-  DRUBA <- MU*UA*handles.UB/(1 + XUBA*WFA)
-  DRU238BA <- MU238*U238_b_diseq/(1 + XU238BA*WFA)
-  DRU234BA <- MU238*U234_b_diseq/(1 + XU234BA*WFA)
-  DRT230BA <- MU238*T230_b_diseq/(1 + XT230BA*WFA)
+  ##gamma
+  DRKG <- MK * K * handles.KG / (1 + XKG * WF)
+  DRTG <- MT * T * handles.TG / (1 + XTG * WF)
+  DRUG <- MU * U * handles.UG / (1 + XUG * WF)
+  DRU238G <- MU238 * U238_g_diseq / (1 + XU238G * WF)
+  DRU234G <- MU238 * U234_g_diseq / (1 + XU234G * WF)
+  DRT230G <- MU238 * T230_g_diseq / (1 + XT230G * WF)
+
+  ##combine values
+  DR <-
+    DRKB + DRTB + DRUB + DRKG + DRTG + DRUG + data[["COSMIC"]] +
+    data[["INTERNAL"]] + DRU238B + DRU234B + DRT230B + DRU238G + DRU234G + DRT230G
+
+  print(DR)
+  ## +++ Conventional factors +++
+  ##beta
+  DRKBA <- MK*KA*handles.KB / (1 + XKBA * WFA)
+  DRTBA <- MT*TA*handles.TB / (1 + XTBA * WFA)
+  DRUBA <- MU*UA*handles.UB / (1 + XUBA * WFA)
+  DRU238BA <- MU238*U238_b_diseq / (1 + XU238BA * WFA)
+  DRU234BA <- MU238*U234_b_diseq / (1 + XU234BA * WFA)
+  DRT230BA <- MU238*T230_b_diseq / (1 + XT230BA * WFA)
+
+  ##gamma
   DRKGA <- MK*KA*handles.KG/(1 + XKGA*WFA)
   DRTGA <- MT*TA*handles.TG/(1 + XTGA*WFA)
   DRUGA <- MU*UA*handles.UG/(1 + XUGA*WFA)
@@ -227,10 +248,6 @@
   DRT230GA <- MU238*T230_g_diseq/(1 + XT230GA*WFA)
 
   ##combine values
-  DR <-
-    DRKB + DRTB + DRUB + DRKG + DRTG + DRUG + data[["COSMIC"]] +
-    data[["INTERNAL"]] + DRU238B + DRU234B + DRT230B + DRU238G + DRU234G + DRT230G
-
   DRA <-
     DRKBA + DRTBA + DRUBA + DRKGA + DRTGA + DRUGA + data[["COSMIC"]] + data[["INTERNAL"]] +
     DRU238BA + DRU234BA + DRT230BA + DRU238GA + DRU234GA + DRT230GA
@@ -256,7 +273,8 @@
   AGE <- try(approx(x = CUMDR, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y, silent = TRUE)
   AGEA <- try(approx(x = CUMDRA, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y, silent = TRUE)
 
-  ##sometimes the input values are not meaningful (for example data row 23 in the example dataset) and the approximation failed,
+  ##sometimes the input values are not meaningful (for example data row 23 in the example dataset)
+  ##and the approximation failed,
   ##we here provide a clean crash
   if(class(AGE) == 'try-error' || class(AGEA) == 'try-error')
     stop("[.calc_DoseRate()] Modelling failed, please check your input data, they may not be meaningful!", call. = FALSE)
@@ -284,3 +302,10 @@
 
   return(results)
 }
+
+
+data("Example_Data", envir = environment())
+.calc_DoseRate(
+x = 10,
+data = Example_Data[14,]
+)
