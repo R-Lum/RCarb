@@ -29,11 +29,27 @@ test_that("Full function test", {
   ), type = "list")
 
   ##run with different conversion factors
-     expect_type(model_DoseRate(data = Example_Data[14,],
-                                DR_conv_factors = "Adamiec_Aitken_1998",
-                             n.MC = 2,
-                             txtProgressBar = FALSE
-  ), type = "list")
+  expect_type(
+    model_DoseRate(
+      data = Example_Data[14, ],
+      DR_conv_factors = "Adamiec_Aitken_1998",
+      n.MC = 2,
+      txtProgressBar = FALSE
+    ),
+    type = "list"
+  )
+
+  ##run extrem case warning
+  temp <- Example_Data[14, ]
+  temp$DE <- 550
+  expect_warning(
+    model_DoseRate(
+      data = temp,
+      n.MC = 2,
+      txtProgressBar = FALSE
+    ),
+    regexp = "Extrem case detected: DE > max cumulative dose rate!"
+  )
 
   ##run two example
   expect_type(model_DoseRate(
