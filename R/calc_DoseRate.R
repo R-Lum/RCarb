@@ -127,7 +127,7 @@
 
   D_b_u238 <- conv_const * A_u238 * 0.8860 * CONST_Q_U238
   D_b_u234 <- conv_const * A_u238 * 0.0120 * CONST_Q_U238
-  D_b_t230 <- conv_const * A_u238 * 1.385 * CONST_Q_U238
+  D_b_t230 <- conv_const * A_u238 * 1.3850 * CONST_Q_U238
   D_b_u235 <- conv_const * A_u235 * 0.1860 * CONST_Q_U235
   D_g_u238 <- conv_const * A_u238 * 0.0290 * CONST_Q_U238
   D_g_u234 <- conv_const * A_u238 * 0.0020 * CONST_Q_U238
@@ -154,11 +154,7 @@
     approx(x = log(ref$mejdahl[[1]]), y = log(ref$mejdahl[[4]]), xout = log(data[["DIAM"]]/1000),
            rule = 2)$y)
 
-  MU238 <- 1
-  MU234 <- 1
-  MT230 <- 1
-  MU235 <- 1
-  MP231 <- 1
+  MU238 <- MU234 <- MT230 <- MU235 <- MP231 <- 1
 
   ##prepare data, to avoid that this is called over and over again when .griddata is called
   x_grid <- as.numeric(colnames(ref$DATAek))
@@ -172,19 +168,20 @@
   ##run surface interpolation calculations to get the
   ##water correction factors
   ##nomenclature:
-  ##B >> beta
-  ##G >> gamma
+
+  ##beta
   XKB <- .griddata(x_grid, y_grid, ref$DATAek, xo, yo)
   XTB <- .griddata(x_grid, y_grid, ref$DATAet, xo, yo)
   XUB <- .griddata(x_grid, y_grid, ref$DATAeu, xo, yo)
 
-  XKG <- .griddata(x_grid, y_grid, ref$DATApk, xo, yo)
-  XTG <- .griddata(x_grid, y_grid, ref$DATApt, xo, yo)
-  XUG <- .griddata(x_grid, y_grid, ref$DATApu, xo, yo)
-
   XU238B <- .griddata(x_grid, y_grid, ref$DATAeu238, xo, yo)
   XU234B <- .griddata(x_grid, y_grid, ref$DATAeu234, xo, yo)
   XT230B <- .griddata(x_grid, y_grid, ref$DATAet230, xo, yo)
+
+  ##gamma
+  XKG <- .griddata(x_grid, y_grid, ref$DATApk, xo, yo)
+  XTG <- .griddata(x_grid, y_grid, ref$DATApt, xo, yo)
+  XUG <- .griddata(x_grid, y_grid, ref$DATApu, xo, yo)
 
   XU238G <- .griddata(x_grid, y_grid, ref$DATApu238, xo, yo)
   XU234G <- .griddata(x_grid, y_grid, ref$DATApu234, xo, yo)
@@ -192,18 +189,8 @@
 
   ##set alternative, the commonly used water correction factors
   ##after Zimmerman, 1971 (Archaeometry)
-  XKBA <- 1.25
-  XTBA <- 1.25
-  XUBA <- 1.25
-  XU238BA <- 1.25
-  XU234BA <- 1.25
-  XT230BA <- 1.25
-  XKGA <- 1.14
-  XTGA <- 1.14
-  XUGA <- 1.14
-  XU238GA <- 1.14
-  XU234GA <- 1.14
-  XT230GA <- 1.14
+  XKBA <- XTBA <- XUBA <- XU238BA <- XU234BA <- XT230BA <- 1.25
+  XKGA <- XTGA <- XUGA <- XU238GA <- XU234GA <- XT230GA <- 1.14
 
   ##perform dose rate correction with the before set factors
 
@@ -232,20 +219,20 @@
   print(DR)
   ## +++ Conventional factors +++
   ##beta
-  DRKBA <- MK*KA*handles.KB / (1 + XKBA * WFA)
-  DRTBA <- MT*TA*handles.TB / (1 + XTBA * WFA)
-  DRUBA <- MU*UA*handles.UB / (1 + XUBA * WFA)
-  DRU238BA <- MU238*U238_b_diseq / (1 + XU238BA * WFA)
-  DRU234BA <- MU238*U234_b_diseq / (1 + XU234BA * WFA)
-  DRT230BA <- MU238*T230_b_diseq / (1 + XT230BA * WFA)
+  DRKBA <- MK * KA * handles.KB / (1 + XKBA * WFA)
+  DRTBA <- MT * TA * handles.TB / (1 + XTBA * WFA)
+  DRUBA <- MU * UA * handles.UB / (1 + XUBA * WFA)
+  DRU238BA <- MU238 * U238_b_diseq / (1 + XU238BA * WFA)
+  DRU234BA <- MU238 * U234_b_diseq / (1 + XU234BA * WFA)
+  DRT230BA <- MU238 * T230_b_diseq / (1 + XT230BA * WFA)
 
   ##gamma
-  DRKGA <- MK*KA*handles.KG/(1 + XKGA*WFA)
-  DRTGA <- MT*TA*handles.TG/(1 + XTGA*WFA)
-  DRUGA <- MU*UA*handles.UG/(1 + XUGA*WFA)
-  DRU238GA <- MU238*U238_g_diseq/(1 + XU238GA*WFA)
-  DRU234GA <- MU238*U234_g_diseq/(1 + XU234GA*WFA)
-  DRT230GA <- MU238*T230_g_diseq/(1 + XT230GA*WFA)
+  DRKGA <- MK * KA * handles.KG / (1 + XKGA * WFA)
+  DRTGA <- MT * TA * handles.TG / (1 + XTGA * WFA)
+  DRUGA <- MU * UA * handles.UG / (1 + XUGA * WFA)
+  DRU238GA <- MU238 * U238_g_diseq / (1 + XU238GA * WFA)
+  DRU234GA <- MU238 * U234_g_diseq / (1 + XU234GA * WFA)
+  DRT230GA <- MU238 * T230_g_diseq / (1 + XT230GA * WFA)
 
   ##combine values
   DRA <-
@@ -270,14 +257,22 @@
   if(data[["DE"]] > max(CUMDR)) ##modified before it was Age > 500 ka, which did not fit.
       warning("[.calc_DoseRate()] Extrem case detected: DE > max cumulative dose rate!", call. = FALSE)
 
-  AGE <- try(approx(x = CUMDR, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y, silent = TRUE)
-  AGEA <- try(approx(x = CUMDRA, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y, silent = TRUE)
+  ##RCarb ages
+  AGE <- try(
+    approx(x = CUMDR, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y,
+    silent = TRUE)
+
+  ##conventional age
+  AGEA <- try(
+    approx(x = CUMDRA, y = as.numeric(TIME), xout = data[["DE"]], method = "linear", rule = 2)$y,
+    silent = TRUE)
 
   ##sometimes the input values are not meaningful (for example data row 23 in the example dataset)
   ##and the approximation failed,
   ##we here provide a clean crash
   if(class(AGE) == 'try-error' || class(AGEA) == 'try-error')
-    stop("[.calc_DoseRate()] Modelling failed, please check your input data, they may not be meaningful!", call. = FALSE)
+    stop("[.calc_DoseRate()] Modelling failed, please check your input data, they may not be meaningful!",
+         call. = FALSE)
 
   ##calculate age
   ABS <- abs(AGE - TIMEMAX)
