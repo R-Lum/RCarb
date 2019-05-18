@@ -28,6 +28,13 @@ test_that("Full function test", {
     txtProgressBar = FALSE
   ), type = "list")
 
+  ##run with different conversion factors
+     expect_type(model_DoseRate(data = Example_Data[14,],
+                                DR_conv_factors = "Adamiec_Aitken_1998",
+                             n.MC = 2,
+                             txtProgressBar = FALSE
+  ), type = "list")
+
   ##run two example
   expect_type(model_DoseRate(
     data = Example_Data[13:14, ],
