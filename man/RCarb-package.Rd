@@ -14,13 +14,7 @@ context of trapped charged dating (e.g., luminescence dating) applications.
 }
 }
 \details{
-\tabular{ll}{
-\strong{Package:} \tab RCarb\cr
-\strong{Type:} \tab Package\cr
-\strong{Version:} \tab 0.1.3\cr
-\strong{Date:} \tab 2019-XX-XX\cr
-\strong{License:} \tab GPL-3
-}
+\strong{Funding}
 
 Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the package was supported
 by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).

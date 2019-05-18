@@ -9,8 +9,7 @@
 
 The **R** package ‘RCarb’ provides a collection of various R functions
 to model dose rates in carbonate-rich samples. The package is a
-translation of the ‘MATLAB’ program *Carb* by Roger P.
-Nathan.
+translation of the ‘MATLAB’ program *Carb* by Roger P. Nathan.
 
 [![CRAN](http://www.r-pkg.org/badges/version/RCarb)](https://CRAN.R-project.org/package=RCarb)
 [![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
