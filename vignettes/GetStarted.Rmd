@@ -1,6 +1,6 @@
 ---
 title: "Get started with RCarb"
-author: "Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine (France) & <br> Barbara Mauz, Department of Geography and Geology, University of Salzburg, Salzburg (Austria)"
+author: "Sebastian Kreutzer<sup>1</sup> & Barbara Mauz<sup>2</sup>"
 date: "Last modified: `r Sys.Date()` ('RCarb' version: `r packageVersion('RCarb')`)"
 output: 
   rmarkdown::html_vignette:
@@ -13,21 +13,25 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+<sup>1</sup>IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine (France)<br>
+<sup>2</sup>Department of Geography and Geology, University of Salzburg, Salzburg (Austria)"
+
 ```{r, echo = FALSE, fig.align='center', out.width=100}
-knitr::include_graphics("../docs/img/Logo_RCarb.png")
+knitr::include_graphics("../man/figures/Logo_RCarb.svg")
 ```
 
 # Scope
 
-Getting started with a new R package can be a very tedious business (if not to say annoying). 
-This document was written with the intention to make the first steps as painless as possible. 
+Getting started with a new **R** package can be a very tedious business (if not to say annoying). 
+This document was written with the intention to make your first steps as painless as possible. 
 
 # Quick start with the example dataset
 
 If you have no idea what a function does and how it works, it is always a good idea to have a 
 closer look into the example sections of the package functions. The package 'RCarb' has 
 one central function named `model_DoseRate()`. The example given in the example section in 
-the manual will be used in the following to illustrate the central package functionality in three steps.
+the manual will be used in the following to illustrate the central package functionality in 
+three steps.
 
 ## Load 'RCarb'
 ```{r}
@@ -49,7 +53,7 @@ head(Example_Data)
 ```
 
 Unfortunately, the naming of the table columns is not straightforward to understand. The good news 
-is that each column carries additional information that can be seen in the R terminal by 
+is that each column carries additional information that can be seen in the **R** terminal by 
 typing, e.g., for the column 'K' (which is the 2nd column):
 
 ```{r}
@@ -58,6 +62,16 @@ attributes(Example_Data$K)
 
 It reveals that the numbers in the column correspond to the potassium concentration and are
 given in '%'. Similar all other columns can be inspected.
+
+And here the full overview
+```{r, echo=FALSE, message=FALSE}
+##extract attributes
+attributes <- lapply(1:ncol(Example_Data), function(x) attributes(Example_Data[[x]]))
+attributes <- as.data.frame(data.table::rbindlist(attributes), stringAsFactors = FALSE)
+
+df <- cbind(COLUM = colnames(Example_Data), attributes)
+knitr::kable(df)
+```
 
 ## Run dose rate modelling
 
@@ -70,6 +84,7 @@ data <- Example_Data[1,]
 ##run model 
 results <- model_DoseRate(
   data = data,
+  DR_conv_factors = "Carb2007",
   n.MC = 10, 
   txtProgressBar = FALSE)
 ```
@@ -77,20 +92,22 @@ results <- model_DoseRate(
 The function returns a terminal output along with two plots, which are mostly similar to the
 original graphical output provided by the 'MATLAB' program 'Carb'. 
 
-*Please note: In the example above the function `model_DoseRate()` was called with two additional 
-arguments, `n.MC = 10` and `txtProgressBar = FALSE`. The first argument limits the number of Monte Carlo runs
-for the error estimation to 10 and the second argument prevents the plotting of the progress bar, 
-indicating the progression of the calculation. Both arguments were solely set to reduce calculation 
-time and output in this vignette.*
+In the example above the function `model_DoseRate()` was called with three additional 
+arguments, `DR_conv_factors = "Carb2007"`, `n.MC = 10`, `txtProgressBar = FALSE`. The first
+argument selects the dose rate conversion factors used by 'RCarb'. The second argument limits the number of 
+Monte Carlo runs for the error estimation to 10 and the second argument prevents the plotting of the progress bar, indicating the progression of the calculation. Both arguments were solely set to reduce calculation time and output in this vignette.
 
-Obviously, you do not want to run each row in the input table, separately, to model the dose rate
-for all samples given in the example dataset you can call the model without subsetting the dataset first.
-**Be careful, the calculation may take some time**.
+Obviously, you do not want to run each row in the input table separately to model all dose rates,
+so to run all the modelling for all samples in the example dataset you can call the model without subsetting the dataset first. **Be careful, the calculation may take some time**.
 
 ```{r, eval = FALSE}
 results <- model_DoseRate(
   data = Example_Data)
 ```
+
+*A note on the used dose rate conversion factors: For historical reasons 'Carb' has its own set of dose rate
+conversion factors, which differ slightly from values in the literature (e.g., Adamiec \& Atiken, 1998)
+and are used in 'RCarb' as default values. However, with 'RCarb' >= 0.1.3 you can select other dose rate conversion factors. Please type `?RCarb::Reference_Data` in your **R** terminal for further details.*
 
 # Using your own dataset
 
@@ -129,7 +146,7 @@ data <- read.csv(file = "files/RCarb_Input.csv")
 
 The final modelling does not differ from the call already show above (here without a plot output):
 
-```{r, fig.height=7, fig.width=5, fig.align='center'}
+```{r, fig.height=7, fig.width=6, fig.align='center'}
 ##run model 
 results <- model_DoseRate(
   data = data,
@@ -138,3 +155,11 @@ results <- model_DoseRate(
   plot = FALSE)
 ```
 
+
+# I don't like R
+
+Well, then you are wrong here. However, if you are just tired of using the **R** terminal and you want to have a graphical user interface to interact with 'RCarb'? Surprise: We also spent countless hours to develop a shiny application called 'RCarb app', and we ship it as part of the **R** package ['RLumShiny'](https://CRAN.R-project.org/package=RLumShiny).
+
+## References {-}
+
+Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update. Ancient TL 16, 37–50. http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf
