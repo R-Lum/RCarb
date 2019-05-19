@@ -1,21 +1,25 @@
 ## Release summary
 
+This is a bugfix release. 
+
+Thanks for your support and
+work for the CRAN!
+
 ## Addressed CRAN issues
 
-### Warnings
+### Old Warnings
 
 > Warning: unable to re-encode 'RCarb-package.R' lines 36, 39, 44, 164
 > Warning: unable to re-encode 'model_DoseRate.R' lines 79, 82, 87 
 
 Fixed.
 
-
 ## Reverse dependency checks
 
 This package has not yet external dependencies.
 
 ## Test environments
-* local macOS Mojava 10.14.1, Xcode 10.0.1, R-devel and R-release (patched)
+* local macOS Mojava 10.14.5, Xcode 10.2.1, R-release (patched)
 * on AppVeyor CI
   * i386-w64-mingw32/i386 (32-bit), R-devel
   * x86_64_w64-mingw32/64 (64-bit), R-devel
