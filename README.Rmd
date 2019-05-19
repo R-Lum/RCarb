@@ -15,7 +15,6 @@ knitr::opts_chunk$set(
 library(RCarb)
 ```
 
-
 # RCarb <img width=120px src="man/figures/Logo_RCarb.svg" align="right" />
 
 [![CRAN](http://www.r-pkg.org/badges/version/RCarb)](https://CRAN.R-project.org/package=RCarb)
@@ -36,11 +35,9 @@ if(!require("devtools"))
 devtools::install_github("R-Lum/RCarb@master")
 ```
 
-To install a developer build other than 'master', replace the term 'master' in the codeline by the name
-of the wanted developer build (not available yet). 
+To install a developer build other than 'master', replace the term 'master' in the codeline by the name of the wanted developer build (not available yet). 
 
-Please further note that this version is a development version and may change day by day. 
-For stable branches please visit the package on [CRAN](https://CRAN.R-project.org/package=RCarb).
+Please further note that our 'GitHub' versions are developer versions and subject to daily changes. For stable please versions download the package from  [CRAN](https://CRAN.R-project.org/package=RCarb).
 
 ## License
 
@@ -53,7 +50,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 * [Luminescence](https://github.com/R-Lum/Luminescence)
 * [RLumModel](https://github.com/R-Lum/RLumModel)
-* [RLumShiny](https://github.com/R-Lum/RLumShiny)
+* [RLumShiny](https://github.com/R-Lum/RLumShiny) 
 
 ## References
 

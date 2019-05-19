@@ -34,9 +34,9 @@ To install a developer build other than ‘master’, replace the term
 ‘master’ in the codeline by the name of the wanted developer build
 (not available yet).
 
-Please further note that this version is a development version and may
-change day by day. For stable branches please visit the package on
-[CRAN](https://CRAN.R-project.org/package=RCarb).
+Please further note that our ‘GitHub’ versions are developer versions
+and subject to daily changes. For stable please versions download the
+package from [CRAN](https://CRAN.R-project.org/package=RCarb).
 
 ## License
 
