@@ -111,32 +111,52 @@
       
     </div>
 
-    <div id="rcarb-013-release-date-2019-xx-xx" class="section level2">
+    <div id="rcarb-013-2019-05-19" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rcarb-013-release-date-2019-xx-xx" class="anchor"></a>RCarb 0.1.3 (Release date: 2019-XX-XX)</h2>
+<a href="#rcarb-013-2019-05-19" class="anchor"></a>RCarb 0.1.3 (2019-05-19)</h2>
+<div id="new-features" class="section level3">
+<h3 class="hasAnchor">
+<a href="#new-features" class="anchor"></a>New features</h3>
+<ul>
+<li>The reference dataset got a new dataset called <code>Reference_Data$DR_conv_factors</code> to support different dose rate conversion factors</li>
+<li>The function <code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code> gained are new argument <code>DR_conv_factors</code> to support different dose rate conversion factors</li>
+</ul>
+</div>
+<div id="bugfixes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#bugfixes" class="anchor"></a>Bugfixes</h3>
+<ul>
+<li>If values for U-238 and U-234 were provided, for the gamma-dose rate contribution the water correction factors from the beta-dose contribution were used; now corrected (internal function <code>.calc_DoseRata()</code>). This bug already existed in <em>Carb</em> and was probably introduced by copy &amp; paste actions.</li>
+</ul>
+</div>
+<div id="other-modifications" class="section level3">
+<h3 class="hasAnchor">
+<a href="#other-modifications" class="anchor"></a>Other modifications</h3>
 <ul>
 <li>Add README.md</li>
 <li>Modify output graphics and add more information</li>
+<li>Update dependency and package version requirements</li>
 </ul>
 </div>
-    <div id="rcarb-012-release-date-2018-12-02" class="section level2">
+</div>
+    <div id="rcarb-012-2018-12-02" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rcarb-012-release-date-2018-12-02" class="anchor"></a>RCarb 0.1.2 (Release date: 2018-12-02)</h2>
+<a href="#rcarb-012-2018-12-02" class="anchor"></a>RCarb 0.1.2 (2018-12-02)</h2>
 <ul>
 <li>Update internal references</li>
 <li>Modify example in write_InputTemplate() to comply with CRAN requests</li>
 </ul>
 </div>
-    <div id="rcarb-011-release-date-2018-11-20" class="section level2">
+    <div id="rcarb-011-2018-11-20" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rcarb-011-release-date-2018-11-20" class="anchor"></a>RCarb 0.1.1 (Release date: 2018-11-20)</h2>
+<a href="#rcarb-011-2018-11-20" class="anchor"></a>RCarb 0.1.1 (2018-11-20)</h2>
 <ul>
 <li>Internal changes only to account for CRAN comments on inital submission.</li>
 </ul>
 </div>
-    <div id="rcarb-010-release-date-2018-11-12" class="section level2">
+    <div id="rcarb-010-2018-11-12" class="section level2">
 <h2 class="hasAnchor">
-<a href="#rcarb-010-release-date-2018-11-12" class="anchor"></a>RCarb 0.1.0 (Release date: 2018-11-12)</h2>
+<a href="#rcarb-010-2018-11-12" class="anchor"></a>RCarb 0.1.0 (2018-11-12)</h2>
 <ul>
 <li>Initial version</li>
 </ul>
@@ -147,10 +167,10 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#rcarb-013-release-date-2019-xx-xx">0.1.3</a></li>
-        <li><a href="#rcarb-012-release-date-2018-12-02">0.1.2</a></li>
-        <li><a href="#rcarb-011-release-date-2018-11-20">0.1.1</a></li>
-        <li><a href="#rcarb-010-release-date-2018-11-12">0.1.0</a></li>
+        <li><a href="#rcarb-013-2019-05-19">0.1.3</a></li>
+        <li><a href="#rcarb-012-2018-12-02">0.1.2</a></li>
+        <li><a href="#rcarb-011-2018-11-20">0.1.1</a></li>
+        <li><a href="#rcarb-010-2018-11-12">0.1.0</a></li>
       </ul>
     </div>
   </div>

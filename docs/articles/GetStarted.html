@@ -75,9 +75,10 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Get started with RCarb</h1>
-                        <h4 class="author">Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine (France) &amp; <br> Barbara Mauz, Department of Geography and Geology, University of Salzburg, Salzburg (Austria)</h4>
+                        <h4 class="author">Sebastian Kreutzer<sup>1</sup> &amp; Barbara Mauz<sup>2</sup>
+</h4>
             
-            <h4 class="date">Last modified: 2019-04-22 (‘RCarb’ version: 0.1.3)</h4>
+            <h4 class="date">Last modified: 2019-05-19 (‘RCarb’ version: 0.1.3)</h4>
       
       
       <div class="hidden name"><code>GetStarted.Rmd</code></div>
@@ -86,11 +87,12 @@
 
     
     
-<p><img src="../docs/img/Logo_RCarb.png" width="100" style="display: block; margin: auto;"></p>
+<p><sup>1</sup>IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montagine (France)<br><sup>2</sup>Department of Geography and Geology, University of Salzburg, Salzburg (Austria)"</p>
+<p><img src="../man/figures/Logo_RCarb.svg" width="100" style="display: block; margin: auto;"></p>
 <div id="scope" class="section level1">
 <h1 class="hasAnchor">
 <a href="#scope" class="anchor"></a>Scope</h1>
-<p>Getting started with a new R package can be a very tedious business (if not to say annoying). This document was written with the intention to make the first steps as painless as possible.</p>
+<p>Getting started with a new <strong>R</strong> package can be a very tedious business (if not to say annoying). This document was written with the intention to make your first steps as painless as possible.</p>
 </div>
 <div id="quick-start-with-the-example-dataset" class="section level1">
 <h1 class="hasAnchor">
@@ -129,7 +131,7 @@
 ## 4        0          0   120      10     40       10  52    5
 ## 5        0          0    60      10     40       10  50    4
 ## 6        0          0   180      10    130       10  81    5</code></pre>
-<p>Unfortunately, the naming of the table columns is not straightforward to understand. The good news is that each column carries additional information that can be seen in the R terminal by typing, e.g., for the column ‘K’ (which is the 2nd column):</p>
+<p>Unfortunately, the naming of the table columns is not straightforward to understand. The good news is that each column carries additional information that can be seen in the <strong>R</strong> terminal by typing, e.g., for the column ‘K’ (which is the 2nd column):</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/attributes.html">attributes</a></span>(Example_Data<span class="op">$</span>K)</a></code></pre></div>
 <pre><code>## $UNIT
 ## [1] "%"
@@ -137,6 +139,161 @@
 ## $DESCRIPTION
 ## [1] "K concentration"</code></pre>
 <p>It reveals that the numbers in the column correspond to the potassium concentration and are given in ‘%’. Similar all other columns can be inspected.</p>
+<p>And here the full overview</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">COLUM</th>
+<th align="left">UNIT</th>
+<th align="left">DESCRIPTION</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">SAMP_NAME</td>
+<td align="left">NA</td>
+<td align="left">Sample name, unique identifier</td>
+</tr>
+<tr class="even">
+<td align="left">K</td>
+<td align="left">%</td>
+<td align="left">K concentration</td>
+</tr>
+<tr class="odd">
+<td align="left">K_X</td>
+<td align="left">%</td>
+<td align="left">K concentration standard error</td>
+</tr>
+<tr class="even">
+<td align="left">T</td>
+<td align="left">ppm</td>
+<td align="left">Th concentration</td>
+</tr>
+<tr class="odd">
+<td align="left">T_X</td>
+<td align="left">ppm</td>
+<td align="left">Th concentration standard error</td>
+</tr>
+<tr class="even">
+<td align="left">U</td>
+<td align="left">ppm</td>
+<td align="left">U concentration</td>
+</tr>
+<tr class="odd">
+<td align="left">U_X</td>
+<td align="left">ppm</td>
+<td align="left">U concentration standard error</td>
+</tr>
+<tr class="even">
+<td align="left">U238</td>
+<td align="left">ppm</td>
+<td align="left">U-238 concentration</td>
+</tr>
+<tr class="odd">
+<td align="left">U238_X</td>
+<td align="left">ppm</td>
+<td align="left">U-238 concentration standard error</td>
+</tr>
+<tr class="even">
+<td align="left">U234_U238</td>
+<td align="left">NA</td>
+<td align="left">U-234/U-238 activity ratio</td>
+</tr>
+<tr class="odd">
+<td align="left">U234_U238_X</td>
+<td align="left">NA</td>
+<td align="left">U-234/U-238 activity ratio standard error</td>
+</tr>
+<tr class="even">
+<td align="left">WCI</td>
+<td align="left">% dry wt.</td>
+<td align="left">Initial water content</td>
+</tr>
+<tr class="odd">
+<td align="left">WCI_X</td>
+<td align="left">% dry wt.</td>
+<td align="left">Initial water content standard error</td>
+</tr>
+<tr class="even">
+<td align="left">WCF</td>
+<td align="left">% dry wt.</td>
+<td align="left">Final water content</td>
+</tr>
+<tr class="odd">
+<td align="left">WCF_X</td>
+<td align="left">% dry wt.</td>
+<td align="left">Final water content standard error</td>
+</tr>
+<tr class="even">
+<td align="left">CC</td>
+<td align="left">% dry wt.</td>
+<td align="left">Carbonate content</td>
+</tr>
+<tr class="odd">
+<td align="left">CC_X</td>
+<td align="left">% dry wt.</td>
+<td align="left">Carbonate content standard error</td>
+</tr>
+<tr class="even">
+<td align="left">DIAM</td>
+<td align="left">m x 10^-6</td>
+<td align="left">Grain diameter</td>
+</tr>
+<tr class="odd">
+<td align="left">DIAM_X</td>
+<td align="left">m x 10^-6</td>
+<td align="left">Grain diameter standard error</td>
+</tr>
+<tr class="even">
+<td align="left">COSMIC</td>
+<td align="left">Gy/ka</td>
+<td align="left">Cosmic dose rate</td>
+</tr>
+<tr class="odd">
+<td align="left">COSMIC_X</td>
+<td align="left">Gy/ka</td>
+<td align="left">Cosmic dose rate standard error</td>
+</tr>
+<tr class="even">
+<td align="left">INTERNAL</td>
+<td align="left">Gy/ka</td>
+<td align="left">Internal dose rate</td>
+</tr>
+<tr class="odd">
+<td align="left">INTERNAL_X</td>
+<td align="left">Gy/ka</td>
+<td align="left">Internal dose standard error</td>
+</tr>
+<tr class="even">
+<td align="left">ONSET</td>
+<td align="left">ka</td>
+<td align="left">Carbonate onset</td>
+</tr>
+<tr class="odd">
+<td align="left">ONSET_X</td>
+<td align="left">ka</td>
+<td align="left">Carbonate onset standard error</td>
+</tr>
+<tr class="even">
+<td align="left">FINISH</td>
+<td align="left">ka</td>
+<td align="left">Carbonate completion</td>
+</tr>
+<tr class="odd">
+<td align="left">FINISH_X</td>
+<td align="left">ka</td>
+<td align="left">Carbonate completion standard error</td>
+</tr>
+<tr class="even">
+<td align="left">DE</td>
+<td align="left">Gy</td>
+<td align="left">Equivalent dose</td>
+</tr>
+<tr class="odd">
+<td align="left">DE_X</td>
+<td align="left">Gy</td>
+<td align="left">Equivalent dose standard error</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="run-dose-rate-modelling" class="section level2">
 <h2 class="hasAnchor">
@@ -148,8 +305,9 @@
 <a class="sourceLine" id="cb7-4" title="4"><span class="co">##run model </span></a>
 <a class="sourceLine" id="cb7-5" title="5">results &lt;-<span class="st"> </span><span class="kw"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span>(</a>
 <a class="sourceLine" id="cb7-6" title="6">  <span class="dt">data =</span> data,</a>
-<a class="sourceLine" id="cb7-7" title="7">  <span class="dt">n.MC =</span> <span class="dv">10</span>, </a>
-<a class="sourceLine" id="cb7-8" title="8">  <span class="dt">txtProgressBar =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb7-7" title="7">  <span class="dt">DR_conv_factors =</span> <span class="st">"Carb2007"</span>,</a>
+<a class="sourceLine" id="cb7-8" title="8">  <span class="dt">n.MC =</span> <span class="dv">10</span>, </a>
+<a class="sourceLine" id="cb7-9" title="9">  <span class="dt">txtProgressBar =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## 
 ## [model_DoseRate()]
 ## 
@@ -158,19 +316,20 @@
 ##  Diameter:        180 µm 
 ##  MC runs error estim.:    10  
 ##  ------------------------------------------------ 
-##  Age (conv.):         133.451  ±  9.097  ka
-##  Age (new):       117.443  ±  5.852  ka
+##  Age (conv.):         133.451  ±  12.931  ka
+##  Age (new):       117.443  ±  10.022  ka
 ## 
-##  Dose rate (conv.):   0.734  ±  0.036  Gy/ka
-##  Dose rate (onset):   1.008  ±  0.097  Gy/ka
-##  Dose rate (final):   0.728  ±  0.034  Gy/ka
+##  Dose rate (conv.):   0.734  ±  0.042  Gy/ka
+##  Dose rate (onset):   0.967  ±  0.073  Gy/ka
+##  Dose rate (final):   0.735  ±  0.033  Gy/ka
 ##  ------------------------------------------------</code></pre>
-<p><img src="GetStarted_files/figure-html/unnamed-chunk-6-1.png" width="480" style="display: block; margin: auto;"></p>
+<p><img src="GetStarted_files/figure-html/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto;"></p>
 <p>The function returns a terminal output along with two plots, which are mostly similar to the original graphical output provided by the ‘MATLAB’ program ‘Carb’.</p>
-<p><em>Please note: In the example above the function <code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code> was called with two additional arguments, <code>n.MC = 10</code> and <code>txtProgressBar = FALSE</code>. The first argument limits the number of Monte Carlo runs for the error estimation to 10 and the second argument prevents the plotting of the progress bar, indicating the progression of the calculation. Both arguments were solely set to reduce calculation time and output in this vignette.</em></p>
-<p>Obviously, you do not want to run each row in the input table, separately, to model the dose rate for all samples given in the example dataset you can call the model without subsetting the dataset first. <strong>Be careful, the calculation may take some time</strong>.</p>
+<p>In the example above the function <code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code> was called with three additional arguments, <code>DR_conv_factors = "Carb2007"</code>, <code>n.MC = 10</code>, <code>txtProgressBar = FALSE</code>. The first argument selects the dose rate conversion factors used by ‘RCarb’. The second argument limits the number of Monte Carlo runs for the error estimation to 10 and the second argument prevents the plotting of the progress bar, indicating the progression of the calculation. Both arguments were solely set to reduce calculation time and output in this vignette.</p>
+<p>Obviously, you do not want to run each row in the input table separately to model all dose rates, so to run all the modelling for all samples in the example dataset you can call the model without subsetting the dataset first. <strong>Be careful, the calculation may take some time</strong>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">results &lt;-<span class="st"> </span><span class="kw"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span>(</a>
 <a class="sourceLine" id="cb9-2" title="2">  <span class="dt">data =</span> Example_Data)</a></code></pre></div>
+<p><em>A note on the used dose rate conversion factors: For historical reasons ‘Carb’ has its own set of dose rate conversion factors, which differ slightly from values in the literature (e.g., Adamiec &amp; Atiken, 1998) and are used in ‘RCarb’ as default values. However, with ‘RCarb’ &gt;= 0.1.3 you can select other dose rate conversion factors. Please type <code><a href="../reference/Reference_Data.html">?RCarb::Reference_Data</a></code> in your <strong>R</strong> terminal for further details.</em></p>
 </div>
 </div>
 <div id="using-your-own-dataset" class="section level1">
@@ -210,13 +369,23 @@
 ##  Diameter:        180 µm 
 ##  MC runs error estim.:    10  
 ##  ------------------------------------------------ 
-##  Age (conv.):         133.451  ±  8.999  ka
-##  Age (new):       117.443  ±  7.131  ka
+##  Age (conv.):         133.451  ±  10.057  ka
+##  Age (new):       117.443  ±  10.001  ka
 ## 
-##  Dose rate (conv.):   0.734  ±  0.043  Gy/ka
-##  Dose rate (onset):   0.975  ±  0.04  Gy/ka
-##  Dose rate (final):   0.736  ±  0.031  Gy/ka
+##  Dose rate (conv.):   0.734  ±  0.04  Gy/ka
+##  Dose rate (onset):   1  ±  0.065  Gy/ka
+##  Dose rate (final):   0.755  ±  0.033  Gy/ka
 ##  ------------------------------------------------</code></pre>
+</div>
+</div>
+<div id="i-dont-like-r" class="section level1">
+<h1 class="hasAnchor">
+<a href="#i-dont-like-r" class="anchor"></a>I don’t like R</h1>
+<p>Well, then you are wrong here. However, if you are just tired of using the <strong>R</strong> terminal and you want to have a graphical user interface to interact with ‘RCarb’? Surprise: We also spent countless hours to develop a shiny application called ‘RCarb app’, and we ship it as part of the <strong>R</strong> package <a href="https://CRAN.R-project.org/package=RLumShiny">‘RLumShiny’</a>.</p>
+<div id="references" class="section level2 unnumbered">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<p>Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update. Ancient TL 16, 37–50. <a href="http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf" class="uri">http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf</a></p>
 </div>
 </div>
   </div>
@@ -239,6 +408,11 @@
 <li><a href="#create-template-table">Create template table</a></li>
       <li><a href="#enter-own-data-back-import-into-r">Enter own data &amp; back import into R</a></li>
       <li><a href="#model-the-dose-rate">Model the dose rate</a></li>
+      </ul>
+</li>
+      <li>
+<a href="#i-dont-like-r">I don’t like R</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#references">References</a></li>
       </ul>
 </li>
       </ul>

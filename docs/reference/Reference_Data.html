@@ -33,7 +33,7 @@
 
 <meta property="og:title" content="Reference data — Reference_Data" />
 
-<meta property="og:description" content="Correction factors for beta and gamma radiation used for internal calculations.
+<meta property="og:description" content="Reference data and correction factors for beta and gamma radiation used for internal calculations.
 These values are used instead of the correction factors given in Aitken (1985) for the carbonate model." />
 <meta name="twitter:card" content="summary" />
 
@@ -118,7 +118,7 @@ These values are used instead of the correction factors given in Aitken (1985) f
 
     <div class="ref-description">
     
-    <p>Correction factors for beta and gamma radiation used for internal calculations.
+    <p>Reference data and correction factors for beta and gamma radiation used for internal calculations.
 These values are used instead of the correction factors given in Aitken (1985) for the carbonate model.</p>
     
     </div>
@@ -142,6 +142,7 @@ These values are used instead of the correction factors given in Aitken (1985) f
 <tr><td>DATApu234</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-234</td></tr>
 <tr><td>DATApu238</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-238</td></tr>
 <tr><td>mejdahl</td><td><code>data.frame</code></td><td>36 x 4</td><td>beta-dose attenuation values for quartz grains according to Mejdahl (1979)</td></tr>
+<tr><td>DR_conv_factors</td><td><code>data.frame</code></td><td>4 x 13</td><td>beta and gamma dose rate conversion factors used internally (see details)</td></tr>
 </table>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -149,6 +150,12 @@ These values are used instead of the correction factors given in Aitken (1985) f
     <p>The reference values are used internally to account for: (1) grain size depend beta-attenuation
 factors (Mejdahl, 1979) and (2) to correct nuclide dependent beta and gamma radiation for water/carbonate proportions.
 The latter values are given as matrix and precise values are interpolated during the modelling process.</p>
+<p>Additionally 'RCarb' provides and own set of dose rate conversion factors to convert concentrations
+of U, Th, and K to dose rate values. Historically <em>Carb</em> (and thus 'RCarb') as its own dose rate
+conversion factors, which differ slightly from other published values. To provide a consistent
+calculation approach by default the 'old' <em>Carb</em> values are used, but the user can further
+switch (see <a href='model_DoseRate.html'>model_DoseRate</a>) to values provided by Adamiec &amp; Aitken (1998), Guérin et al. (2011)
+or Liritzis et al (2013).</p>
 <p>Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
 on the origin of these data we refer to Nathan &amp; Mauz (2008) and Nathan (2010).<br /></p>
 <p><strong>Nuclear data origin according to Nathan &amp; Mauz (2008)</strong></p>
@@ -163,11 +170,19 @@ tabulated by Hubbell &amp; Seltzer (2004).</p>
     
     <h2 class="hasAnchor" id="version"><a class="anchor" href="#version"></a>Version</h2>
 
-    <p>0.1.0</p>
+    <p>0.2.0</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
+    <p>Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update.
+Ancient TL 16, 37–50. <a href='http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf'>http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf</a></p>
+<p>Guérin, G., Mercier, N., Adamiec, G., 2011. Dose-rate conversion factors: update. Ancient TL 29, 5–9.
+<a href='http://ancienttl.org/ATL_29-1_2011/ATL_29-1_Guerin_p5-8.pdf'>http://ancienttl.org/ATL_29-1_2011/ATL_29-1_Guerin_p5-8.pdf</a></p>
+<p>Liritzis, I., Stamoulis, K., Papachristodoulou, C., Ioannides, K., 2013.
+A Re-Evaluation of Radiation Dose-Rate Conversion Factors.
+Mediterranean Arhaeology and Archaeometry 12, 1–15.
+<a href='http://maajournal.com/Issues/2012/pdf/FullTextLiritzis.pdf'>http://maajournal.com/Issues/2012/pdf/FullTextLiritzis.pdf</a></p>
+<p>Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
 <a href='http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf'>http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf</a></p>
 <p>Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
 Radiation Measurements 43, 14-25. doi: <a href='https://doi.org/10.1016/j.radmeas.2007.12.012'>10.1016/j.radmeas.2007.12.012</a></p>
@@ -191,60 +206,74 @@ Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>Reference_Data</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>Reference_Data</span>)</div><div class='output co'>#&gt; List of 13
-#&gt;  $ DATAek   : num [1:4, 1:4] 1 1.195 1.197 1.189 0.995 ...
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>Reference_Data</span>)</div><div class='output co'>#&gt; List of 14
+#&gt;  $ DATAek         : num [1:4, 1:4] 1 1.195 1.197 1.189 0.995 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATAet   : num [1:4, 1:4] 1 1.195 1.201 1.192 0.993 ...
+#&gt;  $ DATAet         : num [1:4, 1:4] 1 1.195 1.201 1.192 0.993 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATAet230: num [1:4, 1:4] 1 1.236 1.25 1.244 0.997 ...
+#&gt;  $ DATAet230      : num [1:4, 1:4] 1 1.236 1.25 1.244 0.997 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATAeu   : num [1:4, 1:4] 1 1.193 1.199 1.187 0.992 ...
+#&gt;  $ DATAeu         : num [1:4, 1:4] 1 1.193 1.199 1.187 0.992 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATAeu234: num [1:4, 1:4] 1 1.248 1.256 1.249 0.997 ...
+#&gt;  $ DATAeu234      : num [1:4, 1:4] 1 1.248 1.256 1.249 0.997 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATAeu238: num [1:4, 1:4] 1 1.187 1.189 1.177 0.993 ...
+#&gt;  $ DATAeu238      : num [1:4, 1:4] 1 1.187 1.189 1.177 0.993 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATApk   : num [1:4, 1:4] 1 1.06 1.06 1.04 1.02 ...
+#&gt;  $ DATApk         : num [1:4, 1:4] 1 1.06 1.06 1.04 1.02 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATApt   : num [1:4, 1:4] 1 1.023 1.015 0.987 1.039 ...
+#&gt;  $ DATApt         : num [1:4, 1:4] 1 1.023 1.015 0.987 1.039 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATApt230: num [1:4, 1:4] 1 0.26 0.252 0.236 1.494 ...
+#&gt;  $ DATApt230      : num [1:4, 1:4] 1 0.26 0.252 0.236 1.494 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATApu   : num [1:4, 1:4] 1 1.015 1.007 0.976 1.044 ...
+#&gt;  $ DATApu         : num [1:4, 1:4] 1 1.015 1.007 0.976 1.044 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATApu234: num [1:4, 1:4] 1 0.208 0.206 0.202 1.527 ...
+#&gt;  $ DATApu234      : num [1:4, 1:4] 1 0.208 0.206 0.202 1.527 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ DATApu238: num [1:4, 1:4] 1 0.814 0.792 0.716 1.16 ...
+#&gt;  $ DATApu238      : num [1:4, 1:4] 1 0.814 0.792 0.716 1.16 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
-#&gt;  $ mejdahl  :'data.frame':	36 obs. of  4 variables:
+#&gt;  $ mejdahl        :'data.frame':	36 obs. of  4 variables:
 #&gt;   ..$ D : num [1:36] 0.005 0.01 0.015 0.02 0.03 0.04 0.05 0.06 0.07 0.08 ...
 #&gt;   ..$ K : num [1:36] 0.0018 0.0035 0.0053 0.0071 0.0106 0.0141 0.0177 0.0212 0.0248 0.0283 ...
 #&gt;   ..$ Th: num [1:36] 0.0225 0.0366 0.0484 0.0582 0.0743 ...
-#&gt;   ..$ U : num [1:36] 0.012 0.0214 0.0296 0.0366 0.0475 0.0564 0.0642 0.0713 0.0779 0.084 ...</div><div class='input'><span class='no'>Reference_Data</span>$<span class='no'>DATAek</span></div><div class='output co'>#&gt;        1e-06   0.04    0.2      1
+#&gt;   ..$ U : num [1:36] 0.012 0.0214 0.0296 0.0366 0.0475 0.0564 0.0642 0.0713 0.0779 0.084 ...
+#&gt;  $ DR_conv_factors:'data.frame':	4 obs. of  13 variables:
+#&gt;   ..$ REFERENCE: chr [1:4] "Carb2007" "Adamiec_Aitken_1998" "Guerin_et_al_2011" "Liritzis_et_al_2013"
+#&gt;   ..$ UB       : num [1:4] 0.146 0.146 0.146 0.146
+#&gt;   ..$ UB_X     : num [1:4] 1e-03 NA NA 4e-04
+#&gt;   ..$ TB       : num [1:4] 0.027 0.0273 0.0277 0.0275
+#&gt;   ..$ TB_X     : num [1:4] 1e-03 NA NA 9e-04
+#&gt;   ..$ KB       : num [1:4] 0.786 0.782 0.798 0.801
+#&gt;   ..$ KB_X     : num [1:4] 0.008 NA NA 0.0073
+#&gt;   ..$ UG       : num [1:4] 0.113 0.113 0.112 0.112
+#&gt;   ..$ UG_X     : num [1:4] 2e-03 NA NA 2e-04
+#&gt;   ..$ TG       : num [1:4] 0.048 0.0476 0.0479 0.0481
+#&gt;   ..$ TG_X     : num [1:4] 2e-03 NA NA 2e-04
+#&gt;   ..$ KG       : num [1:4] 0.245 0.243 0.249 0.25
+#&gt;   ..$ KG_X     : num [1:4] 0.005 NA NA 0.0048</div><div class='input'><span class='no'>Reference_Data</span>$<span class='no'>DATAek</span></div><div class='output co'>#&gt;        1e-06   0.04    0.2      1
 #&gt; 1e-06 1.0000 0.9946 0.9936 0.9911
 #&gt; 0.04  1.1948 1.0944 1.0266 0.9985
 #&gt; 0.2   1.1973 1.1631 1.0922 1.0230
