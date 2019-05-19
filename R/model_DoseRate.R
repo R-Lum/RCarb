@@ -323,11 +323,8 @@ model_DoseRate <- function(
   T <- data[["T"]] + rnorm(n.MC) * data[["T_X"]]
   T[T < 0] <- 0
 
-  # K <- KA * (1 + CC / 100)
-  # U <- UA * (1 + CC / 100)
-  # T <- TA * (1 + CC / 100)
-
-  ##now combine everything in a data.frame, not efficient but we want to stick as close
+  ##now combine everything in a data.frame, not efficient but
+  ##we want to stick as close
   ##as possible with the MATLAB code (the order does not matter)
   data_MC <- cbind(K, T, U,
                    U238 = rep(data[["U238"]],n.MC),
