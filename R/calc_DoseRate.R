@@ -1,6 +1,6 @@
 #' @title Internal function to calculate date for a given maximum time
 #'
-#' @description This is the real worker function based on the Carb MATLAB function 'datalu1.m'. To
+#' @description This is the real worker function based on the *Carb* MATLAB function 'datalu1.m'. To
 #' avoid overhead, the function does not double check the input parameters and is thus not exposed
 #' and it does not appear in the manual
 #'
@@ -18,7 +18,8 @@
 #'
 #' @param max_time [numeric] (with default): maximum time span to be evaluated
 #'
-#' @param mode_optim [logical] (with default): switch output mode, if `TRUE` only a scalar is returned
+#' @param mode_optim [logical] (with default): switch output mode, if `TRUE` only a scalar is returned,
+#' this reduces the used memory consumption for the calculation
 #'
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France) based
 #' on the MATLAB code in the file 'datalu1.m' from Carb_2007a
@@ -65,7 +66,8 @@
    DR_ID <- 1
 
   }else{
-   DR_ID <- grep(x = ref[["DR_conv_factors"]][["REFERENCE"]], pattern = DR_conv_factors, fixed = TRUE)
+   DR_ID <- grep(
+     x = ref[["DR_conv_factors"]][["REFERENCE"]], pattern = DR_conv_factors, fixed = TRUE)
 
   }
 
@@ -88,7 +90,7 @@
   T <- TA * (1 + data[["CC"]] / 100)
 
 # STEP 2: Derive carbonate model (daterlu1.m) -------------------------------------------------
-#
+
   ##2.1. - create vectors with variables, the maxium length is determined by max_time
   ##C >> CARBONATE
   C <- c(
@@ -182,34 +184,28 @@
   ##run surface interpolation calculations to get the
   ##water correction factors
   ##nomenclature:
+  ## ++++++++++++++++ RCarb calculation ++++++++++++++++++++++++
 
-  ##beta
-  XKB <- .griddata(x_grid, y_grid, ref$DATAek, xo, yo)
-  XTB <- .griddata(x_grid, y_grid, ref$DATAet, xo, yo)
-  XUB <- .griddata(x_grid, y_grid, ref$DATAeu, xo, yo)
+    ##beta water correction factors
+    XKB <- .griddata(x_grid, y_grid, ref$DATAek, xo, yo)
+    XTB <- .griddata(x_grid, y_grid, ref$DATAet, xo, yo)
+    XUB <- .griddata(x_grid, y_grid, ref$DATAeu, xo, yo)
 
-  XU238B <- .griddata(x_grid, y_grid, ref$DATAeu238, xo, yo)
-  XU234B <- .griddata(x_grid, y_grid, ref$DATAeu234, xo, yo)
-  XT230B <- .griddata(x_grid, y_grid, ref$DATAet230, xo, yo)
+    XU238B <- .griddata(x_grid, y_grid, ref$DATAeu238, xo, yo)
+    XU234B <- .griddata(x_grid, y_grid, ref$DATAeu234, xo, yo)
+    XT230B <- .griddata(x_grid, y_grid, ref$DATAet230, xo, yo)
 
-  ##gamma
-  XKG <- .griddata(x_grid, y_grid, ref$DATApk, xo, yo)
-  XTG <- .griddata(x_grid, y_grid, ref$DATApt, xo, yo)
-  XUG <- .griddata(x_grid, y_grid, ref$DATApu, xo, yo)
+    ##gamma water correction factors
+    XKG <- .griddata(x_grid, y_grid, ref$DATApk, xo, yo)
+    XTG <- .griddata(x_grid, y_grid, ref$DATApt, xo, yo)
+    XUG <- .griddata(x_grid, y_grid, ref$DATApu, xo, yo)
 
-  XU238G <- .griddata(x_grid, y_grid, ref$DATApu238, xo, yo)
-  XU234G <- .griddata(x_grid, y_grid, ref$DATApu234, xo, yo)
-  XT230G <- .griddata(x_grid, y_grid, ref$DATApt230, xo, yo)
-
-  ##set alternative, the commonly used water correction factors
-  ##after Zimmerman, 1971 (Archaeometry)
-  XKBA <- XTBA <- XUBA <- XU238BA <- XU234BA <- XT230BA <- 1.25
-  XKGA <- XTGA <- XUGA <- XU238GA <- XU234GA <- XT230GA <- 1.14
+    XU238G <- .griddata(x_grid, y_grid, ref$DATApu238, xo, yo)
+    XU234G <- .griddata(x_grid, y_grid, ref$DATApu234, xo, yo)
+    XT230G <- .griddata(x_grid, y_grid, ref$DATApt230, xo, yo)
 
   ##perform dose rate correction with the before set factors
-
-  ## +++ RCarb calculation +++
-  ##beta
+  ##beta water correction factors
   DRKB <- MK * K * handles.KB / (1 + XKB * WF)
   DRTB <- MT * T * handles.TB / (1 + XTB * WF)
   DRUB <- MU * U * handles.UB / (1 + XUB * WF)
@@ -217,7 +213,7 @@
   DRU234B <- MU238 * U234_b_diseq / (1 + XU234B * WF)
   DRT230B <- MU238 * T230_b_diseq / (1 + XT230B * WF)
 
-  ##gamma
+  ##gamma water corrections factors
   DRKG <- MK * K * handles.KG / (1 + XKG * WF)
   DRTG <- MT * T * handles.TG / (1 + XTG * WF)
   DRUG <- MU * U * handles.UG / (1 + XUG * WF)
@@ -225,12 +221,20 @@
   DRU234G <- MU238 * U234_g_diseq / (1 + XU234G * WF)
   DRT230G <- MU238 * T230_g_diseq / (1 + XT230G * WF)
 
-  ##combine values
+
+  ##calculate final dose rate
   DR <-
     DRKB + DRTB + DRUB + DRKG + DRTG + DRUG + data[["COSMIC"]] +
     data[["INTERNAL"]] + DRU238B + DRU234B + DRT230B + DRU238G + DRU234G + DRT230G
 
-  ## +++ Conventional factors +++
+
+  ## ++++++++++++++++ Conventinal calculation ++++++++++++++++++++++++
+  ##set alternative, the commonly used water correction factors
+  ##after Zimmerman, 1971 (Archaeometry); cf. also Aitken (1985)
+  ##after no interpolation is needed since these factors remain constant
+  XKBA <- XTBA <- XUBA <- XU238BA <- XU234BA <- XT230BA <- 1.25
+  XKGA <- XTGA <- XUGA <- XU238GA <- XU234GA <- XT230GA <- 1.14
+
   ##beta
   DRKBA <- MK * KA * handles.KB / (1 + XKBA * WFA)
   DRTBA <- MT * TA * handles.TB / (1 + XTBA * WFA)
@@ -247,7 +251,7 @@
   DRU234GA <- MU238 * U234_g_diseq / (1 + XU234GA * WFA)
   DRT230GA <- MU238 * T230_g_diseq / (1 + XT230GA * WFA)
 
-  ##combine values
+  ##calculate alternative (conventional) dose rate
   DRA <-
     DRKBA + DRTBA + DRUBA + DRKGA + DRTGA + DRUGA + data[["COSMIC"]] + data[["INTERNAL"]] +
     DRU238BA + DRU234BA + DRT230BA + DRU238GA + DRU234GA + DRT230GA
