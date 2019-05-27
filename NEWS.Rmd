@@ -16,8 +16,8 @@ different dose rate conversion factors
 
 ### Bugfixes
 
-* If values for U-238 and U-234 were provided, for the gamma-dose rate contribution the 
-water correction factors from the beta-dose contribution were used; 
+* In case values for U-238 and U-234 were provided, for the gamma-dose rate contribution, 
+erroneously the beta-dose water correction factors were used; 
 now corrected (internal function `.calc_DoseRata()`). This bug already existed in *Carb* and was probably introduced by copy & paste actions. 
 
 ### Other modifications
