@@ -445,7 +445,7 @@ if(plot){
   CUMDR_rowMeans <- rowMeans(CUMDR_)
   CUMDR_rowSds <- matrixStats::rowSds(CUMDR_)
 
-  ## =============================================================================================
+  ## +++++++++++++++++
   ##(A) dose rate plot
   plot(
     NA,
@@ -463,7 +463,7 @@ if(plot){
 
   ##abline
   abline(v = 0, lty = 2)
-  text(x = 0, mean(DATE[["DR"]]), labels = "(sampling)", srt = 90, cex = .6, pos = 2)
+  text(x = 0, mean(DATE[["DR"]]), labels = "(sampling)", srt = 90, cex = .5, pos = 2)
   axis(
     side = 3,
     at = c(data[["ONSET"]], data[["FINISH"]], DATE[["AGE"]]),
@@ -487,7 +487,7 @@ if(plot){
   ##set mean line (give a good indication whether the n.MC runs had been enough)
   lines(x = 0:max_time, y = rowMeans(DR_), lwd = 1, lty = 2, col = "blue")
 
-  ## =============================================================================================
+  ## +++++++++++++++++
   ##(B) accummulated dose and age
   plot(
     NA,
