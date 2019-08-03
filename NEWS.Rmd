@@ -8,7 +8,10 @@ header-includes:
 
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-* Dummy
+### Bugfixes
+
+* If an external dataset was used, the `model_DoseRate()` sometimes did not display the
+sample id correctly in the terminal output; corrected.
 
 ## RCarb 0.1.3 (2019-06-02)
 

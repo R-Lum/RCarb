@@ -76,7 +76,7 @@
 #' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montagine (France); based
 #' on 'MATLAB' code given in file Carb_2007a.m of *Carb*
 #'
-#' @section Function version: 0.2.0
+#' @section Function version: 0.2.1
 #'
 #' @references
 #' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
@@ -127,6 +127,7 @@ model_DoseRate <- function(
     ##remove first (the function name) and 'data'
     args[[1]] <- NULL
     args$data <- NULL
+
 
     ##run function
     results_list <- lapply(data_list, function(x){
@@ -401,7 +402,7 @@ model_DoseRate <- function(
 # Terminal output -----------------------------------------------------------------------------
 if(verbose){
   cat("\n[model_DoseRate()]\n\n")
-  cat(" Sample ID:\t\t", data[["SAMP_NAME"]], "\n")
+  cat(" Sample ID:\t\t", as.character(data[["SAMP_NAME"]]), "\n")
   cat(" Equivalent dose:\t", round(data[["DE"]],2), " \u00b1 ", round(data[["DE_X"]],2), "Gy\n")
   cat(" Diameter:\t\t", data[["DIAM"]], "\u00b5m \n")
   cat(" MC runs error estim.:\t", n.MC," \n")
