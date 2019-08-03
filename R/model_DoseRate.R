@@ -38,6 +38,9 @@
 #'
 #' @param plot [logical] (with default): enables/disables plot output
 #'
+#' @param par_local [logical] (with default): enables/disable local par settings, If set
+#' to `FALSE` all global par settings are accepted.
+#'
 #' @param ... further arguments passed to the underyling plot functions, see also details for further information. Supported standard arguments are `mfrow`, `xlim`, `xlab`.
 #'
 #' @return The function returns numerical and graphical output
@@ -106,6 +109,7 @@ model_DoseRate <- function(
   txtProgressBar = TRUE,
   verbose = TRUE,
   plot = TRUE,
+  par_local = TRUE,
   ...
 ){
 
@@ -436,9 +440,11 @@ if(plot){
   val = list(...))
 
   ##par settings; including restoring them
-  par.default <- list(mfrow = par()$mfrow)
-  on.exit(do.call(par, args = par.default))
-  par(mfrow = plot_settings$mfrow)
+  if(par_local){
+    par.default <- list(mfrow = par()$mfrow)
+    on.exit(do.call(par, args = par.default))
+    par(mfrow = plot_settings$mfrow)
+  }
 
   ##calculate some variables needed later
   DR_rowMeans <- rowMeans(DR_)

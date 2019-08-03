@@ -8,10 +8,12 @@ header-includes:
 
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-### Bugfixes
+### Bugfixes and changes
 
 * If an external dataset was used, the `model_DoseRate()` sometimes did not display the
 sample id correctly in the terminal output; corrected.
+* `model_DoseRate()` gained a new argument `par_local`, which is `TRUE` by default. If 
+set to `FALSE` all global par settings are accepted.
 
 ## RCarb 0.1.3 (2019-06-02)
 
