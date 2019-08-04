@@ -8,6 +8,8 @@
 # RCarb <img width=120px src="man/figures/Logo_RCarb.svg" align="right" />
 
 [![CRAN](http://www.r-pkg.org/badges/version/RCarb)](https://CRAN.R-project.org/package=RCarb)
+[![cran
+checks](https://cranchecks.info/badges/worst/RCarb)](https://cranchecks.info/pkgs/RCarb)
 [![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
 [![Build
 Status](https://travis-ci.org/R-Lum/RCarb.svg?branch=master)](https://travis-ci.org/R-Lum/RCarb)

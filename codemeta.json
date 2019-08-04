@@ -1,0 +1,154 @@
+{
+  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@type": "SoftwareSourceCode",
+  "identifier": "RCarb",
+  "description": "Translation of the 'MATLAB' program 'Carb' (Nathan and Mauz 2008 <DOI:10.1016/j.radmeas.2007.12.012>; Mauz and Hoffmann 2014) for dose rate modelling for carbonate-rich samples in the context of trapped charged dating (e.g., luminescence dating) applications. ",
+  "name": "RCarb: Dose Rate Modelling of Carbonate-Rich Samples ",
+  "codeRepository": "https://r-lum.github.io/RCarb/",
+  "issueTracker": "https://github.com/R-Lum/RCarb/issues",
+  "license": "https://spdx.org/licenses/GPL-3.0",
+  "version": "0.1.4.9000.6",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "version": "3.7.0",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R Under development (unstable) (2019-07-31 r76909)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Sebastian",
+      "familyName": "Kreutzer",
+      "email": "sebastian.kreutzer@u-bordeaux-montaigne.fr",
+      "@id": "https://orcid.org/0000-0002-0734-2199"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Roger P.",
+      "familyName": "Nathan"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Barbara",
+      "familyName": "Mauz",
+      "@id": "https://orcid.org/0000-0003-1504-333X"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "givenName": "Sebastian",
+      "familyName": "Kreutzer",
+      "email": "sebastian.kreutzer@u-bordeaux-montaigne.fr",
+      "@id": "https://orcid.org/0000-0002-0734-2199"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Sebastian",
+      "familyName": "Kreutzer",
+      "email": "sebastian.kreutzer@u-bordeaux-montaigne.fr",
+      "@id": "https://orcid.org/0000-0002-0734-2199"
+    }
+  ],
+  "copyrightHolder": [
+    {
+      "@type": "Person",
+      "givenName": "Roger P.",
+      "familyName": "Nathan"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Barbara",
+      "familyName": "Mauz",
+      "@id": "https://orcid.org/0000-0003-1504-333X"
+    }
+  ],
+  "funder": {},
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Sebastian",
+      "familyName": "Kreutzer",
+      "email": "sebastian.kreutzer@u-bordeaux-montaigne.fr",
+      "@id": "https://orcid.org/0000-0002-0734-2199"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 2.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "R.rsp",
+      "name": "R.rsp",
+      "version": ">= 0.43.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=R.rsp"
+    }
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": ">= 3.4.0"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "utils",
+      "name": "utils"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "interp",
+      "name": "interp",
+      "version": ">= 1.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=interp"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "matrixStats",
+      "name": "matrixStats",
+      "version": ">= 0.54.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=matrixStats"
+    }
+  ],
+  "releaseNotes": "https://github.com/R-Lum/RCarb/blob/master/NEWS.md",
+  "readme": "https://github.com/R-Lum/RCarb/blob/master/README.md",
+  "contIntegration": ["https://travis-ci.org/R-Lum/RCarb", "https://ci.appveyor.com/project/RLumSK/rcarb", "https://codecov.io/gh/R-Lum/RCarb"],
+  "relatedLink": "https://CRAN.R-project.org/package=RCarb"
+}
