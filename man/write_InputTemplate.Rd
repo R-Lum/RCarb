@@ -11,7 +11,7 @@ write_InputTemplate(file = NULL, ...)
 \link{data.frame} is returned.}
 
 \item{...}{additional arguments that can be passed to function \link{write.table} if \code{file != NULL}.
-Supported arguments are: \code{sep}, \code{dec, }fileEncoding`}
+Supported arguments are: \code{sep}, \verb{dec, }fileEncoding`}
 }
 \description{
 This function creates a template table that can be used as input for the function
@@ -45,6 +45,6 @@ Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaign
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. write_InputTemplate(): Write table input template. Function version 0.1.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2019. RCarb: Dose Rate Modelling of Carbonate-Rich Samples R package version 0.1.4.9000-7. https://r-lum.github.io/RCarb/
+Kreutzer, S., 2019. write_InputTemplate(): Write table input template. Function version 0.1.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2019. RCarb: Dose Rate Modelling of Carbonate-Rich Samples R package version 0.1.4.9000-10. https://r-lum.github.io/RCarb/
 }
 

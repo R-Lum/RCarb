@@ -4,10 +4,19 @@
 \alias{model_DoseRate}
 \title{Model dose rate evolution in carbonate-rich samples}
 \usage{
-model_DoseRate(data, DR_conv_factors = NULL, length_step = 1L,
-  max_time = 500L, n.MC = 100, method_control = list(),
-  txtProgressBar = TRUE, verbose = TRUE, plot = TRUE,
-  par_local = TRUE, ...)
+model_DoseRate(
+  data,
+  DR_conv_factors = NULL,
+  length_step = 1L,
+  max_time = 500L,
+  n.MC = 100,
+  method_control = list(),
+  txtProgressBar = TRUE,
+  verbose = TRUE,
+  plot = TRUE,
+  par_local = TRUE,
+  ...
+)
 }
 \arguments{
 \item{data}{\link{data.frame} (\strong{required}): input data following the structure given
@@ -42,14 +51,14 @@ to \code{FALSE} all global par settings are accepted.}
 The function returns numerical and graphical output
 
 -----------------------------------\cr
-\code{[ NUMERICAL OUTPUT ]}\cr
+\verb{[ NUMERICAL OUTPUT ]}\cr
 -----------------------------------\cr
 \itemize{
 \item A \link{data.frame} which is the combination of the input and values calculated by this function.
 }
 
 -----------------------------------\cr
-\code{[ GRAPHICAL OUTPUT ]}\cr
+\verb{[ GRAPHICAL OUTPUT ]}\cr
 -----------------------------------\cr
 
 \strong{Upper plot:} Dose rate evolution over time backwards. The solid black line is the calculation
@@ -97,7 +106,7 @@ txtProgressBar = FALSE
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2019. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2019. RCarb: Dose Rate Modelling of Carbonate-Rich Samples R package version 0.1.4.9000-7. https://r-lum.github.io/RCarb/
+Kreutzer, S., 2019. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2019. RCarb: Dose Rate Modelling of Carbonate-Rich Samples R package version 0.1.4.9000-10. https://r-lum.github.io/RCarb/
 }
 
 \references{
