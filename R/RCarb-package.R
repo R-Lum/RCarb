@@ -29,6 +29,10 @@
 #'
 #' @references
 #'
+#' Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. “RCarb”:
+#' Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R -.
+#' Ancient TL 37, 1–8.
+#'
 #' This package bases on a 'MATLAB' programme with name 'Carb', details can be found the
 #' following references:\cr
 #'
