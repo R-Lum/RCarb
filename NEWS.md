@@ -49,7 +49,7 @@
 
 ## RCarb 0.1.1 (2018-11-20)
 
-  - Internal changes only to account for CRAN comments on inital
+  - Internal changes only to account for CRAN comments on initial
     submission.
 
 ## RCarb 0.1.0 (2018-11-12)
