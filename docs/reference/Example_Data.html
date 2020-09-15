@@ -8,22 +8,29 @@
 
 <title>Example data — Example_Data • RCarb</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -31,14 +38,14 @@
 
 
 
-<meta property="og:title" content="Example data — Example_Data" />
 
-<meta property="og:description" content="Example data as shipped with Carb by Mauz &amp;amp; Hoffmann (2014). In contrast to the original
+<meta property="og:title" content="Example data — Example_Data" />
+<meta property="og:description" content="Example data as shipped with Carb by Mauz \&amp;amp; Hoffmann (2014). In contrast to the original
 data, NA values have been replaced by 0 and columns and rows have been transposed. Samples
 are now organised in rows and parameters in columns.
 The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
-Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz &amp;amp; Hoffmann (2014)." />
-<meta name="twitter:card" content="summary" />
+Sample HD107 was renamed to LV107 for the sake of consistency with Fig. 4 in Mauz \&amp;amp; Hoffmann (2014)." />
+
 
 
 
@@ -52,9 +59,10 @@ Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Ma
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -68,7 +76,7 @@ Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Ma
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -99,9 +107,13 @@ Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Ma
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/R-Lum/RCarb/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -109,27 +121,27 @@ Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Ma
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Example data</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/R-Lum/RCarb/blob/master/R/RCarb-package.R'><code>R/RCarb-package.R</code></a></small>
     <div class="hidden name"><code>Example_Data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
-    <p>Example data as shipped with <em>Carb</em> by Mauz &amp; Hoffmann (2014). In contrast to the original
+    <p>Example data as shipped with <em>Carb</em> by Mauz \&amp; Hoffmann (2014). In contrast to the original
 data, <code>NA</code> values have been replaced by 0 and columns and rows have been transposed. Samples
 are now organised in rows and parameters in columns.</p>
-<p>The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
-Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz &amp; Hoffmann (2014).</p>
-    
+<p>The data can be used to test <code>'RCarb'</code> and play with the secondary carbonatisation process.
+Sample HD107 was renamed to LV107 for the sake of consistency with Fig. 4 in Mauz \&amp; Hoffmann (2014).</p>
     </div>
 
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p><code>Example_Data</code>: <a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> (28 x 29)</p>
@@ -137,22 +149,25 @@ Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Ma
 <li><p><code>UNIT</code>: the unit, so far applicable, e.g. "ppm"</p></li>
 <li><p><code>DESCRIPTION</code>: the column description</p></li>
 </ul>
-    
+
     <h2 class="hasAnchor" id="version"><a class="anchor" href="#version"></a>Version</h2>
 
     <p>0.1.0</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model
 for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.</p>
-    
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Mauz \&amp; Hoffmann (2014), with minor modifications by Sebastian Kreutzer,Geography &amp; Earth
+Sciences, Aberystwyth University (United Kingdom)</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## show first elements of the example data</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>Example_Data</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>Example_Data</span>)</div><div class='output co'>#&gt;   SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='kw'>Example_Data</span>, envir = <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>Example_Data</span>)
+</div><div class='output co'>#&gt;   SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X
 #&gt; 1     BN107 0.080 0.010 1.64 0.08 1.90 0.08    0      0         0           0
 #&gt; 2     BN102 0.170 0.009 2.59 0.03 3.02 0.07    0      0         0           0
 #&gt; 3     BN106 0.560 0.030 1.80 0.11 0.83 0.03    0      0         0           0
@@ -174,7 +189,8 @@ for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.</p
 #&gt; 5    60      10     40       10  50    4
 #&gt; 6   180      10    130       10  81    5</div><div class='input'>
 <span class='co'>##show only column U230</span>
-<span class='no'>Example_Data</span>$<span class='no'>U238</span></div><div class='output co'>#&gt;  [1] 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+<span class='kw'>Example_Data</span><span class='op'>$</span><span class='kw'>U238</span>
+</div><div class='output co'>#&gt;  [1] 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
 #&gt; [16] 0.31 0.00 0.00 0.32 0.35 0.35 0.30 0.15 0.19 0.14 0.60 0.21 0.68
 #&gt; attr(,"UNIT")
 #&gt; [1] "ppm"
@@ -182,24 +198,13 @@ for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.</p
 #&gt; [1] "U-238 concentration"</div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#version">Version</a></li>
-
-      <li><a href="#references">References</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Mauz &amp; Hoffmann (2014), with minor modifcations by Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
-CNRS-Université Bordeaux Montaigne (France)</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -207,13 +212,16 @@ CNRS-Université Bordeaux Montaigne (France)</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

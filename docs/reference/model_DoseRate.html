@@ -8,22 +8,29 @@
 
 <title>Model dose rate evolution in carbonate-rich samples — model_DoseRate • RCarb</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -31,11 +38,11 @@
 
 
 
-<meta property="og:title" content="Model dose rate evolution in carbonate-rich samples — model_DoseRate" />
 
+<meta property="og:title" content="Model dose rate evolution in carbonate-rich samples — model_DoseRate" />
 <meta property="og:description" content="This function models the dose rate evolution in carbonate enrich environments. For the
 calculation internal functions are called." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -49,9 +56,10 @@ calculation internal functions are called." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -65,7 +73,7 @@ calculation internal functions are called." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -96,9 +104,13 @@ calculation internal functions are called." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/R-Lum/RCarb/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -106,27 +118,36 @@ calculation internal functions are called." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Model dose rate evolution in carbonate-rich samples</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/R-Lum/RCarb/blob/master/R/model_DoseRate.R'><code>R/model_DoseRate.R</code></a></small>
     <div class="hidden name"><code>model_DoseRate.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>This function models the dose rate evolution in carbonate enrich environments. For the
 calculation internal functions are called.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>model_DoseRate</span>(<span class='no'>data</span>, <span class='kw'>DR_conv_factors</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>length_step</span> <span class='kw'>=</span> <span class='fl'>1L</span>,
-  <span class='kw'>max_time</span> <span class='kw'>=</span> <span class='fl'>500L</span>, <span class='kw'>n.MC</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>method_control</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
-  <span class='kw'>txtProgressBar</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>plot</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>model_DoseRate</span>(
+  <span class='kw'>data</span>,
+  DR_conv_factors = <span class='kw'>NULL</span>,
+  length_step = <span class='fl'>1L</span>,
+  max_time = <span class='fl'>500L</span>,
+  n.MC = <span class='fl'>100</span>,
+  method_control = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
+  txtProgressBar = <span class='fl'>TRUE</span>,
+  verbose = <span class='fl'>TRUE</span>,
+  plot = <span class='fl'>TRUE</span>,
+  par_local = <span class='fl'>TRUE</span>,
+  <span class='kw'>...</span>
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -172,11 +193,16 @@ the modelling. See details for further information.</p></td>
       <td><p><a href='https://rdrr.io/r/base/logical.html'>logical</a> (with default): enables/disables plot output</p></td>
     </tr>
     <tr>
+      <th>par_local</th>
+      <td><p><a href='https://rdrr.io/r/base/logical.html'>logical</a> (with default): enables/disable local par settings, If set
+to <code>FALSE</code> all global par settings are accepted.</p></td>
+    </tr>
+    <tr>
       <th>...</th>
-      <td><p>further arguments passed to the underyling plot functions, see also details for further information. Supported standard arguments are <code>mfrow</code>, <code>xlim</code>, <code>xlab</code>.</p></td>
+      <td><p>further arguments passed to the underlying plot functions, see also details for further information. Supported standard arguments are <code>mfrow</code>, <code>xlim</code>, <code>xlab</code>.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>The function returns numerical and graphical output</p>
@@ -194,28 +220,24 @@ output, the grey shaded area indicates the 2-sigma error margins. The dashed blu
 of the quality of the error estimations based on Monte Carlo (MC) runs.The closer it follows the
 black line, the more reliable are the given error margins. <br /></p>
 <p><strong>Lower plot:</strong> Totally absorbed dose over time. The plot is an representation of the 'new'
-age based on the carbonat modelling.</p>
-    
+age based on the carbonate modelling.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function is the starting point for the dose rate modelling for carbonat enrich
-environments. It provides basically the same functionality as the original version of 'Carb', i.e.
+    <p>This function is the starting point for the dose rate modelling for carbonate enrich
+environments. It provides basically the same functionality as the original version of <code>'Carb'</code>, i.e.
 you should be also aware of the limitations of this modelling approach. In particular: The model
 assumes a linear carbonate mass increase due to post-depositional processes. Please read the
 references cited blow.<br /></p>
 <p><strong>Uncertainty estimation</strong></p>
-<p>For estimating the uncertainties, Monte-Carloe (MC) simulation runs are used. For very
-small values (close to 0) this can, however, lead to edge effects (similar in 'Carb') since
+<p>For estimating the uncertainties, Monte-Carlo (MC) simulation runs are used. For very
+small values (close to 0) this can, however, lead to edge effects (similar in <code>'Carb'</code>) since
 values below 0 are set to 0.</p>
-    
     <h2 class="hasAnchor" id="function-version"><a class="anchor" href="#function-version"></a>Function version</h2>
 
-    <p>0.2.0</p>
-    
+    <p>0.2.1</p>
     <h2 class="hasAnchor" id="how-to-cite"><a class="anchor" href="#how-to-cite"></a>How to cite</h2>
 
-    <p>Kreutzer, S., 2019. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2019. RCarb: Dose Rate Modelling of Carbonate-Rich Samples R package version 0.1.3. https://r-lum.github.io/RCarb/</p>
-    
+    <p>Kreutzer, S., 2020. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2020. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.4. https://r-lum.github.io/RCarb/</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
@@ -228,19 +250,23 @@ Radiation Measurements 43, 14-25. doi: <a href='https://doi.org/10.1016/j.radmea
 DPhil thesis, St Hugh's College, Oxford. <a href='https://ora.ox.ac.uk/objects/ora:6421'>https://ora.ox.ac.uk/objects/ora:6421</a></p>
 <p>Zimmerman, D.W., 1971. Thermoluminescent dating using fine grains from pottery.
 Archaeometry 13, 29–52.doi: <a href='https://doi.org/10.1111/j.1475-4754.1971.tb00028.x'>10.1111/j.1475-4754.1971.tb00028.x</a></p>
-    
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Sebastian Kreutzer, Geography &amp; Earth Sciences, Aberystwyth University (United Kingdom); based
+on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>##load example data</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"Example_Data"</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"Example_Data"</span>, envir = <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
 
 <span class='co'>##run the function for one sample from</span>
 <span class='co'>##the dataset</span>
 <span class='fu'>model_DoseRate</span>(
-<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>Example_Data</span>[<span class='fl'>14</span>,],
-<span class='kw'>n.MC</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-<span class='kw'>txtProgressBar</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</div><div class='output co'>#&gt; 
+data = <span class='kw'>Example_Data</span>[<span class='fl'>14</span>,],
+n.MC = <span class='fl'>2</span>,
+txtProgressBar = <span class='fl'>FALSE</span>
+)
+</div><div class='output co'>#&gt; 
 #&gt; [model_DoseRate()]
 #&gt; 
 #&gt;  Sample ID:		 LV107 
@@ -265,29 +291,13 @@ Archaeometry 13, 29–52.doi: <a href='https://doi.org/10.1111/j.1475-4754.1971.
 
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#function-version">Function version</a></li>
-
-      <li><a href="#how-to-cite">How to cite</a></li>
-
-      <li><a href="#references">References</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montagine (France); based
-on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -295,13 +305,16 @@ on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

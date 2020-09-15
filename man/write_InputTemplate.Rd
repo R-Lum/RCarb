@@ -11,7 +11,7 @@ write_InputTemplate(file = NULL, ...)
 \link{data.frame} is returned.}
 
 \item{...}{additional arguments that can be passed to function \link{write.table} if \code{file != NULL}.
-Supported arguments are: \code{sep}, \verb{dec, }fileEncoding`}
+Supported arguments are: \code{sep}, \code{dec}, \code{fileEncoding}}
 }
 \description{
 This function creates a template table that can be used as input for the function
@@ -41,7 +41,7 @@ write_InputTemplate(file = temp_file)
 \link{Example_Data}, \link{write.table}
 }
 \author{
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 } 
 
 \section{How to cite}{

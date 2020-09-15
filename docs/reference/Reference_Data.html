@@ -8,22 +8,29 @@
 
 <title>Reference data — Reference_Data • RCarb</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -31,11 +38,11 @@
 
 
 
-<meta property="og:title" content="Reference data — Reference_Data" />
 
+<meta property="og:title" content="Reference data — Reference_Data" />
 <meta property="og:description" content="Reference data and correction factors for beta and gamma radiation used for internal calculations.
 These values are used instead of the correction factors given in Aitken (1985) for the carbonate model." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -49,9 +56,10 @@ These values are used instead of the correction factors given in Aitken (1985) f
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -65,7 +73,7 @@ These values are used instead of the correction factors given in Aitken (1985) f
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
@@ -96,9 +104,13 @@ These values are used instead of the correction factors given in Aitken (1985) f
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/R-Lum/RCarb/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -106,45 +118,46 @@ These values are used instead of the correction factors given in Aitken (1985) f
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Reference data</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/R-Lum/RCarb/blob/master/R/RCarb-package.R'><code>R/RCarb-package.R</code></a></small>
     <div class="hidden name"><code>Reference_Data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>Reference data and correction factors for beta and gamma radiation used for internal calculations.
 These values are used instead of the correction factors given in Aitken (1985) for the carbonate model.</p>
-    
     </div>
 
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p><code>Reference_Data</code>: <a href='https://rdrr.io/r/base/list.html'>list</a> <br /></p>
 <table class='table'>
 <tr><td><strong>NAME</strong></td><td><strong>TYPE</strong></td><td><strong>DIM</strong></td><td><strong>DESCRIPTION</strong></td></tr>
-<tr><td>DATAek</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for K</td></tr>
-<tr><td>DATAet</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for Th</td></tr>
-<tr><td>DATAet230</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for Th-230</td></tr>
-<tr><td>DATAeu</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U</td></tr>
-<tr><td>DATAeu234</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U-234</td></tr>
-<tr><td>DATAeu238</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U-238</td></tr>
-<tr><td>DATApk</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for K</td></tr>
-<tr><td>DATApt</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for T</td></tr>
-<tr><td>DATApt230</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for Th-230</td></tr>
-<tr><td>DATApu</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U</td></tr>
-<tr><td>DATApu234</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-234</td></tr>
-<tr><td>DATApu238</td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-238</td></tr>
-<tr><td>mejdahl</td><td><code>data.frame</code></td><td>36 x 4</td><td>beta-dose attenuation values for quartz grains according to Mejdahl (1979)</td></tr>
-<tr><td>DR_conv_factors</td><td><code>data.frame</code></td><td>4 x 13</td><td>beta and gamma dose rate conversion factors used internally (see details)</td></tr>
+<tr><td><code>DATAek</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for K</td></tr>
+<tr><td><code>DATAet</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for Th</td></tr>
+<tr><td><code>DATAet230</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for Th-230</td></tr>
+<tr><td><code>DATAeu</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U</td></tr>
+<tr><td><code>DATAeu234</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U-234</td></tr>
+<tr><td><code>DATAeu238</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for electrons for water and carbonate to sediment mass ratio for U-238</td></tr>
+<tr><td><code>DATApk</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for K</td></tr>
+<tr><td><code>DATApt</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for T</td></tr>
+<tr><td><code>DATApt230</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for Th-230</td></tr>
+<tr><td><code>DATApu</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U</td></tr>
+<tr><td><code>DATApu234</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-234</td></tr>
+<tr><td><code>DATApu238</code></td><td><code>matrix</code></td><td>4 x 4</td><td>correction factors for photons for water and carbonate to sediment mass ratio for U-238</td></tr>
+<tr><td><code>mejdahl</code></td><td><code>data.frame</code></td><td>36 x 4</td><td>beta-dose attenuation values for quartz grains according to Mejdahl (1979)</td></tr>
+<tr><td><code>DR_conv_factors</code></td><td><code>data.frame</code></td><td>4 x 13</td><td>beta and gamma dose rate conversion factors used internally (see details)</td></tr>
 </table>
-    
+
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The reference values are used internally to account for: (1) grain size depend beta-attenuation
@@ -154,24 +167,22 @@ The latter values are given as matrix and precise values are interpolated during
 of U, Th, and K to dose rate values. Historically <em>Carb</em> (and thus 'RCarb') as its own dose rate
 conversion factors, which differ slightly from other published values. To provide a consistent
 calculation approach by default the 'old' <em>Carb</em> values are used, but the user can further
-switch (see <a href='model_DoseRate.html'>model_DoseRate</a>) to values provided by Adamiec &amp; Aitken (1998), Guérin et al. (2011)
+switch (see <a href='model_DoseRate.html'>model_DoseRate</a>) to values provided by Adamiec \&amp; Aitken (1998), Guérin et al. (2011)
 or Liritzis et al (2013).</p>
 <p>Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
-on the origin of these data we refer to Nathan &amp; Mauz (2008) and Nathan (2010).<br /></p>
-<p><strong>Nuclear data origin according to Nathan &amp; Mauz (2008)</strong></p>
+on the origin of these data we refer to Nathan \&amp; Mauz (2008) and Nathan (2010).<br /></p>
+<p><strong>Nuclear data origin according to Nathan \&amp; Mauz (2008)</strong></p>
 <p>The gamma primary energy spectra of uranium, thorium and potassium are drawn from
 Evaluated Nuclear Structure Data File (ENSDF) database at <a href='http://www.nndc.bnl.gov'>http://www.nndc.bnl.gov</a> (2002-01-16)
 and the beta primary energy spectra was derived from ENSDF end-point energies using a
-Fermi beta decay model (Evans, 1955) modified by Behrens &amp; Szybisz (1976).
+Fermi beta decay model (Evans, 1955) modified by Behrens \&amp; Szybisz (1976).
 For the simulations of the collisional mass stopping powers for quartz the software ESTAR
 (Berger et al., 2000) was used. The mass energy-absorption coefficients for quartz were
-tabulated by Hubbell &amp; Seltzer (2004).</p>
-<p><em>For further details and references please read Nathan &amp; Mauz (2008)</em></p>
-    
+tabulated by Hubbell \&amp; Seltzer (2004).</p>
+<p><em>For further details and references please read Nathan \&amp; Mauz (2008)</em></p>
     <h2 class="hasAnchor" id="version"><a class="anchor" href="#version"></a>Version</h2>
 
     <p>0.2.0</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update.
@@ -180,7 +191,7 @@ Ancient TL 16, 37–50. <a href='http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Ada
 <a href='http://ancienttl.org/ATL_29-1_2011/ATL_29-1_Guerin_p5-8.pdf'>http://ancienttl.org/ATL_29-1_2011/ATL_29-1_Guerin_p5-8.pdf</a></p>
 <p>Liritzis, I., Stamoulis, K., Papachristodoulou, C., Ioannides, K., 2013.
 A Re-Evaluation of Radiation Dose-Rate Conversion Factors.
-Mediterranean Arhaeology and Archaeometry 12, 1–15.
+Mediterranean Archaeology and Archaeometry 12, 1–15.
 <a href='http://maajournal.com/Issues/2012/pdf/FullTextLiritzis.pdf'>http://maajournal.com/Issues/2012/pdf/FullTextLiritzis.pdf</a></p>
 <p>Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
 <a href='http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf'>http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf</a></p>
@@ -201,12 +212,12 @@ Zentralstelle fuer Atomkernenergie-Dokumentation (ZAED), Germany.</p>
 <p>Hubbell, J.H., Seltzer, S.M., 2004. Tables of X-Ray Mass Attenuation Coefficients and Mass
 Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
 (2005-08-09). National Institute of Standards and Technology, Gaithersburg, MD.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>Reference_Data</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>Reference_Data</span>)</div><div class='output co'>#&gt; List of 14
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='kw'>Reference_Data</span>, envir = <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='kw'>Reference_Data</span>)
+</div><div class='output co'>#&gt; List of 14
 #&gt;  $ DATAek         : num [1:4, 1:4] 1 1.195 1.197 1.189 0.995 ...
 #&gt;   ..- attr(*, "dimnames")=List of 2
 #&gt;   .. ..$ : chr [1:4] "1e-06" "0.04" "0.2" "1"
@@ -273,30 +284,21 @@ Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
 #&gt;   ..$ TG       : num [1:4] 0.048 0.0476 0.0479 0.0481
 #&gt;   ..$ TG_X     : num [1:4] 2e-03 NA NA 2e-04
 #&gt;   ..$ KG       : num [1:4] 0.245 0.243 0.249 0.25
-#&gt;   ..$ KG_X     : num [1:4] 0.005 NA NA 0.0048</div><div class='input'><span class='no'>Reference_Data</span>$<span class='no'>DATAek</span></div><div class='output co'>#&gt;        1e-06   0.04    0.2      1
+#&gt;   ..$ KG_X     : num [1:4] 0.005 NA NA 0.0048</div><div class='input'><span class='kw'>Reference_Data</span><span class='op'>$</span><span class='kw'>DATAek</span>
+</div><div class='output co'>#&gt;        1e-06   0.04    0.2      1
 #&gt; 1e-06 1.0000 0.9946 0.9936 0.9911
 #&gt; 0.04  1.1948 1.0944 1.0266 0.9985
 #&gt; 0.2   1.1973 1.1631 1.0922 1.0230
 #&gt; 1     1.1886 1.1808 1.1546 1.0850</div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#version">Version</a></li>
-
-      <li><a href="#references">References</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -304,13 +306,16 @@ Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

@@ -18,8 +18,8 @@ Example data as shipped with \emph{Carb} by Mauz \& Hoffmann (2014). In contrast
 data, \code{NA} values have been replaced by 0 and columns and rows have been transposed. Samples
 are now organised in rows and parameters in columns.
 
-The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
-Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz \& Hoffmann (2014).
+The data can be used to test \code{'RCarb'} and play with the secondary carbonatisation process.
+Sample HD107 was renamed to LV107 for the sake of consistency with Fig. 4 in Mauz \& Hoffmann (2014).
 }
 \section{Version}{
  0.1.0
@@ -40,7 +40,7 @@ Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, th
 for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.
 }
 \author{
-Mauz \& Hoffmann (2014), with minor modifcations by Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
-CNRS-Université Bordeaux Montaigne (France)
+Mauz \& Hoffmann (2014), with minor modifications by Sebastian Kreutzer,Geography & Earth
+Sciences, Aberystwyth University (United Kingdom)
 }
 \keyword{datasets}

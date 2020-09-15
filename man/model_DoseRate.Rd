@@ -45,7 +45,7 @@ the modelling. See details for further information.}
 \item{par_local}{\link{logical} (with default): enables/disable local par settings, If set
 to \code{FALSE} all global par settings are accepted.}
 
-\item{...}{further arguments passed to the underyling plot functions, see also details for further information. Supported standard arguments are \code{mfrow}, \code{xlim}, \code{xlab}.}
+\item{...}{further arguments passed to the underlying plot functions, see also details for further information. Supported standard arguments are \code{mfrow}, \code{xlim}, \code{xlab}.}
 }
 \value{
 The function returns numerical and graphical output
@@ -67,23 +67,23 @@ of the quality of the error estimations based on Monte Carlo (MC) runs.The close
 black line, the more reliable are the given error margins. \cr
 
 \strong{Lower plot:} Totally absorbed dose over time. The plot is an representation of the 'new'
-age based on the carbonat modelling.
+age based on the carbonate modelling.
 }
 \description{
 This function models the dose rate evolution in carbonate enrich environments. For the
 calculation internal functions are called.
 }
 \details{
-This function is the starting point for the dose rate modelling for carbonat enrich
-environments. It provides basically the same functionality as the original version of 'Carb', i.e.
+This function is the starting point for the dose rate modelling for carbonate enrich
+environments. It provides basically the same functionality as the original version of \code{'Carb'}, i.e.
 you should be also aware of the limitations of this modelling approach. In particular: The model
 assumes a linear carbonate mass increase due to post-depositional processes. Please read the
 references cited blow.\cr
 
 \strong{Uncertainty estimation}
 
-For estimating the uncertainties, Monte-Carloe (MC) simulation runs are used. For very
-small values (close to 0) this can, however, lead to edge effects (similar in 'Carb') since
+For estimating the uncertainties, Monte-Carlo (MC) simulation runs are used. For very
+small values (close to 0) this can, however, lead to edge effects (similar in \code{'Carb'}) since
 values below 0 are set to 0.
 }
 \section{Function version}{
@@ -125,7 +125,7 @@ Zimmerman, D.W., 1971. Thermoluminescent dating using fine grains from pottery.
 Archaeometry 13, 29–52.\doi{10.1111/j.1475-4754.1971.tb00028.x}
 }
 \author{
-Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montagine (France); based
+Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom); based
 on 'MATLAB' code given in file Carb_2007a.m of \emph{Carb}
 }
 \keyword{dplot}

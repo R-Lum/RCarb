@@ -15,18 +15,19 @@ Authors@R: c(
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@aber.ac.uk>
 Description: Translation of the 'MATLAB' program 'Carb' (Nathan and Mauz 2008 <DOI:10.1016/j.radmeas.2007.12.012>; Mauz and Hoffmann 2014) for dose rate modelling for carbonate-rich samples in the context of trapped charged dating (e.g., luminescence dating) applications. 
 Depends: 
-  R (>= 3.4.0),
+  R (>= 3.5.0),
   utils
 Imports: 
   interp (>= 1.0),
-  matrixStats (>= 0.54.0)
+  matrixStats (>= 0.56.0)
 Suggests: 
-  testthat (>= 2.1),
-  R.rsp (>= 0.43.0)
+  testthat (>= 2.3.2),
+  R.rsp (>= 0.44.0)
 URL: https://r-lum.github.io/RCarb/
 BugReports: https://github.com/R-Lum/RCarb/issues
 License: GPL-3
 Encoding: UTF-8
+Language: en-GB
 LazyData: true
 VignetteBuilder: R.rsp
 RoxygenNote: 7.1.1

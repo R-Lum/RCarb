@@ -17,13 +17,13 @@ Status](https://travis-ci.org/R-Lum/RCarb.svg?branch=master)](https://travis-ci.
 status](https://ci.appveyor.com/api/projects/status/bjfy5lkqblrgvo15?svg=true)](https://ci.appveyor.com/project/RLumSK/rcarb)
 [![codecov](https://codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg)](https://codecov.io/gh/R-Lum/RCarb)
 
-The **R** package ‘RCarb’ provides a collection of various R functions
+The **R** package `'RCarb'` provides a collection of various R functions
 to model dose rates in carbonate-rich samples. The package is a
-translation of the ‘MATLAB’ program *Carb* by Roger P. Nathan.
+translation of the `'MATLAB'` program *Carb* by Roger P. Nathan.
 
 ## Installation of the developer version
 
-To install the latest development builds of ‘RCarb’ directly from
+To install the latest development builds of `'RCarb'` directly from
 GitHub, run
 
 ``` r
@@ -32,8 +32,8 @@ if(!require("devtools"))
 devtools::install_github("R-Lum/RCarb@master")
 ```
 
-To install a developer build other than ‘master’, replace the term
-‘master’ in the codeline by the name of the wanted developer build
+To install a developer build other than `'master'`, replace the term
+`'master'` in the code line by the name of the wanted developer build
 (not available yet).
 
 Please further note that our ‘GitHub’ versions are developer versions
