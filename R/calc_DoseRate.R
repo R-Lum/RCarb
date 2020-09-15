@@ -1,6 +1,6 @@
 #' @title Internal function to calculate date for a given maximum time
 #'
-#' @description This is the real worker function based on the *Carb* MATLAB function 'datalu1.m'. To
+#' @description This is the real worker function based on the *Carb* MATLAB function `'datalu1.m'`. To
 #' avoid overhead, the function does not double check the input parameters and is thus not exposed
 #' and it does not appear in the manual
 #'
@@ -8,7 +8,7 @@
 #'
 #' @param data [data.frame] (**required**): input data, only a data.frame is allowed
 #'
-#' @param DR_conv_factors [character] (*optional*): select dose rate converson factors, `NULL`
+#' @param DR_conv_factors [character] (*optional*): select dose rate conversion factors, `NULL`
 #' uses the original *Carb* values
 #'
 #' @param ref [list] (**optional**): list of reference data provided with this package, if nothing
@@ -21,8 +21,8 @@
 #' @param mode_optim [logical] (with default): switch output mode, if `TRUE` only a scalar is returned,
 #' this reduces the used memory consumption for the calculation
 #'
-#' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France) based
-#' on the MATLAB code in the file 'datalu1.m' from Carb_2007a
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom) based
+#' on the MATLAB code in the file `'datalu1.m'` from `Carb_2007a`
 #'
 #' @section Function version: 0.2.0
 #'

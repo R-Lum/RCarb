@@ -3,16 +3,16 @@
 #' @description This function models the dose rate evolution in carbonate enrich environments. For the
 #' calculation internal functions are called.
 #'
-#' @details This function is the starting point for the dose rate modelling for carbonat enrich
-#' environments. It provides basically the same functionality as the original version of 'Carb', i.e.
+#' @details This function is the starting point for the dose rate modelling for carbonate enrich
+#' environments. It provides basically the same functionality as the original version of `'Carb'`, i.e.
 #' you should be also aware of the limitations of this modelling approach. In particular: The model
 #' assumes a linear carbonate mass increase due to post-depositional processes. Please read the
 #' references cited blow.\cr
 #'
 #' **Uncertainty estimation**
 #'
-#' For estimating the uncertainties, Monte-Carloe (MC) simulation runs are used. For very
-#' small values (close to 0) this can, however, lead to edge effects (similar in 'Carb') since
+#' For estimating the uncertainties, Monte-Carlo (MC) simulation runs are used. For very
+#' small values (close to 0) this can, however, lead to edge effects (similar in `'Carb'`) since
 #' values below 0 are set to 0.
 #'
 #' @param data [data.frame] (**required**): input data following the structure given
@@ -76,7 +76,7 @@
 #' )
 #'
 #'
-#' @author Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060, Université Bordeaux Montagine (France); based
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom); based
 #' on 'MATLAB' code given in file Carb_2007a.m of *Carb*
 #'
 #' @section Function version: 0.2.1

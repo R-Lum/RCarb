@@ -8,9 +8,9 @@
 #' @title Calculate Ra population based in a given activity ratio and time
 #'
 #' @description This function is a direct translation from the Matlab function `rad_pop_LU` to R from the
-#' software 'Carb' (version 2007a). The function is called from within the function [calc_DoseRate].
+#' software `'Carb'` (version 2007a). The function is called from within the function [calc_DoseRate].
 #'
-#' @author Sebastian Kreutzer, IRAMAT-CRP2A, Université Bordeaux Montagine (France); based on Matlab
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom); based on Matlab
 #' code provided by the authors of 'Carb'
 #'
 #' @param ACT_RATIO [numeric] (**required**): activity ratio (a scalar)
@@ -71,8 +71,8 @@
 #+++++++++++++++++++++
 #' @title Point interpolation on for irregular surface data
 #'
-#' @description This function mimics the MATLAB function 'griddata', addpated for the specific
-#' problemns in context of this package. Internally the function [interp::interpp] is used. Please
+#' @description This function mimics the MATLAB function `'griddata'`, adapted for the specific
+#' problems in context of this package. Internally the function [interp::interpp] is used. Please
 #' note that this function should not be used outside of the context of this package.
 #'
 #' @return The function returns a vector with the interpolated values
@@ -89,7 +89,7 @@
 #'
 #' @param ... further arguments passed to [inter::interpp]
 #'
-#' @author Sebastian Kreutzer, IRAMAT-CRP2A, Université Bordeaux Montagine (France)
+#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
 #'
 #' @section Function version: 0.1.0
 #'
