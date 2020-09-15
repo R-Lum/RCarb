@@ -10,6 +10,7 @@ header-includes:
 
 ### Bugfixes and changes
 
+* This version of the package requires R >= 3.5.0
 * If an external dataset was used, the `model_DoseRate()` sometimes did not display the
 sample id correctly in the terminal output; corrected.
 * `model_DoseRate()` gained a new argument `par_local`, which is `TRUE` by default. If 
