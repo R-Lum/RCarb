@@ -41,7 +41,7 @@
 #' @param par_local [logical] (with default): enables/disable local par settings, If set
 #' to `FALSE` all global par settings are accepted.
 #'
-#' @param ... further arguments passed to the underyling plot functions, see also details for further information. Supported standard arguments are `mfrow`, `xlim`, `xlab`.
+#' @param ... further arguments passed to the underlying plot functions, see also details for further information. Supported standard arguments are `mfrow`, `xlim`, `xlab`.
 #'
 #' @return The function returns numerical and graphical output
 #'
@@ -60,7 +60,7 @@
 #' black line, the more reliable are the given error margins. \cr
 #'
 #' **Lower plot:** Totally absorbed dose over time. The plot is an representation of the 'new'
-#' age based on the carbonat modelling.
+#' age based on the carbonate modelling.
 #'
 #'
 #' @examples

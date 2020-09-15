@@ -43,7 +43,7 @@ now corrected (internal function `.calc_DoseRata()`). This bug already existed i
 
 ## RCarb 0.1.1 (2018-11-20)
 
-* Internal changes only to account for CRAN comments on inital submission.
+* Internal changes only to account for CRAN comments on initial submission.
 
 ## RCarb 0.1.0 (2018-11-12)
 

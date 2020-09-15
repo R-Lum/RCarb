@@ -68,8 +68,8 @@ NULL
 #' data, `NA` values have been replaced by 0 and columns and rows have been transposed. Samples
 #' are now organised in rows and parameters in columns.
 #'
-#' The data can be used to test 'RCarb' and play with the secondary carbonatisation process.
-#' Sample HD107 was remnamed to LV107 for the sake of consistency with Fig. 4 in Mauz \& Hoffmann (2014).
+#' The data can be used to test `'RCarb'` and play with the secondary carbonatisation process.
+#' Sample HD107 was renamed to LV107 for the sake of consistency with Fig. 4 in Mauz \& Hoffmann (2014).
 #'
 #'
 #' @format
@@ -85,8 +85,8 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @author Mauz \& Hoffmann (2014), with minor modifcations by Sebastian Kreutzer, IRAMAT-CRP2A, UMR 5060,
-#' CNRS-Université Bordeaux Montaigne (France)
+#' @author Mauz \& Hoffmann (2014), with minor modifications by Sebastian Kreutzer,Geography & Earth
+#' Sciences, Aberystwyth University (United Kingdom)
 #'
 #'
 #' @references
@@ -148,20 +148,20 @@ NULL
 #'
 #' \tabular{llll}{
 #' **NAME** \tab **TYPE** \tab **DIM** \tab **DESCRIPTION**\cr
-#' DATAek \tab	 `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for K\cr
-#' DATAet \tab	 `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th \cr
-#' DATAet230 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th-230\cr
-#' DATAeu 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U\cr
-#' DATAeu234 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U-234\cr
-#' DATAeu238 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U-238\cr
-#' DATApk \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for K\cr
-#' DATApt \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for T\cr
-#' DATApt230 \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for Th-230\cr
-#' DATApu \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U\cr
-#' DATApu234 \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-234\cr
-#' DATApu238 \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-238\cr
-#' mejdahl \tab	 `data.frame` \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979) \cr
-#' DR_conv_factors \tab `data.frame` \tab 4 x 13 \tab beta and gamma dose rate conversion factors used internally (see details)
+#' `DATAek` \tab	 `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for K\cr
+#' `DATAet` \tab	 `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th \cr
+#' `DATAet230` 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for Th-230\cr
+#' `DATAeu` 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U\cr
+#' `DATAeu234` 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U-234\cr
+#' `DATAeu238` 	\tab `matrix` \tab 4 x 4 \tab correction factors for electrons for water and carbonate to sediment mass ratio for U-238\cr
+#' `DATApk` \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for K\cr
+#' `DATApt` \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for T\cr
+#' `DATApt230` \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for Th-230\cr
+#' `DATApu` \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U\cr
+#' `DATApu234` \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-234\cr
+#' `DATApu238` \tab	 `matrix` \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-238\cr
+#' `mejdahl` \tab	 `data.frame` \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979) \cr
+#' `DR_conv_factors` \tab `data.frame` \tab 4 x 13 \tab beta and gamma dose rate conversion factors used internally (see details)
 #' }
 #'
 #' @section Version: 0.2.0
@@ -178,7 +178,7 @@ NULL
 #'
 #' Liritzis, I., Stamoulis, K., Papachristodoulou, C., Ioannides, K., 2013.
 #' A Re-Evaluation of Radiation Dose-Rate Conversion Factors.
-#' Mediterranean Arhaeology and Archaeometry 12, 1–15.
+#' Mediterranean Archaeology and Archaeometry 12, 1–15.
 #' \url{http://maajournal.com/Issues/2012/pdf/FullTextLiritzis.pdf}
 #'
 #' Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
