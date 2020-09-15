@@ -4,13 +4,15 @@
 \name{Example_Data}
 \alias{Example_Data}
 \title{Example data}
-\format{\code{Example_Data}: \link{data.frame} (28 x 29)
+\format{
+\code{Example_Data}: \link{data.frame} (28 x 29)
 
 Each column has two attributes:
 \itemize{
 \item \code{UNIT}: the unit, so far applicable, e.g. "ppm"
 \item \code{DESCRIPTION}: the column description
-}}
+}
+}
 \description{
 Example data as shipped with \emph{Carb} by Mauz \& Hoffmann (2014). In contrast to the original
 data, \code{NA} values have been replaced by 0 and columns and rows have been transposed. Samples

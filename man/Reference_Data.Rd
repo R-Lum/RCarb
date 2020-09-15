@@ -4,7 +4,8 @@
 \name{Reference_Data}
 \alias{Reference_Data}
 \title{Reference data}
-\format{\code{Reference_Data}: \link{list} \cr
+\format{
+\code{Reference_Data}: \link{list} \cr
 
 \tabular{llll}{
 \strong{NAME} \tab \strong{TYPE} \tab \strong{DIM} \tab \strong{DESCRIPTION}\cr
@@ -22,7 +23,8 @@ DATApu234 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for
 DATApu238 \tab	 \code{matrix} \tab 4 x 4 \tab correction factors for photons for water and carbonate to sediment mass ratio for U-238\cr
 mejdahl \tab	 \code{data.frame} \tab 36 x 4 \tab beta-dose attenuation values for quartz grains according to Mejdahl (1979) \cr
 DR_conv_factors \tab \code{data.frame} \tab 4 x 13 \tab beta and gamma dose rate conversion factors used internally (see details)
-}}
+}
+}
 \description{
 Reference data and correction factors for beta and gamma radiation used for internal calculations.
 These values are used instead of the correction factors given in Aitken (1985) for the carbonate model.

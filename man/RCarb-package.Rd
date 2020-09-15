@@ -15,11 +15,19 @@ context of trapped charged dating (e.g., luminescence dating) applications.
 }
 \details{
 \strong{Funding}
-
-Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the package was supported
+\itemize{
+\item Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the package was supported
 by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).
+\item From 2020, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
+research and innovation programme under the Marie Skłodowska-Curie grant agreement
+No 844457 (project: CREDit).
+}
 }
 \references{
+Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. “RCarb”:
+Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R -.
+Ancient TL 37, 1–8.
+
 This package bases on a 'MATLAB' programme with name 'Carb', details can be found the
 following references:\cr
 
