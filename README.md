@@ -58,6 +58,7 @@ details.
 
   - [Luminescence](https://github.com/R-Lum/Luminescence)
   - [RLumModel](https://github.com/R-Lum/RLumModel)
+  - [RLumCarlo](https://github.com/R-Lum/RLumCarlo)
   - [RLumShiny](https://github.com/R-Lum/RLumShiny)
 
 ## References

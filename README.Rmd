@@ -51,6 +51,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 * [Luminescence](https://github.com/R-Lum/Luminescence)
 * [RLumModel](https://github.com/R-Lum/RLumModel)
+* [RLumCarlo](https://github.com/R-Lum/RLumCarlo)
 * [RLumShiny](https://github.com/R-Lum/RLumShiny) 
 
 ## References
