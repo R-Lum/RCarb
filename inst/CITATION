@@ -1,0 +1,11 @@
+citHeader("To cite the R package 'RCarb' please use the first two entries, and apply the rest if applicable:")
+citation(auto = meta)
+
+bibentry(bibtype = "Article",
+         title = "'RCarb': Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R -",
+         author = "Sebastian Kreutzer, Barbara Mauz, Loïc Martin, Norbert Mercier",
+         year = "2019",
+         journal = "Ancient TL",
+         volume = "37",
+         number = "2",
+         pages = "1-8")
