@@ -1,4 +1,4 @@
-citHeader("To cite the R package 'RCarb' please use the first two entries, and apply the rest if applicable:")
+citHeader("To cite the R package 'RCarb' please apply the entries below where applicable:")
 citation(auto = meta)
 
 bibentry(bibtype = "Article",

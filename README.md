@@ -63,6 +63,11 @@ details.
 
 ## References
 
+Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. ‘RCarb’: Dose
+Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in
+R -. Ancient TL 37, 1–8.
+<http://ancienttl.org/ATL_37-2_2019/ATL_37-2_Kreutzer_p1-8.pdf>
+
 Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of
 carbonate-rich sediments for trapped charge dating. Radiation
 Measurements 43, 14–25. doi:
