@@ -16,6 +16,7 @@ environment:
   global:
     WARNINGS_ARE_ERRORS: 1
     USE_RTOOLS: true
+    PKGTYPE: both
 
   matrix:
   - R_VERSION: devel
