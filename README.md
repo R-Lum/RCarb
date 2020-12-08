@@ -57,10 +57,10 @@ details.
 
 ## Related projects
 
-  - [Luminescence](https://github.com/R-Lum/Luminescence)
-  - [RLumModel](https://github.com/R-Lum/RLumModel)
-  - [RLumCarlo](https://github.com/R-Lum/RLumCarlo)
-  - [RLumShiny](https://github.com/R-Lum/RLumShiny)
+-   [Luminescence](https://github.com/R-Lum/Luminescence)
+-   [RLumModel](https://github.com/R-Lum/RLumModel)
+-   [RLumCarlo](https://github.com/R-Lum/RLumCarlo)
+-   [RLumShiny](https://github.com/R-Lum/RLumShiny)
 
 ## References
 
@@ -87,10 +87,10 @@ College, Oxford. <https://ora.ox.ac.uk/objects/ora:6421>
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
-  - Between 2018-2019, the work of Sebastian Kreutzer as maintainer of
+-   Between 2018-2019, the work of Sebastian Kreutzer as maintainer of
     the package was supported by LabEx LaScArBxSK (ANR -
     n. ANR-10-LABX-52).
 
-  - From 2020, Sebastian Kreutzer received funding from the European
+-   From 2020, Sebastian Kreutzer received funding from the European
     Union’s Horizon 2020 research and innovation programme under the
     Marie Skłodowska-Curie grant agreement No 844457 (project: CREDit).
