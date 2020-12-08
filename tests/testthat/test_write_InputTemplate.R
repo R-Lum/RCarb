@@ -1,7 +1,6 @@
-context("Test write_InputTemplate()")
-
 test_that("Full function test", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ##simple run
   expect_type(write_InputTemplate(), type = "list")

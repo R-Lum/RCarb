@@ -21,7 +21,7 @@ Imports:
   interp (>= 1.0),
   matrixStats (>= 0.56.0)
 Suggests: 
-  testthat (>= 2.3.2),
+  testthat (>= 3.0.0),
   R.rsp (>= 0.44.0)
 URL: https://r-lum.github.io/RCarb/
 BugReports: https://github.com/R-Lum/RCarb/issues
