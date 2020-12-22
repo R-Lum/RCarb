@@ -1,7 +1,7 @@
 {
-  "language": ["eng"],
-  "license": ["GPL-2.0+"],
-  "title": ["RCarb: Dose Rate Modelling of Carbonate-Rich Samples "],
+  "language": "eng",
+  "license": "GPL-2.0+",
+  "title": "RCarb: Dose Rate Modelling of Carbonate-Rich Samples ",
   "related_identifiers": [
     {
       "scheme": "url",
@@ -16,14 +16,14 @@
     {
       "scheme": "doi",
       "identifier": "10.5281/zenodo.4030478",
-      "relation": "isVersionOf"
+      "relation": "isNewVersionOf"
     }
   ],
-  "version": ["0.1.5.9000-5"],
-  "references": ["Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. \"RCarb\": Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R . Ancient TL 37, 1–8."],
-  "upload_type": ["software"],
+  "version": "0.1.5.9000-6",
+  "references": "Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. \"RCarb\": Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R . Ancient TL 37, 1–8.",
+  "upload_type": "software",
   "keywords": ["Luminescence dating", "Dose rate", "R"],
-  "publication_date": ["2020-12-10"],
+  "publication_date": "2020-12-10",
   "creators": [
     {
       "orcid": "0000-0002-0734-2199",
@@ -39,6 +39,6 @@
       "name": "Mauz, Barbara"
     }
   ],
-  "access_right": ["open"],
-  "description": ["<p>Translation of the 'MATLAB' program 'Carb' (Nathan and Mauz 2008 <DOI:10.1016/j.radmeas.2007.12.012>; Mauz and Hoffmann 2014) for dose rate modelling for carbonate-rich samples in the context of trapped charged dating (e.g., luminescence dating) applications. <\/p>"]
+  "access_right": "open",
+  "description": "<p>Translation of the 'MATLAB' program 'Carb' (Nathan and Mauz 2008 <DOI:10.1016/j.radmeas.2007.12.012>; Mauz and Hoffmann 2014) for dose rate modelling for carbonate-rich samples in the context of trapped charged dating (e.g., luminescence dating) applications. <\/p>"
 }
