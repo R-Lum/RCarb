@@ -12,8 +12,7 @@
 checks](https://cranchecks.info/badges/worst/RCarb)](https://cranchecks.info/pkgs/RCarb)
 [![DOI](https://zenodo.org/badge/151577249.svg)](https://zenodo.org/badge/latestdoi/151577249)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
-[![Build
-Status](https://travis-ci.org/R-Lum/RCarb.svg?branch=master)](https://travis-ci.org/R-Lum/RCarb)
+[![R-CMD-check](https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RCarb/actions)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/bjfy5lkqblrgvo15?svg=true)](https://ci.appveyor.com/project/RLumSK/rcarb)
 [![codecov](https://codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg)](https://codecov.io/gh/R-Lum/RCarb)
