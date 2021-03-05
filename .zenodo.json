@@ -6,7 +6,7 @@
     {
       "scheme": "url",
       "identifier": "https://CRAN.R-project.org/package=RCarb",
-      "relation": "references"
+      "relation": "isSupplementedBy"
     },
     {
       "scheme": "url",
@@ -16,14 +16,14 @@
     {
       "scheme": "doi",
       "identifier": "10.5281/zenodo.4030478",
-      "relation": "isNewVersionOf"
+      "relation": "isReferencedBy"
     }
   ],
-  "version": "0.1.5.9000-6",
+  "version": "0.1.5.9000-7",
   "references": "Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. \"RCarb\": Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R . Ancient TL 37, 1–8.",
   "upload_type": "software",
   "keywords": ["Luminescence dating", "Dose rate", "R"],
-  "publication_date": "2020-12-10",
+  "publication_date": "2021-01-03",
   "creators": [
     {
       "orcid": "0000-0002-0734-2199",
