@@ -14,7 +14,7 @@ vignette: >
 ---
 
 <sup>1</sup>Geography & Earth Science, Aberystwyth University (United Kingdom)<br>
-<sup>2</sup>IRAMAT-CRP2A, UMR 5060, CNRS - Université Bordeaux Montaigne (France)<br>
+<sup>2</sup>Archéosciences Bordeaux, UMR 6034, CNRS-Université Bordeaux Montaigne (France)<br>
 <sup>3</sup>Department of Geography and Geology, University of Salzburg, Salzburg (Austria)"
 
 ```{r, echo = FALSE, fig.align='center', out.width=100}
