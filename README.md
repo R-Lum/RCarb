@@ -15,7 +15,7 @@ checks](https://cranchecks.info/badges/worst/RCarb)](https://cranchecks.info/pkg
 [![R-CMD-check](https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RCarb/actions)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/bjfy5lkqblrgvo15?svg=true)](https://ci.appveyor.com/project/RLumSK/rcarb)
-[![codecov](https://codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg)](https://codecov.io/gh/R-Lum/RCarb)
+[![codecov](https://app.codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg)](https://app.codecov.io/gh/R-Lum/RCarb)
 
 The **R** package `'RCarb'` provides a collection of various R functions
 to model dose rates in carbonate-rich samples. The package is a
@@ -90,6 +90,7 @@ College, Oxford. <https://ora.ox.ac.uk/objects/ora:6421>
     the package was supported by LabEx LaScArBxSK (ANR -
     n. ANR-10-LABX-52).
 
--   From 2020, Sebastian Kreutzer received funding from the European
-    Union’s Horizon 2020 research and innovation programme under the
-    Marie Skłodowska-Curie grant agreement No 844457 (project: CREDit).
+-   Between 2020-2022, Sebastian Kreutzer received funding from the
+    European Union’s Horizon 2020 research and innovation programme
+    under the Marie Skłodowska-Curie grant agreement No 844457 (project:
+    CREDit).
