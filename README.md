@@ -13,8 +13,6 @@ checks](https://cranchecks.info/badges/worst/RCarb)](https://cranchecks.info/pkg
 [![DOI](https://zenodo.org/badge/151577249.svg)](https://zenodo.org/badge/latestdoi/151577249)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
 [![R-CMD-check](https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RCarb/actions)
-[![Build
-status](https://ci.appveyor.com/api/projects/status/bjfy5lkqblrgvo15?svg=true)](https://ci.appveyor.com/project/RLumSK/rcarb)
 [![codecov](https://app.codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg)](https://app.codecov.io/gh/R-Lum/RCarb)
 
 The **R** package `'RCarb'` provides a collection of various R functions
