@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -64,8 +60,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/R-Lum/RCarb/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/R-Lum/RCarb/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -81,55 +77,82 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="rcarb-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#rcarb-" class="anchor"></a>RCarb <img width="120px" src="reference/figures/Logo_RCarb.svg" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="rcarb-">RCarb
+<img width="120px" src="reference/figures/Logo_RCarb.svg" align="right"><a class="anchor" aria-label="anchor" href="#rcarb-"></a>
 </h1></div>
 
-<p>The <strong>R</strong> package <code>'RCarb'</code> provides a collection of various R functions to model dose rates in carbonate-rich samples. The package is a translation of the <code>'MATLAB'</code> program <em>Carb</em> by Roger P. Nathan.</p>
-<div id="installation-of-the-developer-version" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation-of-the-developer-version" class="anchor"></a>Installation of the developer version</h2>
-<p>To install the latest development builds of <code>'RCarb'</code> directly from GitHub, run</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co">if</span>(<span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st"><a href="https://devtools.r-lib.org">"devtools"</a></span>))
-  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)
-<span class="kw">devtools</span>::<span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"R-Lum/RCarb@master"</span>)
-</pre></div>
-<p>To install a developer build other than <code>'master'</code>, replace the term <code>'master'</code> in the code line by the name of the wanted developer build (not available yet).</p>
-<p>Please further note that our ‘GitHub’ versions are developer versions and subject to daily changes. For stable please versions download the package from <a href="https://CRAN.R-project.org/package=RCarb">CRAN</a>.</p>
+<p>The <strong>R</strong> package <code>'RCarb'</code> provides a
+collection of various R functions to model dose rates in carbonate-rich
+samples. The package is a translation of the <code>'MATLAB'</code>
+program <em>Carb</em> by Roger P. Nathan.</p>
+<div class="section level2">
+<h2 id="installation-of-the-developer-version">Installation of the developer version<a class="anchor" aria-label="anchor" href="#installation-of-the-developer-version"></a>
+</h2>
+<p>To install the latest development builds of <code>'RCarb'</code>
+directly from GitHub, run</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://devtools.r-lib.org/" class="external-link">"devtools"</a></span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"R-Lum/RCarb@master"</span><span class="op">)</span></code></pre></div>
+<p>To install a developer build other than <code>'master'</code>,
+replace the term <code>'master'</code> in the code line by the name of
+the wanted developer build (not available yet).</p>
+<p>Please further note that our ‘GitHub’ versions are developer versions
+and subject to daily changes. For stable please versions download the
+package from <a href="https://CRAN.R-project.org/package=RCarb" class="external-link">CRAN</a>.</p>
 </div>
-<div id="license" class="section level2">
-<h2 class="hasAnchor">
-<a href="#license" class="anchor"></a>License</h2>
-<p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.</p>
-<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <a href="https://github.com/R-Lum/RCarb/blob/master/LICENSE">GNU General Public License</a> for more details.</p>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or any later
+version.</p>
+<p>This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the <a href="https://github.com/R-Lum/RCarb/blob/master/LICENSE" class="external-link">GNU General
+Public License</a> for more details.</p>
 </div>
-<div id="related-projects" class="section level2">
-<h2 class="hasAnchor">
-<a href="#related-projects" class="anchor"></a>Related projects</h2>
+<div class="section level2">
+<h2 id="related-projects">Related projects<a class="anchor" aria-label="anchor" href="#related-projects"></a>
+</h2>
 <ul>
-<li><a href="https://github.com/R-Lum/Luminescence">Luminescence</a></li>
-<li><a href="https://github.com/R-Lum/RLumModel">RLumModel</a></li>
-<li><a href="https://github.com/R-Lum/RLumCarlo">RLumCarlo</a></li>
-<li><a href="https://github.com/R-Lum/RLumShiny">RLumShiny</a></li>
+<li><a href="https://github.com/R-Lum/Luminescence" class="external-link">Luminescence</a></li>
+<li><a href="https://github.com/R-Lum/RLumModel" class="external-link">RLumModel</a></li>
+<li><a href="https://github.com/R-Lum/RLumCarlo" class="external-link">RLumCarlo</a></li>
+<li><a href="https://github.com/R-Lum/RLumShiny" class="external-link">RLumShiny</a></li>
 </ul>
 </div>
-<div id="references" class="section level2">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
-<p>Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. ‘RCarb’: Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R -. Ancient TL 37, 1–8. <a href="http://ancienttl.org/ATL_37-2_2019/ATL_37-2_Kreutzer_p1-8.pdf" class="uri">http://ancienttl.org/ATL_37-2_2019/ATL_37-2_Kreutzer_p1-8.pdf</a></p>
-<p>Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating. Radiation Measurements 43, 14–25. doi: <a href="https://dx.doi.org/10.1016/j.radmeas.2007.12.012">10.1016/j.radmeas.2007.12.012</a></p>
-<p>Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24–32. <a href="http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf" class="uri">http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf</a></p>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
+<p>Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. ‘RCarb’: Dose
+Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in
+R -. Ancient TL 37, 1–8. <a href="http://ancienttl.org/ATL_37-2_2019/ATL_37-2_Kreutzer_p1-8.pdf" class="external-link uri">http://ancienttl.org/ATL_37-2_2019/ATL_37-2_Kreutzer_p1-8.pdf</a></p>
+<p>Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of
+carbonate-rich sediments for trapped charge dating. Radiation
+Measurements 43, 14–25. doi: <a href="https://dx.doi.org/10.1016/j.radmeas.2007.12.012" class="external-link">10.1016/j.radmeas.2007.12.012</a></p>
+<p>Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced
+water: Carb, the model for estimating the dose rate of carbonate-rich
+samples. Ancient TL 32, 24–32. <a href="http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf" class="external-link uri">http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf</a></p>
 <p><strong>Further reading</strong></p>
-<p>Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating. DPhil thesis, St Hugh’s College, Oxford. <a href="https://ora.ox.ac.uk/objects/ora:6421" class="uri">https://ora.ox.ac.uk/objects/ora:6421</a></p>
+<p>Nathan, R.P., 2010. Numerical modelling of environmental dose rate
+and its application to trapped-charge dating. DPhil thesis, St Hugh’s
+College, Oxford. <a href="https://ora.ox.ac.uk/objects/ora:6421" class="external-link uri">https://ora.ox.ac.uk/objects/ora:6421</a></p>
 </div>
-<div id="-funding" class="section level2">
-<h2 class="hasAnchor">
-<a href="#-funding" class="anchor"></a><span class="glyphicon glyphicon-euro"></span> Funding</h2>
+<div class="section level2">
+<h2 id="-funding">
+<span class="glyphicon glyphicon-euro"></span> Funding<a class="anchor" aria-label="anchor" href="#-funding"></a>
+</h2>
 <ul>
-<li><p>Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the package was supported by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).</p></li>
-<li><p>From 2020, Sebastian Kreutzer received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 844457 (project: CREDit).</p></li>
+<li><p>Between 2018-2019, the work of Sebastian Kreutzer as maintainer
+of the package was supported by LabEx LaScArBxSK (ANR -
+n. ANR-10-LABX-52).</p></li>
+<li><p>Between 2020-2022, Sebastian Kreutzer received funding from the
+European Union’s Horizon 2020 research and innovation programme under
+the Marie Skłodowska-Curie grant agreement No 844457 (project:
+CREDit).</p></li>
 </ul>
 </div>
 </div>
@@ -137,59 +160,64 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=RCarb">https://​cloud.r-project.org/​package=RCarb</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/R-Lum/RCarb/">https://​github.com/​R-Lum/​RCarb/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/R-Lum/RCarb/issues">https://​github.com/​R-Lum/​RCarb/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
-</ul>
-</div>
-<div class="citation">
-<h2>Citation</h2>
-<ul class="list-unstyled">
-<li><a href="authors.html">Citing RCarb</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Sebastian Kreutzer <br><small class="roles"> Author, translator, maintainer, data contributor </small> <a href="https://orcid.org/0000-0002-0734-2199" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Roger P. Nathan <br><small class="roles"> Author, copyright holder </small>  </li>
-<li>Barbara Mauz <br><small class="roles"> Author, copyright holder </small> <a href="https://orcid.org/0000-0003-1504-333X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="https://cloud.r-project.org/package=RCarb" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/R-Lum/RCarb/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/R-Lum/RCarb/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://CRAN.R-project.org/package=RCarb"><img src="https://www.r-pkg.org/badges/version/RCarb" alt="CRAN"></a></li>
-<li><a href="https://cranchecks.info/pkgs/RCarb"><img src="https://cranchecks.info/badges/worst/RCarb" alt="cran checks"></a></li>
-<li><a href="https://zenodo.org/badge/latestdoi/151577249"><img src="https://zenodo.org/badge/151577249.svg" alt="DOI"></a></li>
-<li><a href="https://www.r-pkg.org/pkg/RCarb"><img src="https://cranlogs.r-pkg.org/badges/grand-total/RCarb" alt="Downloads"></a></li>
-<li><a href="https://travis-ci.org/R-Lum/RCarb"><img src="https://travis-ci.org/R-Lum/RCarb.svg?branch=master" alt="Build Status"></a></li>
-<li><a href="https://ci.appveyor.com/project/RLumSK/rcarb"><img src="https://ci.appveyor.com/api/projects/status/bjfy5lkqblrgvo15?svg=true" alt="Build status"></a></li>
-<li><a href="https://codecov.io/gh/R-Lum/RCarb"><img src="https://codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing RCarb</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Sebastian Kreutzer <br><small class="roles"> Author, translator, maintainer, data contributor </small> <a href="https://orcid.org/0000-0002-0734-2199" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Roger P. Nathan <br><small class="roles"> Author, copyright holder </small>  </li>
+<li>Barbara Mauz <br><small class="roles"> Author, copyright holder </small> <a href="https://orcid.org/0000-0003-1504-333X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://CRAN.R-project.org/package=RCarb" class="external-link"><img src="https://www.r-pkg.org/badges/version/RCarb" alt="CRAN"></a></li>
+<li><a href="https://cranchecks.info/pkgs/RCarb" class="external-link"><img src="https://cranchecks.info/badges/worst/RCarb" alt="cran checks"></a></li>
+<li><a href="https://zenodo.org/badge/latestdoi/151577249" class="external-link"><img src="https://zenodo.org/badge/151577249.svg" alt="DOI"></a></li>
+<li><a href="https://www.r-pkg.org/pkg/RCarb" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/RCarb" alt="Downloads"></a></li>
+<li><a href="https://github.com/R-Lum/RCarb/actions" class="external-link"><img src="https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://ci.appveyor.com/project/RLumSK/rcarb" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/bjfy5lkqblrgvo15?svg=true" alt="Build status"></a></li>
+<li><a href="https://app.codecov.io/gh/R-Lum/RCarb" class="external-link"><img src="https://app.codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg" alt="codecov"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Sebastian Kreutzer, Roger P. Nathan, Barbara Mauz.</p>
+  <p></p>
+<p>Developed by Sebastian Kreutzer, Roger P. Nathan, Barbara Mauz.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+2.0.2.</p>
 </div>
 
       </footer>
@@ -197,6 +225,8 @@
 
   
 
+
+  
 
   </body>
 </html>
