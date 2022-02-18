@@ -8,6 +8,8 @@ header-includes:
 
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
+**This update requires R >= 4.0**
+
 * Update internal tests to support `'testthat'` >=3.0
 * Address a CRAN request concerning the logo of RCarb.
 
