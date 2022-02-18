@@ -9,6 +9,7 @@ header-includes:
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
 * Update internal tests to support `'testthat'` >=3.0
+* Address a CRAN request concerning the logo of RCarb.
 
 ## RCarb 0.1.4 (2020-09-15)
 

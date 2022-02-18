@@ -5,7 +5,7 @@
 #'
 #'
 #' \if{html}{
-#' \figure{Logo_RCarb.svg}{options: width="50px" alt="https://github.com/R-Lum/RCarb"}\cr
+#' \figure{Logo_RCarb.svg}{options: width="50" alt="https://github.com/R-Lum/RCarb"}\cr
 #' }
 #'
 #'
