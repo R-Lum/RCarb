@@ -8,50 +8,5 @@ header-includes:
 
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-**This update requires R >= 4.0**
+* Dummy
 
-* Update internal tests to support `'testthat'` >=3.0
-* Address a CRAN request concerning the logo of RCarb.
-
-## RCarb 0.1.4 (2020-09-15)
-
-### Bugfixes and changes
-
-* This version of the package requires R >= 3.5.0
-* If an external dataset was used, the `model_DoseRate()` sometimes did not display the
-sample id correctly in the terminal output; corrected.
-* `model_DoseRate()` gained a new argument `par_local`, which is `TRUE` by default. If 
-set to `FALSE` all global par settings are accepted.
-
-## RCarb 0.1.3 (2019-06-02)
-
-### New features 
-* The reference dataset got a new dataset called `Reference_Data$DR_conv_factors` to support 
-different dose rate conversion factors
-* The function `model_DoseRate()` gained are new argument `DR_conv_factors` to support 
-different dose rate conversion factors
-
-### Bugfixes
-
-* In case values for U-238 and U-234 were provided, for the gamma-dose rate contribution, 
-erroneously the beta-dose water correction factors were used; 
-now corrected (internal function `.calc_DoseRata()`). This bug already existed in *Carb* and was probably introduced by copy & paste actions. 
-
-### Other modifications
-
-* Add README.md
-* Modify output graphics and add more information
-* Update dependency and package version requirements
-
-## RCarb 0.1.2 (2018-12-02)
-
-* Update internal references
-* Modify example in write_InputTemplate() to comply with CRAN requests
-
-## RCarb 0.1.1 (2018-11-20)
-
-* Internal changes only to account for CRAN comments on initial submission.
-
-## RCarb 0.1.0 (2018-11-12)
-
-* Initial version
