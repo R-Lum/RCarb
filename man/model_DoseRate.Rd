@@ -106,7 +106,7 @@ txtProgressBar = FALSE
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.5. https://r-lum.github.io/RCarb/
+Kreutzer, S., 2022. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.6.9000-1. https://r-lum.github.io/RCarb/
 }
 
 \references{
