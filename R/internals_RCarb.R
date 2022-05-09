@@ -10,7 +10,7 @@
 #' @description This function is a direct translation from the Matlab function `rad_pop_LU` to R from the
 #' software `'Carb'` (version 2007a). The function is called from within the function [calc_DoseRate].
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom); based on Matlab
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany); based on Matlab
 #' code provided by the authors of 'Carb'
 #'
 #' @param ACT_RATIO [numeric] (**required**): activity ratio (a scalar)
@@ -89,7 +89,7 @@
 #'
 #' @param ... further arguments passed to [inter::interpp]
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 #'
 #' @section Function version: 0.1.0
 #'

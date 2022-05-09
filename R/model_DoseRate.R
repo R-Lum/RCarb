@@ -76,7 +76,7 @@
 #' )
 #'
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom); based
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany); based
 #' on 'MATLAB' code given in file Carb_2007a.m of *Carb*
 #'
 #' @section Function version: 0.2.1

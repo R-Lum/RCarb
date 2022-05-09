@@ -9,7 +9,7 @@
 #' @param ... additional arguments that can be passed to function [write.table] if `file != NULL`.
 #' Supported arguments are: `sep`, `dec`, `fileEncoding`
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom)
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 #'
 #' @section Function version:  0.1.0
 #'

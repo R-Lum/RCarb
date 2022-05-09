@@ -21,7 +21,7 @@
 #' @param mode_optim [logical] (with default): switch output mode, if `TRUE` only a scalar is returned,
 #' this reduces the used memory consumption for the calculation
 #'
-#' @author Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom) based
+#' @author Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany) based
 #' on the MATLAB code in the file `'datalu1.m'` from `Carb_2007a`
 #'
 #' @section Function version: 0.2.0
