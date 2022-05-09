@@ -106,7 +106,7 @@ txtProgressBar = FALSE
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2022. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.6.9000-1. https://r-lum.github.io/RCarb/
+Kreutzer, S., 2022. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.6.9000-2. https://r-lum.github.io/RCarb/
 }
 
 \references{
@@ -125,7 +125,7 @@ Zimmerman, D.W., 1971. Thermoluminescent dating using fine grains from pottery.
 Archaeometry 13, 29–52.\doi{10.1111/j.1475-4754.1971.tb00028.x}
 }
 \author{
-Sebastian Kreutzer, Geography & Earth Sciences, Aberystwyth University (United Kingdom); based
+Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany); based
 on 'MATLAB' code given in file Carb_2007a.m of \emph{Carb}
 }
 \keyword{dplot}
