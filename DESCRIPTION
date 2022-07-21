@@ -1,8 +1,8 @@
 Package: RCarb
 Type: Package
 Title: Dose Rate Modelling of Carbonate-Rich Samples 
-Version: 0.1.6.9000-2
-Date: 2022-05-09
+Version: 0.1.6
+Date: 2022-07-21
 Author: Sebastian Kreutzer [aut, trl, cre, dtc] (<https://orcid.org/0000-0002-0734-2199>),
   Roger P. Nathan [aut, cph],
   Barbara Mauz [aut, cph] (<https://orcid.org/0000-0003-1504-333X>)
@@ -15,14 +15,14 @@ Authors@R: c(
 Maintainer: Sebastian Kreutzer <sebastian.kreutzer@uni-heidelberg.de>
 Description: Translation of the 'MATLAB' program 'Carb' (Nathan and Mauz 2008 <DOI:10.1016/j.radmeas.2007.12.012>; Mauz and Hoffmann 2014) for dose rate modelling for carbonate-rich samples in the context of trapped charged dating (e.g., luminescence dating) applications. 
 Depends: 
-  R (>= 4.0),
+  R (>= 4.1),
   utils
 Imports: 
-  interp (>= 1.0),
-  matrixStats (>= 0.61.0)
+  interp (>= 1.1),
+  matrixStats (>= 0.62.0)
 Suggests: 
-  testthat (>= 3.1.0),
-  R.rsp (>= 0.44.0)
+  testthat (>= 3.1.4),
+  R.rsp (>= 0.45.0)
 URL: https://r-lum.github.io/RCarb/
 BugReports: https://github.com/R-Lum/RCarb/issues
 License: GPL-3
@@ -30,4 +30,4 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 VignetteBuilder: R.rsp
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
