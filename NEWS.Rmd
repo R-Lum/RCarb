@@ -8,5 +8,5 @@ header-includes:
 
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-* Dummy
+* Internal changes CRAN message `Escaped LaTeX specials: \&` 
 

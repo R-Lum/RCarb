@@ -16,7 +16,7 @@
 #' * Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the package was supported
 #' by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).
 #'
-#' * From 2020, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
+#' * From 01/2020-04/2022, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
 #' research and innovation programme under the Marie Skłodowska-Curie grant agreement
 #' No 844457 (project: CREDit).
 #'
@@ -64,12 +64,12 @@ NULL
 #' @name Example_Data
 #'
 #' @description
-#' Example data as shipped with *Carb* by Mauz \& Hoffmann (2014). In contrast to the original
+#' Example data as shipped with *Carb* by Mauz & Hoffmann (2014). In contrast to the original
 #' data, `NA` values have been replaced by 0 and columns and rows have been transposed. Samples
 #' are now organised in rows and parameters in columns.
 #'
 #' The data can be used to test `'RCarb'` and play with the secondary carbonatisation process.
-#' Sample HD107 was renamed to LV107 for the sake of consistency with Fig. 4 in Mauz \& Hoffmann (2014).
+#' Sample HD107 was renamed to LV107 for the sake of consistency with Fig. 4 in Mauz & Hoffmann (2014).
 #'
 #'
 #' @format
@@ -85,7 +85,7 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @author Mauz \& Hoffmann (2014), with minor modifications by Sebastian Kreutzer,Geography & Earth
+#' @author Mauz & Hoffmann (2014), with minor modifications by Sebastian Kreutzer,Geography & Earth
 #' Sciences, Aberystwyth University (United Kingdom)
 #'
 #'
@@ -123,23 +123,23 @@ NULL
 #' of U, Th, and K to dose rate values. Historically *Carb* (and thus 'RCarb') as its own dose rate
 #' conversion factors, which differ slightly from other published values. To provide a consistent
 #' calculation approach by default the 'old' *Carb* values are used, but the user can further
-#' switch (see [model_DoseRate]) to values provided by Adamiec \& Aitken (1998), Guérin et al. (2011)
+#' switch (see [model_DoseRate]) to values provided by Adamiec & Aitken (1998), Guérin et al. (2011)
 #' or Liritzis et al (2013).
 #'
 #' Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
-#' on the origin of these data we refer to Nathan \& Mauz (2008) and Nathan (2010).\cr
+#' on the origin of these data we refer to Nathan & Mauz (2008) and Nathan (2010).\cr
 #'
-#' **Nuclear data origin according to Nathan \& Mauz (2008)**
+#' **Nuclear data origin according to Nathan & Mauz (2008)**
 #'
 #' The gamma primary energy spectra of uranium, thorium and potassium are drawn from
 #' Evaluated Nuclear Structure Data File (ENSDF) database at \url{http://www.nndc.bnl.gov} (2002-01-16)
 #' and the beta primary energy spectra was derived from ENSDF end-point energies using a
-#' Fermi beta decay model (Evans, 1955) modified by Behrens \& Szybisz (1976).
+#' Fermi beta decay model (Evans, 1955) modified by Behrens & Szybisz (1976).
 #' For the simulations of the collisional mass stopping powers for quartz the software ESTAR
 #' (Berger et al., 2000) was used. The mass energy-absorption coefficients for quartz were
-#' tabulated by Hubbell \& Seltzer (2004).
+#' tabulated by Hubbell & Seltzer (2004).
 #'
-#' *For further details and references please read Nathan \& Mauz (2008)*
+#' *For further details and references please read Nathan & Mauz (2008)*
 #'
 #'
 #' @format
