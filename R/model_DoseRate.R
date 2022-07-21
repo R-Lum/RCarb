@@ -118,7 +118,7 @@ model_DoseRate <- function(
 
   ##we keep it as simple as possible, only a data.frame is allowed, all subsequent tests
   ##are handed over to the code below
-  if(class(data) == "data.frame" &&
+  if(inherits(data, "data.frame") &&
      nrow(data) > 1) {
 
     ##split input in a list
@@ -137,7 +137,7 @@ model_DoseRate <- function(
     results_list <- lapply(data_list, function(x){
       temp <- try(do.call(model_DoseRate, c(list(data = x),args)))
 
-      if(class(temp) == "try-error"){
+      if(inherits(temp, "try-error")){
         try(stop(paste0("[model_DoseRate()] Calculation for sample ", x[[1]], " failed. NULL returned!"),
                  call. = FALSE))
         return(NULL)
@@ -165,7 +165,7 @@ model_DoseRate <- function(
   ##avoid additional overhead
 
   ##checks for data
-  if (class(data) != "data.frame")
+  if (!inherits(data, "data.frame"))
     stop("[model_DoseRate()] 'data' is not a 'data.frame'", call. = FALSE)
   if (nrow(data) == 0)
     stop("[model_DoseRate()] 'data' is empty!", call. = FALSE)

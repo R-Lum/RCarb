@@ -287,7 +287,7 @@
   ##sometimes the input values are not meaningful (for example data row 23 in the example dataset)
   ##and the approximation failed,
   ##we here provide a clean crash
-  if(class(AGE) == 'try-error' || class(AGEA) == 'try-error')
+  if(inherits(AGE, 'try-error') || inherits(AGEA, 'try-error'))
     stop("[.calc_DoseRate()] Modelling failed, please check your input data, they may not be meaningful!",
          call. = FALSE)
 
