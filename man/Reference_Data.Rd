@@ -38,23 +38,23 @@ Additionally 'RCarb' provides and own set of dose rate conversion factors to con
 of U, Th, and K to dose rate values. Historically \emph{Carb} (and thus 'RCarb') as its own dose rate
 conversion factors, which differ slightly from other published values. To provide a consistent
 calculation approach by default the 'old' \emph{Carb} values are used, but the user can further
-switch (see \link{model_DoseRate}) to values provided by Adamiec \& Aitken (1998), Guérin et al. (2011)
+switch (see \link{model_DoseRate}) to values provided by Adamiec & Aitken (1998), Guérin et al. (2011)
 or Liritzis et al (2013).
 
 Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
-on the origin of these data we refer to Nathan \& Mauz (2008) and Nathan (2010).\cr
+on the origin of these data we refer to Nathan & Mauz (2008) and Nathan (2010).\cr
 
-\strong{Nuclear data origin according to Nathan \& Mauz (2008)}
+\strong{Nuclear data origin according to Nathan & Mauz (2008)}
 
 The gamma primary energy spectra of uranium, thorium and potassium are drawn from
 Evaluated Nuclear Structure Data File (ENSDF) database at \url{http://www.nndc.bnl.gov} (2002-01-16)
 and the beta primary energy spectra was derived from ENSDF end-point energies using a
-Fermi beta decay model (Evans, 1955) modified by Behrens \& Szybisz (1976).
+Fermi beta decay model (Evans, 1955) modified by Behrens & Szybisz (1976).
 For the simulations of the collisional mass stopping powers for quartz the software ESTAR
 (Berger et al., 2000) was used. The mass energy-absorption coefficients for quartz were
-tabulated by Hubbell \& Seltzer (2004).
+tabulated by Hubbell & Seltzer (2004).
 
-\emph{For further details and references please read Nathan \& Mauz (2008)}
+\emph{For further details and references please read Nathan & Mauz (2008)}
 }
 \section{Version}{
  0.2.0

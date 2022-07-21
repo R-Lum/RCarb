@@ -88,7 +88,7 @@ College, Oxford. <https://ora.ox.ac.uk/objects/ora:6421>
     the package was supported by LabEx LaScArBxSK (ANR -
     n. ANR-10-LABX-52).
 
--   Between 2020-2022, Sebastian Kreutzer received funding from the
-    European Union’s Horizon 2020 research and innovation programme
+-   Between 01/2020-04/2022, Sebastian Kreutzer received funding from
+    the European Union’s Horizon 2020 research and innovation programme
     under the Marie Skłodowska-Curie grant agreement No 844457 (project:
     CREDit).

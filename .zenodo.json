@@ -19,11 +19,11 @@
       "relation": "isReferencedBy"
     }
   ],
-  "version": "0.1.6.9000-2",
+  "version": "0.1.6",
   "references": "Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. \"RCarb\": Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R. Ancient TL 37, 1–8.",
   "upload_type": "software",
   "keywords": ["Luminescence dating", "Dose rate", "R"],
-  "publication_date": "2022-05-09",
+  "publication_date": "2022-07-21",
   "creators": [
     {
       "orcid": "0000-0002-0734-2199",
