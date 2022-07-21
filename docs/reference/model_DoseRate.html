@@ -18,7 +18,7 @@ calculation internal functions are called."><!-- mathjax --><script src="https:/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
@@ -27,7 +27,7 @@ calculation internal functions are called."><!-- mathjax --><script src="https:/
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -65,19 +65,19 @@ calculation internal functions are called.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">model_DoseRate</span><span class="op">(</span>
-  <span class="va">data</span>,
-  DR_conv_factors <span class="op">=</span> <span class="cn">NULL</span>,
-  length_step <span class="op">=</span> <span class="fl">1L</span>,
-  max_time <span class="op">=</span> <span class="fl">500L</span>,
-  n.MC <span class="op">=</span> <span class="fl">100</span>,
-  method_control <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,
-  txtProgressBar <span class="op">=</span> <span class="cn">TRUE</span>,
-  verbose <span class="op">=</span> <span class="cn">TRUE</span>,
-  plot <span class="op">=</span> <span class="cn">TRUE</span>,
-  par_local <span class="op">=</span> <span class="cn">TRUE</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">model_DoseRate</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  DR_conv_factors <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  length_step <span class="op">=</span> <span class="fl">1L</span>,</span>
+<span>  max_time <span class="op">=</span> <span class="fl">500L</span>,</span>
+<span>  n.MC <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  method_control <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  txtProgressBar <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  par_local <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -86,39 +86,87 @@ calculation internal functions are called.</p>
 <dd><p><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a> (<strong>required</strong>): input data following the structure given
 in the example data set <code>data(Example_Data)</code>. The input <a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a> should have at least
 one row (i.e. values for one sample). For multiple rows the function is automatically re-called.</p></dd>
+
+
 <dt>DR_conv_factors</dt>
 <dd><p><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> (<em>optional</em>): applied dose rate conversion factors,
 allowed input values are <code>"Carb2007"</code>, <code>"Adamiec_Aitken_1998"</code>, <code>"Guerin_et_al_2011"</code>,
 <code>"Liritzis_et_al_2013"</code>. <code>NULL</code> triggers the default, which is <code>"Carb2007"</code></p></dd>
+
+
 <dt>length_step</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (with default): step length used for the calculation</p></dd>
+
+
 <dt>max_time</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (with default): maximum temporal search range</p></dd>
+
+
 <dt>n.MC</dt>
 <dd><p><a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (with default): number of Monte Carlo runs used for the error calculation</p></dd>
+
+
 <dt>method_control</dt>
 <dd><p>(<em>optional</em>): additional arguments that can be provided to the control the
 the modelling. See details for further information.</p></dd>
+
+
 <dt>txtProgressBar</dt>
 <dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> (with default): enables/disables the <code>txtProgressBar</code> for the MC runs</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> (with default): enables/disables verbose mode</p></dd>
+
+
 <dt>plot</dt>
 <dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> (with default): enables/disables plot output</p></dd>
+
+
 <dt>par_local</dt>
 <dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> (with default): enables/disable local par settings, If set
 to <code>FALSE</code> all global par settings are accepted.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>further arguments passed to the underlying plot functions, see also details for further information. Supported standard arguments are <code>mfrow</code>, <code>xlim</code>, <code>xlab</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The function returns numerical and graphical output
------------------------------------<br><code>[ NUMERICAL OUTPUT ]</code><br>-----------------------------------<br></p><ul><li><p>A <a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a> which is the combination of the input and values calculated by this function.</p></li>
-</ul><p>-----------------------------------<br><code>[ GRAPHICAL OUTPUT ]</code><br>-----------------------------------<br><strong>Upper plot:</strong> Dose rate evolution over time backwards. The solid black line is the calculation
+    
+
+<p>The function returns numerical and graphical output</p>
+
+
+<p>-----------------------------------<br></p>
+
+
+<p><code>[ NUMERICAL OUTPUT ]</code><br></p>
+
+
+<p>-----------------------------------<br></p>
+
+
+<ul><li><p>A <a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a> which is the combination of the input and values calculated by this function.</p></li>
+</ul><p>-----------------------------------<br></p>
+
+
+<p><code>[ GRAPHICAL OUTPUT ]</code><br></p>
+
+
+<p>-----------------------------------<br></p>
+
+
+
+<p><strong>Upper plot:</strong> Dose rate evolution over time backwards. The solid black line is the calculation
 output, the grey shaded area indicates the 2-sigma error margins. The dashed blue line is an indicator
 of the quality of the error estimations based on Monte Carlo (MC) runs.The closer it follows the
-black line, the more reliable are the given error margins. <br><strong>Lower plot:</strong> Totally absorbed dose over time. The plot is an representation of the 'new'
+black line, the more reliable are the given error margins. <br></p>
+
+
+
+<p><strong>Lower plot:</strong> Totally absorbed dose over time. The plot is an representation of the 'new'
 age based on the carbonate modelling.</p>
     </div>
     <div id="details">
@@ -139,39 +187,39 @@ values below 0 are set to 0.</p>
     </div>
     <div id="how-to-cite">
     <h2>How to cite</h2>
-    <p>Kreutzer, S., 2022. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.5. https://r-lum.github.io/RCarb/</p>
+    <p>Kreutzer, S., 2022. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.6. https://r-lum.github.io/RCarb/</p>
     </div>
     <div id="references">
     <h2>References</h2>
     <p>Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
 dose rate of carbonate-rich samples. Ancient TL 32, 24-32. <a href="http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf" class="external-link">http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf</a></p>
 <p>Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-Radiation Measurements 43, 14-25. doi: <a href="https://doi.org/10.1016/j.radmeas.2007.12.012" class="external-link">10.1016/j.radmeas.2007.12.012</a>
+Radiation Measurements 43, 14-25. <a href="https://doi.org/10.1016/j.radmeas.2007.12.012" class="external-link">doi:10.1016/j.radmeas.2007.12.012</a>
  <br></p>
 <p><strong>Further reading</strong></p>
 <p>Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
 DPhil thesis, St Hugh's College, Oxford. <a href="https://ora.ox.ac.uk/objects/ora:6421" class="external-link">https://ora.ox.ac.uk/objects/ora:6421</a></p>
 <p>Zimmerman, D.W., 1971. Thermoluminescent dating using fine grains from pottery.
-Archaeometry 13, 29–52.doi: <a href="https://doi.org/10.1111/j.1475-4754.1971.tb00028.x" class="external-link">10.1111/j.1475-4754.1971.tb00028.x</a></p>
+Archaeometry 13, 29–52.<a href="https://doi.org/10.1111/j.1475-4754.1971.tb00028.x" class="external-link">doi:10.1111/j.1475-4754.1971.tb00028.x</a></p>
     </div>
     <div id="author">
     <h2>Author</h2>
-    <p>Sebastian Kreutzer, Geography &amp; Earth Sciences, Aberystwyth University (United Kingdom); based
+    <p>Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany); based
 on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">##load example data</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"Example_Data"</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">##run the function for one sample from</span></span>
-<span class="r-in"><span class="co">##the dataset</span></span>
-<span class="r-in"><span class="fu">model_DoseRate</span><span class="op">(</span></span>
-<span class="r-in">data <span class="op">=</span> <span class="va">Example_Data</span><span class="op">[</span><span class="fl">14</span>,<span class="op">]</span>,</span>
-<span class="r-in">n.MC <span class="op">=</span> <span class="fl">2</span>,</span>
-<span class="r-in">txtProgressBar <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">##load example data</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"Example_Data"</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">##run the function for one sample from</span></span></span>
+<span class="r-in"><span><span class="co">##the dataset</span></span></span>
+<span class="r-in"><span><span class="fu">model_DoseRate</span><span class="op">(</span></span></span>
+<span class="r-in"><span>data <span class="op">=</span> <span class="va">Example_Data</span><span class="op">[</span><span class="fl">14</span>,<span class="op">]</span>,</span></span>
+<span class="r-in"><span>n.MC <span class="op">=</span> <span class="fl">2</span>,</span></span>
+<span class="r-in"><span>txtProgressBar <span class="op">=</span> <span class="cn">FALSE</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [model_DoseRate()]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -180,24 +228,24 @@ on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Diameter:		 215 µm </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  MC runs error estim.:	 2  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ------------------------------------------------ </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (conv.):		 149.73  ±  21.323  ka</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (new):		 130.642  ±  11.851  ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (conv.):		 149.73  ±  1.018  ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (new):		 130.642  ±  3.211  ka</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (conv.):	 0.354  ±  0.015  Gy/ka</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (onset):	 0.479  ±  0.014  Gy/ka</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (final):	 0.361  ±  0.022  Gy/ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (conv.):	 0.354  ±  0.001  Gy/ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (onset):	 0.502  ±  0.028  Gy/ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (final):	 0.365  ±  0.005  Gy/ka</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ------------------------------------------------ </span>
 <span class="r-plt img"><img src="model_DoseRate-1.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14     LV107 0.073 0.004 0.67 0.02 0.79 0.07    0      0         0           0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    WCI WCI_X WCF WCF_X CC CC_X DIAM DIAM_X COSMIC COSMIC_X INTERNAL INTERNAL_X</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14  10     2   5     5 60    2  215     35 0.0876   0.0044        0          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ONSET ONSET_X FINISH FINISH_X DE DE_X AGE_CONV AGE_CONV_X     AGE  AGE_X</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   120      10     40       10 53    2   149.73     21.323 130.642 11.851</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ONSET ONSET_X FINISH FINISH_X DE DE_X AGE_CONV AGE_CONV_X     AGE AGE_X</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   120      10     40       10 53    2   149.73      1.018 130.642 3.211</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    DR_CONV DR_CONV_X DR_ONSET DR_ONSET_X DR_FINAL DR_FINAL_X n.MC</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   0.354     0.015    0.479      0.014    0.361      0.022    2</span>
-<span class="r-in"></span>
-<span class="r-in"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   0.354     0.001    0.502      0.028    0.365      0.005    2</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -212,8 +260,7 @@ on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -18,7 +18,7 @@ These values are used instead of the correction factors given in Aitken (1985) f
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
@@ -27,7 +27,7 @@ These values are used instead of the correction factors given in Aitken (1985) f
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -78,19 +78,19 @@ The latter values are given as matrix and precise values are interpolated during
 of U, Th, and K to dose rate values. Historically <em>Carb</em> (and thus 'RCarb') as its own dose rate
 conversion factors, which differ slightly from other published values. To provide a consistent
 calculation approach by default the 'old' <em>Carb</em> values are used, but the user can further
-switch (see <a href="model_DoseRate.html">model_DoseRate</a>) to values provided by Adamiec \&amp; Aitken (1998), Guérin et al. (2011)
+switch (see <a href="model_DoseRate.html">model_DoseRate</a>) to values provided by Adamiec &amp; Aitken (1998), Guérin et al. (2011)
 or Liritzis et al (2013).</p>
 <p>Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
-on the origin of these data we refer to Nathan \&amp; Mauz (2008) and Nathan (2010).<br></p>
-<p><strong>Nuclear data origin according to Nathan \&amp; Mauz (2008)</strong></p>
+on the origin of these data we refer to Nathan &amp; Mauz (2008) and Nathan (2010).<br></p>
+<p><strong>Nuclear data origin according to Nathan &amp; Mauz (2008)</strong></p>
 <p>The gamma primary energy spectra of uranium, thorium and potassium are drawn from
 Evaluated Nuclear Structure Data File (ENSDF) database at <a href="http://www.nndc.bnl.gov" class="external-link">http://www.nndc.bnl.gov</a> (2002-01-16)
 and the beta primary energy spectra was derived from ENSDF end-point energies using a
-Fermi beta decay model (Evans, 1955) modified by Behrens \&amp; Szybisz (1976).
+Fermi beta decay model (Evans, 1955) modified by Behrens &amp; Szybisz (1976).
 For the simulations of the collisional mass stopping powers for quartz the software ESTAR
 (Berger et al., 2000) was used. The mass energy-absorption coefficients for quartz were
-tabulated by Hubbell \&amp; Seltzer (2004).</p>
-<p><em>For further details and references please read Nathan \&amp; Mauz (2008)</em></p>
+tabulated by Hubbell &amp; Seltzer (2004).</p>
+<p><em>For further details and references please read Nathan &amp; Mauz (2008)</em></p>
     </div>
     <div id="version">
     <h2>Version</h2>
@@ -109,7 +109,7 @@ Mediterranean Archaeology and Archaeometry 12, 1–15.
 <p>Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
 <a href="http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf" class="external-link">http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf</a></p>
 <p>Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
-Radiation Measurements 43, 14-25. doi: <a href="https://doi.org/10.1016/j.radmeas.2007.12.012" class="external-link">10.1016/j.radmeas.2007.12.012</a></p>
+Radiation Measurements 43, 14-25. <a href="https://doi.org/10.1016/j.radmeas.2007.12.012" class="external-link">doi:10.1016/j.radmeas.2007.12.012</a></p>
 <p>Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
 DPhil thesis, St Hugh's College, Oxford. <a href="https://ora.ox.ac.uk/objects/ora:6421" class="external-link">https://ora.ox.ac.uk/objects/ora:6421</a><br></p>
 <p><strong>Further reading</strong></p>
@@ -129,9 +129,9 @@ Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Reference_Data</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">Reference_Data</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Reference_Data</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">Reference_Data</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> List of 14</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ DATAek         : num [1:4, 1:4] 1 1.195 1.197 1.189 0.995 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "dimnames")=List of 2</span>
@@ -200,13 +200,13 @@ Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ TG_X     : num [1:4] 2e-03 NA NA 2e-04</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ KG       : num [1:4] 0.245 0.243 0.249 0.25</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ KG_X     : num [1:4] 0.005 NA NA 0.0048</span>
-<span class="r-in"><span class="va">Reference_Data</span><span class="op">$</span><span class="va">DATAek</span></span>
+<span class="r-in"><span><span class="va">Reference_Data</span><span class="op">$</span><span class="va">DATAek</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        1e-06   0.04    0.2      1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1e-06 1.0000 0.9946 0.9936 0.9911</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 0.04  1.1948 1.0944 1.0266 0.9985</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 0.2   1.1973 1.1631 1.0922 1.0230</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     1.1886 1.1808 1.1546 1.0850</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -221,8 +221,7 @@ Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

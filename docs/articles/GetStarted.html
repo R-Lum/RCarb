@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
@@ -43,7 +43,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -83,8 +83,8 @@
 Kreutzer<sup>1,2</sup> &amp; Barbara Mauz<sup>3</sup>
 </h4>
             
-            <h4 data-toc-skip class="date">Last modified: 2022-02-18
-(‘RCarb’ version: 0.1.5)</h4>
+            <h4 data-toc-skip class="date">Last modified: 2022-07-21
+(‘RCarb’ version: 0.1.6)</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/R-Lum/RCarb/blob/HEAD/vignettes/GetStarted.Rmd" class="external-link"><code>vignettes/GetStarted.Rmd</code></a></small>
       <div class="hidden name"><code>GetStarted.Rmd</code></div>
@@ -93,8 +93,8 @@ Kreutzer<sup>1,2</sup> &amp; Barbara Mauz<sup>3</sup>
 
     
     
-<p><sup>1</sup>Geography &amp; Earth Science, Aberystwyth University
-(United Kingdom)<br><sup>2</sup>Archéosciences Bordeaux, UMR 6034,
+<p><sup>1</sup>Institute of Geography, Universität Heidelberg,
+Germany<br><sup>2</sup>Archéosciences Bordeaux, UMR 6034,
 CNRS-Université Bordeaux Montaigne (France)<br><sup>3</sup>Department
 of Geography and Geology, University of Salzburg, Salzburg
 (Austria)”</p>
@@ -119,51 +119,51 @@ illustrate the central package functionality in three steps.</p>
 <h3 id="load-rcarb">Load ‘RCarb’<a class="anchor" aria-label="anchor" href="#load-rcarb"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-lum.github.io/RCarb/" class="external-link">RCarb</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-lum.github.io/RCarb/" class="external-link">RCarb</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="load-example-data">Load example data<a class="anchor" aria-label="anchor" href="#load-example-data"></a>
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">##load example data</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"Example_Data"</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">##load example data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"Example_Data"</span>, envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html" class="external-link">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>To get a first impression on how the example dataset looks like, you
 call the function <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> to print the first five rows of a
 <code>data.frame</code> on the terminal.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">Example_Data</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">##   SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X</span>
-<span class="co">## 1     BN107 0.080 0.010 1.64 0.08 1.90 0.08    0      0         0           0</span>
-<span class="co">## 2     BN102 0.170 0.009 2.59 0.03 3.02 0.07    0      0         0           0</span>
-<span class="co">## 3     BN106 0.560 0.030 1.80 0.11 0.83 0.03    0      0         0           0</span>
-<span class="co">## 4      LV61 0.131 0.005 0.85 0.03 0.86 0.11    0      0         0           0</span>
-<span class="co">## 5      LV99 0.047 0.003 0.59 0.03 1.94 0.11    0      0         0           0</span>
-<span class="co">## 6      D101 0.105 0.004 0.65 0.02 1.25 0.08    0      0         0           0</span>
-<span class="co">##   WCI WCI_X WCF WCF_X CC CC_X DIAM DIAM_X COSMIC COSMIC_X INTERNAL INTERNAL_X</span>
-<span class="co">## 1  20     7   7     7 62    1  180     10  0.180   0.0100        0          0</span>
-<span class="co">## 2  20    10  10    10 68    1  180     22  0.180   0.0100        0          0</span>
-<span class="co">## 3  20     6   6     6 49    1  145     15  0.180   0.0100        0          0</span>
-<span class="co">## 4  12     5   2     2 17    1  210     30  0.069   0.0035        0          0</span>
-<span class="co">## 5   8     3   5     5 61    3  210     30  0.182   0.0090        0          0</span>
-<span class="co">## 6   8     3   2     2 59    2  210     20  0.180   0.0100        0          0</span>
-<span class="co">##   ONSET ONSET_X FINISH FINISH_X  DE DE_X</span>
-<span class="co">## 1   100      10     40       10  98    9</span>
-<span class="co">## 2   100      10     40       10 130   10</span>
-<span class="co">## 3   100      10     40       10 120   10</span>
-<span class="co">## 4   120      10     40       10  52    5</span>
-<span class="co">## 5    60      10     40       10  50    4</span>
-<span class="co">## 6   180      10    130       10  81    5</span></code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">Example_Data</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">##   SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X</span></span>
+<span><span class="co">## 1     BN107 0.080 0.010 1.64 0.08 1.90 0.08    0      0         0           0</span></span>
+<span><span class="co">## 2     BN102 0.170 0.009 2.59 0.03 3.02 0.07    0      0         0           0</span></span>
+<span><span class="co">## 3     BN106 0.560 0.030 1.80 0.11 0.83 0.03    0      0         0           0</span></span>
+<span><span class="co">## 4      LV61 0.131 0.005 0.85 0.03 0.86 0.11    0      0         0           0</span></span>
+<span><span class="co">## 5      LV99 0.047 0.003 0.59 0.03 1.94 0.11    0      0         0           0</span></span>
+<span><span class="co">## 6      D101 0.105 0.004 0.65 0.02 1.25 0.08    0      0         0           0</span></span>
+<span><span class="co">##   WCI WCI_X WCF WCF_X CC CC_X DIAM DIAM_X COSMIC COSMIC_X INTERNAL INTERNAL_X</span></span>
+<span><span class="co">## 1  20     7   7     7 62    1  180     10  0.180   0.0100        0          0</span></span>
+<span><span class="co">## 2  20    10  10    10 68    1  180     22  0.180   0.0100        0          0</span></span>
+<span><span class="co">## 3  20     6   6     6 49    1  145     15  0.180   0.0100        0          0</span></span>
+<span><span class="co">## 4  12     5   2     2 17    1  210     30  0.069   0.0035        0          0</span></span>
+<span><span class="co">## 5   8     3   5     5 61    3  210     30  0.182   0.0090        0          0</span></span>
+<span><span class="co">## 6   8     3   2     2 59    2  210     20  0.180   0.0100        0          0</span></span>
+<span><span class="co">##   ONSET ONSET_X FINISH FINISH_X  DE DE_X</span></span>
+<span><span class="co">## 1   100      10     40       10  98    9</span></span>
+<span><span class="co">## 2   100      10     40       10 130   10</span></span>
+<span><span class="co">## 3   100      10     40       10 120   10</span></span>
+<span><span class="co">## 4   120      10     40       10  52    5</span></span>
+<span><span class="co">## 5    60      10     40       10  50    4</span></span>
+<span><span class="co">## 6   180      10    130       10  81    5</span></span></code></pre>
 <p>Unfortunately, the naming of the table columns is not straightforward
 to understand. The good news is that each column carries additional
 information that can be seen in the <strong>R</strong> terminal by
 typing, e.g., for the column ‘K’ (which is the 2nd column):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/attributes.html" class="external-link">attributes</a></span><span class="op">(</span><span class="va">Example_Data</span><span class="op">$</span><span class="va">K</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## $UNIT</span>
-<span class="co">## [1] "%"</span>
-<span class="co">## </span>
-<span class="co">## $DESCRIPTION</span>
-<span class="co">## [1] "K concentration"</span></code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/attributes.html" class="external-link">attributes</a></span><span class="op">(</span><span class="va">Example_Data</span><span class="op">$</span><span class="va">K</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## $UNIT</span></span>
+<span><span class="co">## [1] "%"</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## $DESCRIPTION</span></span>
+<span><span class="co">## [1] "K concentration"</span></span></code></pre>
 <p>It reveals that the numbers in the column correspond to the potassium
 concentration and are given in ‘%’. Similar all other columns can be
 inspected.</p>
@@ -329,30 +329,30 @@ inspected.</p>
 <p>Now we want to start the modelling using the data given for the first
 sample only.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">##extract only the first row </span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="va">Example_Data</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span>
-
-<span class="co">##run model </span>
-<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span><span class="op">(</span>
-  data <span class="op">=</span> <span class="va">data</span>,
-  DR_conv_factors <span class="op">=</span> <span class="st">"Carb2007"</span>,
-  n.MC <span class="op">=</span> <span class="fl">10</span>, 
-  txtProgressBar <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## </span>
-<span class="co">## [model_DoseRate()]</span>
-<span class="co">## </span>
-<span class="co">##  Sample ID:       BN107 </span>
-<span class="co">##  Equivalent dose:     98  ±  9 Gy</span>
-<span class="co">##  Diameter:        180 µm </span>
-<span class="co">##  MC runs error estim.:    10  </span>
-<span class="co">##  ------------------------------------------------ </span>
-<span class="co">##  Age (conv.):         133.451  ±  15.614  ka</span>
-<span class="co">##  Age (new):       117.443  ±  10.948  ka</span>
-<span class="co">## </span>
-<span class="co">##  Dose rate (conv.):   0.734  ±  0.033  Gy/ka</span>
-<span class="co">##  Dose rate (onset):   0.995  ±  0.045  Gy/ka</span>
-<span class="co">##  Dose rate (final):   0.744  ±  0.029  Gy/ka</span>
-<span class="co">##  ------------------------------------------------</span></code></pre>
+<code class="sourceCode R"><span><span class="co">##extract only the first row </span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">Example_Data</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span></span>
+<span></span>
+<span><span class="co">##run model </span></span>
+<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">data</span>,</span>
+<span>  DR_conv_factors <span class="op">=</span> <span class="st">"Carb2007"</span>,</span>
+<span>  n.MC <span class="op">=</span> <span class="fl">10</span>, </span>
+<span>  txtProgressBar <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">## [model_DoseRate()]</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Sample ID:       BN107 </span></span>
+<span><span class="co">##  Equivalent dose:     98  ±  9 Gy</span></span>
+<span><span class="co">##  Diameter:        180 µm </span></span>
+<span><span class="co">##  MC runs error estim.:    10  </span></span>
+<span><span class="co">##  ------------------------------------------------ </span></span>
+<span><span class="co">##  Age (conv.):         133.451  ±  18.099  ka</span></span>
+<span><span class="co">##  Age (new):       117.443  ±  14.896  ka</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Dose rate (conv.):   0.734  ±  0.04  Gy/ka</span></span>
+<span><span class="co">##  Dose rate (onset):   0.972  ±  0.076  Gy/ka</span></span>
+<span><span class="co">##  Dose rate (final):   0.754  ±  0.032  Gy/ka</span></span>
+<span><span class="co">##  ------------------------------------------------</span></span></code></pre>
 <p><img src="GetStarted_files/figure-html/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto;"></p>
 <p>The function returns a terminal output along with two plots, which
 are mostly similar to the original graphical output provided by the
@@ -372,8 +372,8 @@ samples in the example dataset you can call the model without subsetting
 the dataset first. <strong>Be careful, the calculation may take some
 time</strong>.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span><span class="op">(</span>
-  data <span class="op">=</span> <span class="va">Example_Data</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">Example_Data</span><span class="op">)</span></span></code></pre></div>
 <p><em>A note on the used dose rate conversion factors: For historical
 reasons ‘Carb’ has its own set of dose rate conversion factors, which
 differ slightly from values in the literature (e.g., Adamiec &amp;
@@ -399,7 +399,7 @@ a template table (a CSV-file) that can be subsequently opened and
 filled. Using the function ensures that your input data have the correct
 structure, e.g., the correct number for columns and column names.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/write_InputTemplate.html">write_InputTemplate</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"files/RCarb_Input.csv"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/write_InputTemplate.html">write_InputTemplate</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"files/RCarb_Input.csv"</span><span class="op">)</span></span></code></pre></div>
 <p>The path given with the argument <code>file</code> can be modified as
 needed.</p>
 </div>
@@ -411,7 +411,7 @@ save again as CSV-file.</p>
 <p><img src="files/Screenshot.png" width="400px" style="display: block; margin: auto;"></p>
 <p>For re-importing, the data standard R functionality can be used.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"files/RCarb_Input.csv"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"files/RCarb_Input.csv"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="model-the-dose-rate">Model the dose rate<a class="anchor" aria-label="anchor" href="#model-the-dose-rate"></a>
@@ -419,27 +419,27 @@ save again as CSV-file.</p>
 <p>The final modelling does not differ from the call already show above
 (here without a plot output):</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">##run model </span>
-<span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span><span class="op">(</span>
-  data <span class="op">=</span> <span class="va">data</span>,
-  n.MC <span class="op">=</span> <span class="fl">10</span>, 
-  txtProgressBar <span class="op">=</span> <span class="cn">FALSE</span>, 
-  plot <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">## </span>
-<span class="co">## [model_DoseRate()]</span>
-<span class="co">## </span>
-<span class="co">##  Sample ID:       EXAMPLE </span>
-<span class="co">##  Equivalent dose:     98  ±  9 Gy</span>
-<span class="co">##  Diameter:        180 µm </span>
-<span class="co">##  MC runs error estim.:    10  </span>
-<span class="co">##  ------------------------------------------------ </span>
-<span class="co">##  Age (conv.):         133.451  ±  13.098  ka</span>
-<span class="co">##  Age (new):       117.443  ±  9.279  ka</span>
-<span class="co">## </span>
-<span class="co">##  Dose rate (conv.):   0.734  ±  0.031  Gy/ka</span>
-<span class="co">##  Dose rate (onset):   0.984  ±  0.063  Gy/ka</span>
-<span class="co">##  Dose rate (final):   0.752  ±  0.023  Gy/ka</span>
-<span class="co">##  ------------------------------------------------</span></code></pre>
+<code class="sourceCode R"><span><span class="co">##run model </span></span>
+<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_DoseRate.html">model_DoseRate</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">data</span>,</span>
+<span>  n.MC <span class="op">=</span> <span class="fl">10</span>, </span>
+<span>  txtProgressBar <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>  plot <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">## [model_DoseRate()]</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Sample ID:       EXAMPLE </span></span>
+<span><span class="co">##  Equivalent dose:     98  ±  9 Gy</span></span>
+<span><span class="co">##  Diameter:        180 µm </span></span>
+<span><span class="co">##  MC runs error estim.:    10  </span></span>
+<span><span class="co">##  ------------------------------------------------ </span></span>
+<span><span class="co">##  Age (conv.):         133.451  ±  14.846  ka</span></span>
+<span><span class="co">##  Age (new):       117.443  ±  8.516  ka</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Dose rate (conv.):   0.734  ±  0.045  Gy/ka</span></span>
+<span><span class="co">##  Dose rate (onset):   0.994  ±  0.051  Gy/ka</span></span>
+<span><span class="co">##  Dose rate (final):   0.757  ±  0.033  Gy/ka</span></span>
+<span><span class="co">##  ------------------------------------------------</span></span></code></pre>
 </div>
 </div>
 <div class="section level2">
@@ -476,8 +476,7 @@ update. Ancient TL 16, 37–50. <a href="http://ancienttl.org/ATL_16-2_1998/ATL_
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>

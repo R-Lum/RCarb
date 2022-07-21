@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -58,67 +58,9 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.5" id="rcarb-015-2022-02-18">RCarb 0.1.5 (2022-02-18)<a class="anchor" aria-label="anchor" href="#rcarb-015-2022-02-18"></a></h2>
-<p><strong>This update requires R &gt;= 4.0</strong></p>
-<ul><li>Update internal tests to support <code>'testthat'</code>
-&gt;=3.0</li>
-<li>Address a CRAN request concerning the logo of RCarb.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.4" id="rcarb-014-2020-09-15">RCarb 0.1.4 (2020-09-15)<small>2020-09-15</small><a class="anchor" aria-label="anchor" href="#rcarb-014-2020-09-15"></a></h2>
-<div class="section level3">
-<h3 id="bugfixes-and-changes-0-1-4">Bugfixes and changes<a class="anchor" aria-label="anchor" href="#bugfixes-and-changes-0-1-4"></a></h3>
-<ul><li>This version of the package requires R &gt;= 3.5.0</li>
-<li>If an external dataset was used, the <code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code>
-sometimes did not display the sample id correctly in the terminal
-output; corrected.</li>
-<li>
-<code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code> gained a new argument
-<code>par_local</code>, which is <code>TRUE</code> by default. If set to
-<code>FALSE</code> all global par settings are accepted.</li>
-</ul></div>
-</div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.3" id="rcarb-013-2019-06-02">RCarb 0.1.3 (2019-06-02)<small>2019-06-03</small><a class="anchor" aria-label="anchor" href="#rcarb-013-2019-06-02"></a></h2>
-<div class="section level3">
-<h3 id="new-features-0-1-3">New features<a class="anchor" aria-label="anchor" href="#new-features-0-1-3"></a></h3>
-<ul><li>The reference dataset got a new dataset called
-<code>Reference_Data$DR_conv_factors</code> to support different dose
-rate conversion factors</li>
-<li>The function <code><a href="../reference/model_DoseRate.html">model_DoseRate()</a></code> gained are new argument
-<code>DR_conv_factors</code> to support different dose rate conversion
-factors</li>
-</ul></div>
-<div class="section level3">
-<h3 id="bugfixes-0-1-3">Bugfixes<a class="anchor" aria-label="anchor" href="#bugfixes-0-1-3"></a></h3>
-<ul><li>In case values for U-238 and U-234 were provided, for the gamma-dose
-rate contribution, erroneously the beta-dose water correction factors
-were used; now corrected (internal function
-<code>.calc_DoseRata()</code>). This bug already existed in
-<em>Carb</em> and was probably introduced by copy &amp; paste
-actions.</li>
-</ul></div>
-<div class="section level3">
-<h3 id="other-modifications-0-1-3">Other modifications<a class="anchor" aria-label="anchor" href="#other-modifications-0-1-3"></a></h3>
-<ul><li>Add README.md</li>
-<li>Modify output graphics and add more information</li>
-<li>Update dependency and package version requirements</li>
-</ul></div>
-</div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.2" id="rcarb-012-2018-12-02">RCarb 0.1.2 (2018-12-02)<small>2018-12-09</small><a class="anchor" aria-label="anchor" href="#rcarb-012-2018-12-02"></a></h2>
-<ul><li>Update internal references</li>
-<li>Modify example in write_InputTemplate() to comply with CRAN
-requests</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.1" id="rcarb-011-2018-11-20">RCarb 0.1.1 (2018-11-20)<a class="anchor" aria-label="anchor" href="#rcarb-011-2018-11-20"></a></h2>
-<ul><li>Internal changes only to account for CRAN comments on initial
-submission.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="page-header" data-toc-text="0.1.0" id="rcarb-010-2018-11-12">RCarb 0.1.0 (2018-11-12)<a class="anchor" aria-label="anchor" href="#rcarb-010-2018-11-12"></a></h2>
-<ul><li>Initial version</li>
+<h2 class="page-header" data-toc-text="0.1.6" id="rcarb-016-2022-07-21">RCarb 0.1.6 (2022-07-21)<a class="anchor" aria-label="anchor" href="#rcarb-016-2022-07-21"></a></h2>
+<ul><li>Internal changes CRAN message <code>Escaped LaTeX specials: \&amp;</code>
+</li>
 </ul></div>
   </div>
 
@@ -134,8 +76,7 @@ submission.</li>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -18,7 +18,7 @@ model_DoseRate"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RCarb</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.6</span>
       </span>
     </div>
 
@@ -27,7 +27,7 @@ model_DoseRate"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -65,7 +65,7 @@ model_DoseRate"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">write_InputTemplate</span><span class="op">(</span>file <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">write_InputTemplate</span><span class="op">(</span>file <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -73,9 +73,12 @@ model_DoseRate"><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
     <dl><dt>file</dt>
 <dd><p><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> (optional): output path, if <code>NULL</code> nothing is written, but a template
 <a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a> is returned.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>additional arguments that can be passed to function <a href="https://rdrr.io/r/utils/write.table.html" class="external-link">write.table</a> if <code>file != NULL</code>.
 Supported arguments are: <code>sep</code>, <code>dec</code>, <code>fileEncoding</code></p></dd>
+
 </dl></div>
     <div id="function-version">
     <h2>Function version</h2>
@@ -87,35 +90,35 @@ Supported arguments are: <code>sep</code>, <code>dec</code>, <code>fileEncoding<
     </div>
     <div id="author">
     <h2>Author</h2>
-    <p>Sebastian Kreutzer, Geography &amp; Earth Sciences, Aberystwyth University (United Kingdom)</p>
+    <p>Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)</p>
     </div>
     <div id="how-to-cite">
     <h2>How to cite</h2>
-    <p>Kreutzer, S., 2022. write_InputTemplate(): Write table input template. Function version 0.1.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.5. https://r-lum.github.io/RCarb/</p>
+    <p>Kreutzer, S., 2022. write_InputTemplate(): Write table input template. Function version 0.1.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2022. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.6. https://r-lum.github.io/RCarb/</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">##create template without file creation</span></span>
-<span class="r-in"><span class="fu">write_InputTemplate</span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">##create template without file creation</span></span></span>
+<span class="r-in"><span><span class="fu">write_InputTemplate</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SAMP_NAME    K  K_X    T  T_X   U  U_X U238 U238_X U234_U238 U234_U238_X WCI</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   EXAMPLE 0.08 0.01 1.64 0.08 1.9 0.08    0      0         0           0  20</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   WCI_X WCF WCF_X CC CC_X DIAM DIAM_X COSMIC COSMIC_X INTERNAL INTERNAL_X ONSET</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1     7   7     7 62    1  180     10   0.18     0.01        0          0   100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ONSET_X FINISH FINISH_X DE DE_X</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1      10     40       10 98    9</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co">##Example with file output</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## set temporary filename</span></span>
-<span class="r-in"><span class="co">## (replace by own path if needed)</span></span>
-<span class="r-in"><span class="va">temp_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"template"</span>, fileext <span class="op">=</span> <span class="st">".csv"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">write_InputTemplate</span><span class="op">(</span>file <span class="op">=</span> <span class="va">temp_file</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co">##Example with file output</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## set temporary filename</span></span></span>
+<span class="r-in"><span><span class="co">## (replace by own path if needed)</span></span></span>
+<span class="r-in"><span><span class="va">temp_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"template"</span>, fileext <span class="op">=</span> <span class="st">".csv"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">write_InputTemplate</span><span class="op">(</span>file <span class="op">=</span> <span class="va">temp_file</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -130,8 +133,7 @@ Supported arguments are: <code>sep</code>, <code>dec</code>, <code>fileEncoding<
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
