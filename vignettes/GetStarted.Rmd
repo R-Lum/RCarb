@@ -13,7 +13,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-<sup>1</sup>Geography & Earth Science, Aberystwyth University (United Kingdom)<br>
+<sup>1</sup>Institute of Geography, Universität Heidelberg, Germany<br>
 <sup>2</sup>Archéosciences Bordeaux, UMR 6034, CNRS-Université Bordeaux Montaigne (France)<br>
 <sup>3</sup>Department of Geography and Geology, University of Salzburg, Salzburg (Austria)"
 
