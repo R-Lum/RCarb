@@ -20,14 +20,16 @@
     }
   ],
   "version": "0.1.6",
-  "references": "Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. \"RCarb\": Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R. Ancient TL 37, 1–8.",
+  "references": [
+    "Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. \"RCarb\": Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R. Ancient TL 37, 1–8."
+   ],
   "upload_type": "software",
   "keywords": ["Luminescence dating", "Dose rate", "R"],
   "publication_date": "2022-07-22",
   "creators": [
     {
       "orcid": "0000-0002-0734-2199",
-      "affiliation": "Department of Geography and Earth Sciences, Aberystwyth University",
+      "affiliation": "Institue of Geography, Ruprecht-Karl-University of Heidelberg (Germany)",
       "name": "Kreutzer, Sebastian"
     },
     {
