@@ -8,8 +8,8 @@
 # RCarb <img width=120px src="man/figures/Logo_RCarb.svg" align="right" />
 
 [![CRAN](https://www.r-pkg.org/badges/version/RCarb)](https://CRAN.R-project.org/package=RCarb)
-[![cran
-checks](https://cranchecks.info/badges/worst/RCarb)](https://cranchecks.info/pkgs/RCarb)
+[![CRAN
+DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.RCarb-blue.svg)](https://doi.org/10.32614/CRAN.package.RCarb)
 [![DOI](https://zenodo.org/badge/151577249.svg)](https://zenodo.org/badge/latestdoi/151577249)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
 [![R-CMD-check](https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RCarb/actions)
@@ -54,10 +54,10 @@ details.
 
 ## Related projects
 
--   [Luminescence](https://github.com/R-Lum/Luminescence)
--   [RLumModel](https://github.com/R-Lum/RLumModel)
--   [RLumCarlo](https://github.com/R-Lum/RLumCarlo)
--   [RLumShiny](https://github.com/R-Lum/RLumShiny)
+- [Luminescence](https://github.com/R-Lum/Luminescence)
+- [RLumModel](https://github.com/R-Lum/RLumModel)
+- [RLumCarlo](https://github.com/R-Lum/RLumCarlo)
+- [RLumShiny](https://github.com/R-Lum/RLumShiny)
 
 ## References
 
@@ -84,11 +84,10 @@ College, Oxford. <https://ora.ox.ac.uk/objects/ora:6421>
 
 ## <span class="glyphicon glyphicon-euro"></span> Funding
 
--   Between 2018-2019, the work of Sebastian Kreutzer as maintainer of
-    the package was supported by LabEx LaScArBxSK (ANR -
-    n. ANR-10-LABX-52).
+- Between 2018-2019, the work of Sebastian Kreutzer as maintainer of the
+  package was supported by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).
 
--   Between 01/2020-04/2022, Sebastian Kreutzer received funding from
-    the European Union’s Horizon 2020 research and innovation programme
-    under the Marie Skłodowska-Curie grant agreement No 844457 (project:
-    CREDit).
+- Between 01/2020-04/2022, Sebastian Kreutzer received funding from the
+  European Union’s Horizon 2020 research and innovation programme under
+  the Marie Skłodowska-Curie grant agreement No 844457 (project:
+  CREDit).
