@@ -42,4 +42,22 @@ Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}
 Nathan, R.P., 2010. Numerical modelling of environmental dose rate and its application to trapped-charge dating.
 DPhil thesis, St Hugh's College, Oxford. \url{https://ora.ox.ac.uk/objects/ora:6421}
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://r-lum.github.io/RCarb/}
+  \item Report bugs at \url{https://github.com/R-Lum/RCarb/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Sebastian Kreutzer \email{sebastian.kreutzer@uni-heidelberg.de} (\href{https://orcid.org/0000-0002-0734-2199}{ORCID}) [translator, data contributor]
+
+Authors:
+\itemize{
+  \item Roger P. Nathan [copyright holder]
+  \item Barbara Mauz (\href{https://orcid.org/0000-0003-1504-333X}{ORCID}) [copyright holder]
+}
+
+}
 \keyword{package}

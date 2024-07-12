@@ -228,7 +228,7 @@
     data[["INTERNAL"]] + DRU238B + DRU234B + DRT230B + DRU238G + DRU234G + DRT230G
 
 
-  ## ++++++++++++++++ Conventinal calculation ++++++++++++++++++++++++
+  ## ++++++++++++++++ Conventional calculation ++++++++++++++++++++++++
   ##set alternative, the commonly used water correction factors
   ##after Zimmerman, 1971 (Archaeometry); cf. also Aitken (1985)
   ##after no interpolation is needed since these factors remain constant
