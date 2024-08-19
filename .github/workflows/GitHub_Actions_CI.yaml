@@ -30,6 +30,7 @@ jobs:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -42,17 +43,17 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
-
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-         extra-packages: any::covr
-         needs: coverage
+          extra-packages: any::covr
+          needs: coverage
 
       - name: Test coverage
         run: |
           covr::codecov(
             quiet = FALSE,
             clean = TRUE,
+            token = "${{ secrets.CODECOV_TOKEN }}",
             install_path = file.path(Sys.getenv("RUNNER_TEMP"), "package")
           )
         shell: Rscript {0}
