@@ -13,7 +13,7 @@ DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.RCarb-blue.svg)](htt
 [![DOI](https://zenodo.org/badge/151577249.svg)](https://zenodo.org/badge/latestdoi/151577249)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
 [![R-CMD-check](https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RCarb/actions)
-[![codecov](https://app.codecov.io/gh/R-Lum/RCarb/branch/master/graph/badge.svg)](https://app.codecov.io/gh/R-Lum/RCarb)
+[![codecov](https://codecov.io/gh/R-Lum/RCarb/graph/badge.svg?token=yAbeonoPiC)](https://codecov.io/gh/R-Lum/RCarb)
 
 The **R** package `'RCarb'` provides a collection of various R functions
 to model dose rates in carbonate-rich samples. The package is a
