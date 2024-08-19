@@ -54,7 +54,7 @@ jobs:
             quiet = FALSE,
             clean = TRUE,
             token = "${{ secrets.CODECOV_TOKEN }}",
-            install_path = file.path(Sys.getenv("RUNNER_TEMP"), "package")
+            install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
           )
         shell: Rscript {0}
 
