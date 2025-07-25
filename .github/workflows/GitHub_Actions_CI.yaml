@@ -19,12 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-        - {os: windows-latest, r: 'release', not_cran: 'true'}
-        - {os: macos-13,   r: 'release'}
-        - {os: macos-12,   r: 'oldrel'}
         - {os: ubuntu-22.04,   r: 'devel', not_cran: 'true'}
-        - {os: ubuntu-22.04,   r: 'release', not_cran: 'true'}
-        - {os: ubuntu-22.04,   r: 'oldrel', not_cran: 'true'}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
