@@ -1,12 +1,10 @@
 #' @title RCarb - Dose Rate Modelling of Carbonate-Rich Samples
+#' \if{html}{
+#' \figure{Logo_RCarb.svg}{options: width="50" alt="https://r-lum.github.io/RCarb"}\cr
+#' }
 #'
 #' @description The package provides a dose rate modelling for carbonate-rich samples in the
 #' context of trapped charged dating (e.g., luminescence dating) applications.
-#'
-#'
-#' \if{html}{
-#' \figure{Logo_RCarb.svg}{options: width="50" alt="https://github.com/R-Lum/RCarb"}\cr
-#' }
 #'
 #'
 #' @details

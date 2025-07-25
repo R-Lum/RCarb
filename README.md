@@ -91,3 +91,7 @@ College, Oxford. <https://ora.ox.ac.uk/objects/ora:6421>
   European Union’s Horizon 2020 research and innovation programme under
   the Marie Skłodowska-Curie grant agreement No 844457 (project:
   CREDit).
+
+- since 03/2023: Sebastian Kreutzer as maintainer of the package
+  receives funding from the DFG Heisenberg programme No
+  [505822867](https://gepris.dfg.de/gepris/projekt/505822867).
