@@ -37,10 +37,10 @@ Example_Data$U238
 }
 \references{
 Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model
-for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.
+for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \doi{10.26034/la.atl.2014.481}
 }
 \author{
-Mauz & Hoffmann (2014), with minor modifications by Sebastian Kreutzer,Geography & Earth
-Sciences, Aberystwyth University (United Kingdom)
+Mauz & Hoffmann (2014), with minor modifications by Sebastian Kreutzer, Institute of Geography,
+Heidelberb University (Germany)
 }
 \keyword{datasets}

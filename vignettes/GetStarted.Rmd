@@ -163,4 +163,5 @@ Well, then you are wrong here. However, if you are just tired of using the **R**
 
 ## References {-}
 
-Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update. Ancient TL 16, 37–50. http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf
+Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update. Ancient TL 16, 37–50. 
+[10.26034/la.atl.1998.292](https://doi.org/10.26034/la.atl.1998.292)

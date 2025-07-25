@@ -13,7 +13,7 @@ DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.RCarb-blue.svg)](htt
 [![DOI](https://zenodo.org/badge/151577249.svg)](https://zenodo.org/badge/latestdoi/151577249)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
 [![R-CMD-check](https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RCarb/actions)
-[![codecov](https://codecov.io/gh/R-Lum/RCarb/graph/badge.svg?token=yAbeonoPiC)](https://codecov.io/gh/R-Lum/RCarb)
+[![codecov](https://app.codecov.io/gh/R-Lum/RCarb/graph/badge.svg?token=yAbeonoPiC)](https://app.codecov.io/gh/R-Lum/RCarb)
 
 The **R** package `'RCarb'` provides a collection of various R functions
 to model dose rates in carbonate-rich samples. The package is a
@@ -64,7 +64,7 @@ details.
 Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. ‘RCarb’: Dose
 Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in
 R -. Ancient TL 37, 1–8.
-<http://ancienttl.org/ATL_37-2_2019/ATL_37-2_Kreutzer_p1-8.pdf>
+[10.26034/la.atl.2019.533](https://doi.org/10.26034/la.atl.2019.533)
 
 Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of
 carbonate-rich sediments for trapped charge dating. Radiation
@@ -74,7 +74,7 @@ Measurements 43, 14–25. doi:
 Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water:
 Carb, the model for estimating the dose rate of carbonate-rich samples.
 Ancient TL 32, 24–32.
-<http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf>
+[10.26034/la.atl.2014.481](https://doi.org/10.26034/la.atl.2014.481)
 
 **Further reading**
 

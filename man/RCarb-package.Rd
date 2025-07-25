@@ -21,18 +21,20 @@ by LabEx LaScArBxSK (ANR - n. ANR-10-LABX-52).
 \item From 01/2020-04/2022, Sebastian Kreutzer received funding from the European Union’s Horizon 2020
 research and innovation programme under the Marie Skłodowska-Curie grant agreement
 No 844457 (project: CREDit).
+\item since 03/2023: Sebastian Kreutzer as maintainer of the package receives
+funding from the DFG Heisenberg programme No 505822867.
 }
 }
 \references{
 Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. “RCarb”:
 Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R -.
-Ancient TL 37, 1–8.
+Ancient TL 37, 1–8. \doi{10.26034/la.atl.2019.533}
 
 This package bases on a 'MATLAB' programme with name 'Carb', details can be found the
 following references:\cr
 
 Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
-dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
+dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \doi{10.26034/la.atl.2014.481}
 
 Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
 Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}

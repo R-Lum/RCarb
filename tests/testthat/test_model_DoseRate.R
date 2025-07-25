@@ -23,7 +23,7 @@ test_that("Full function test", {
                              DR_conv_factors = "error",
                              n.MC = 2,
                              txtProgressBar = FALSE
-  )), regexp = "'error' does not correspond to an available dose rate conversion dataset.\n        Allowed are: Carb2007, Adamiec_Aitken_1998, Guerin_et_al_2011, Liritzis_et_al_2013")
+  )), regexp = "'error' does not correspond to an available dose rate conversion dataset.\n        Allowed are: Carb2007, Adamiec_Aitken_1998, Guerin_et_al_2011, Liritzis_et_al_2013, Cresswell_et_al_2018")
 
 
   ##run simple example

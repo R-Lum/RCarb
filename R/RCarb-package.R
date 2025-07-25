@@ -20,6 +20,9 @@
 #' research and innovation programme under the Marie Skłodowska-Curie grant agreement
 #' No 844457 (project: CREDit).
 #'
+#' * since 03/2023: Sebastian Kreutzer as maintainer of the package receives
+#' funding from the DFG Heisenberg programme No 505822867.
+#'
 #' @name RCarb-package
 #'
 #' @aliases RCarb-package RCarb
@@ -35,13 +38,13 @@
 #'
 #' Kreutzer, S., Mauz, B., Martin, L., Mercier, N., 2019. “RCarb”:
 #' Dose Rate Modelling of Carbonate-Rich Samples - an Implementation of Carb in R -.
-#' Ancient TL 37, 1–8.
+#' Ancient TL 37, 1–8. \doi{10.26034/la.atl.2019.533}
 #'
 #' This package bases on a 'MATLAB' programme with name 'Carb', details can be found the
 #' following references:\cr
 #'
 #' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
-#' dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
+#' dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \doi{10.26034/la.atl.2014.481}
 #'
 #' Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
 #' Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}
@@ -85,14 +88,14 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @author Mauz & Hoffmann (2014), with minor modifications by Sebastian Kreutzer,Geography & Earth
-#' Sciences, Aberystwyth University (United Kingdom)
+#' @author Mauz & Hoffmann (2014), with minor modifications by Sebastian Kreutzer, Institute of Geography,
+#' Heidelberb University (Germany)
 #'
 #'
 #' @references
 #'
 #' Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model
-#' for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32.
+#' for estimating the dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \doi{10.26034/la.atl.2014.481}
 #'
 #' @examples
 #'
@@ -123,8 +126,8 @@ NULL
 #' of U, Th, and K to dose rate values. Historically *Carb* (and thus 'RCarb') as its own dose rate
 #' conversion factors, which differ slightly from other published values. To provide a consistent
 #' calculation approach by default the 'old' *Carb* values are used, but the user can further
-#' switch (see [model_DoseRate]) to values provided by Adamiec & Aitken (1998), Guérin et al. (2011)
-#' or Liritzis et al (2013).
+#' switch (see [model_DoseRate]) to values provided by Adamiec & Aitken (1998), Guérin et al. (2011),
+#' Liritzis et al. (2013) or Cresswell et al. (2018).
 #'
 #' Different values quoted for U-238 and U-234 accounts for different activity ratios. For further details
 #' on the origin of these data we refer to Nathan & Mauz (2008) and Nathan (2010).\cr
@@ -132,7 +135,7 @@ NULL
 #' **Nuclear data origin according to Nathan & Mauz (2008)**
 #'
 #' The gamma primary energy spectra of uranium, thorium and potassium are drawn from
-#' Evaluated Nuclear Structure Data File (ENSDF) database at \url{http://www.nndc.bnl.gov} (2002-01-16)
+#' Evaluated Nuclear Structure Data File (ENSDF) database at \url{https://www.nndc.bnl.gov} (2002-01-16)
 #' and the beta primary energy spectra was derived from ENSDF end-point energies using a
 #' Fermi beta decay model (Evans, 1955) modified by Behrens & Szybisz (1976).
 #' For the simulations of the collisional mass stopping powers for quartz the software ESTAR
@@ -171,18 +174,21 @@ NULL
 #' @references
 #'
 #' Adamiec, G., Aitken, M.J., 1998. Dose-rate conversion factors: update.
-#' Ancient TL 16, 37–50. \url{http://ancienttl.org/ATL_16-2_1998/ATL_16-2_Adamiec_p37-50.pdf}
+#' Ancient TL 16, 37–50. \doi{10.26034/la.atl.1998.292}
 #'
 #' Guérin, G., Mercier, N., Adamiec, G., 2011. Dose-rate conversion factors: update. Ancient TL 29, 5–9.
-#' \url{http://ancienttl.org/ATL_29-1_2011/ATL_29-1_Guerin_p5-8.pdf}
+#' \doi{10.26034/la.atl.2011.443}
+#'
+#' Cresswell, A.J., Carter, J., Sanderson, D.C.W., 2018. Dose rate conversion parameters:
+#' Assessment of nuclear data. Radiation Measurements 120, 195–201. \doi{10.1016/j.radmeas.2018.02.007}
 #'
 #' Liritzis, I., Stamoulis, K., Papachristodoulou, C., Ioannides, K., 2013.
 #' A Re-Evaluation of Radiation Dose-Rate Conversion Factors.
 #' Mediterranean Archaeology and Archaeometry 12, 1–15.
-#' \url{http://maajournal.com/Issues/2012/pdf/FullTextLiritzis.pdf}
+#' \url{https://www.maajournal.com/index.php/maa/article/view/1012/921}
 #'
 #' Mejdahl, V., 1979. Thermoluminescence dating: beta-dose attenuation in quartz grains. Archaeometry 21, 61-72.
-#' \url{http://ancienttl.org/ATL_32-2_2014/ATL_32-2_Mauz_p24-32.pdf}
+#' \doi{10.1111/j.1475-4754.1979.tb00241.x}
 #'
 #' Nathan, R.P., Mauz, B., 2008. On the dose-rate estimate of carbonate-rich sediments for trapped charge dating.
 #' Radiation Measurements 43, 14-25. \doi{10.1016/j.radmeas.2007.12.012}
@@ -197,7 +203,7 @@ NULL
 #' Berger, M.J., Coursey, J.S., Zucker, M.A., 2000. ESTAR, PSTAR, and
 #' ASTAR: Computer Programs for Calculating Stopping-Power and Range
 #' Tables for Electrons, Protons, and Helium Ions (version 1.2.2).
-#' http://physics.nist.gov/Star (2005-08-09).
+#' https://physics.nist.gov/Star (2005-08-09).
 #' National Institute of Standards and Technology, Gaithersburg, MD.
 #'
 #' Behrens, H., Szybisz, L., 1976. Shapes of beta spectra. Physics Data 6-1,
@@ -206,7 +212,7 @@ NULL
 #' Evans, R.D., 1955. The Atomic Nucleus. McGraw-Hill, NY.
 #'
 #' Hubbell, J.H., Seltzer, S.M., 2004. Tables of X-Ray Mass Attenuation Coefficients and Mass
-#' Energy-Absorption Coefficients (version 1.4). http://physics.nist.gov/xaamdi
+#' Energy-Absorption Coefficients (version 1.4). https://physics.nist.gov/xaamdi
 #' (2005-08-09). National Institute of Standards and Technology, Gaithersburg, MD.
 #'
 #'

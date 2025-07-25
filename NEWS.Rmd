@@ -8,5 +8,6 @@ header-includes:
 
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
+* Add conversion factors by Cresswell et al. (2018)
 * Internal changes CRAN message `Escaped LaTeX specials: \&` 
 
