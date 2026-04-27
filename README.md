@@ -10,9 +10,12 @@
 [![CRAN](https://www.r-pkg.org/badges/version/RCarb)](https://CRAN.R-project.org/package=RCarb)
 [![CRAN
 DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.RCarb-blue.svg)](https://doi.org/10.32614/CRAN.package.RCarb)
-[![DOI](https://zenodo.org/badge/151577249.svg)](https://zenodo.org/badge/latestdoi/151577249)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4030478.svg)](https://doi.org/10.5281/zenodo.4030478)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/RCarb)](https://www.r-pkg.org/pkg/RCarb)
 [![R-CMD-check](https://github.com/R-Lum/RCarb/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/R-Lum/RCarb/actions)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/R-Lum/RCarb.svg)](https://app.codecov.io/github/R-Lum/RCarb?branch=master)
+
 [![codecov](https://app.codecov.io/gh/R-Lum/RCarb/graph/badge.svg?token=yAbeonoPiC)](https://app.codecov.io/gh/R-Lum/RCarb)
 
 The **R** package `'RCarb'` provides a collection of various R functions
