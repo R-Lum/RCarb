@@ -65,3 +65,5 @@
 
 # -- Package 'RCarb' stuff -- 
 ^RCarb\..*$
+^\.positai$
+^\.claude$
