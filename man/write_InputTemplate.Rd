@@ -4,11 +4,13 @@
 \alias{write_InputTemplate}
 \title{Write table input template}
 \usage{
-write_InputTemplate(file = NULL, ...)
+write_InputTemplate(file = NULL, nrows = NULL, ...)
 }
 \arguments{
 \item{file}{\link{character} (optional): output path, if \code{NULL} nothing is written, but a template
 \link{data.frame} is returned.}
+
+\item{nrows}{\link{integer} (optionl): set the number of rows in the template, the default \code{NULL} is one.}
 
 \item{...}{additional arguments that can be passed to function \link{write.table} if \code{file != NULL}.
 Supported arguments are: \code{sep}, \code{dec}, \code{fileEncoding}}
@@ -45,6 +47,6 @@ Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2026. write_InputTemplate(): Write table input template. Function version 0.1.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.7.9000-2. https://r-lum.github.io/RCarb/
+Kreutzer, S., 2026. write_InputTemplate(): Write table input template. Function version 0.1.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.7.9000-3. https://r-lum.github.io/RCarb/
 }
 

@@ -10,4 +10,6 @@ header-includes:
 
 * Add conversion factors by Cresswell et al. (2018)
 * Internal changes CRAN message `Escaped LaTeX specials: \&` 
+* The function `write_InputTemplate()` gained a new argument `nrows` to 
+control the number of rows returned in the template.
 
