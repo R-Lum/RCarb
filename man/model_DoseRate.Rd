@@ -25,7 +25,8 @@ one row (i.e. values for one sample). For multiple rows the function is automati
 
 \item{DR_conv_factors}{\link{character} (\emph{optional}): applied dose rate conversion factors,
 allowed input values are \code{"Carb2007"}, \code{"Adamiec_Aitken_1998"}, \code{"Guerin_et_al_2011"},
-\code{"Liritzis_et_al_2013"}. \code{NULL} triggers the default, which is \code{"Carb2007"}}
+\code{"Liritzis_et_al_2013"}, \code{Cresswell_et_al_2018},
+\code{NULL} triggers the default, which is \code{"Carb2007"}}
 
 \item{length_step}{\link{numeric} (with default): step length used for the calculation}
 
@@ -106,7 +107,7 @@ txtProgressBar = FALSE
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2026. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.7.9000-2. https://r-lum.github.io/RCarb/
+Kreutzer, S., 2026. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.7.9000-3. https://r-lum.github.io/RCarb/
 }
 
 \references{

@@ -21,7 +21,8 @@
 #'
 #' @param DR_conv_factors [character] (*optional*): applied dose rate conversion factors,
 #' allowed input values are `"Carb2007"`, `"Adamiec_Aitken_1998"`, `"Guerin_et_al_2011"`,
-#' `"Liritzis_et_al_2013"`. `NULL` triggers the default, which is `"Carb2007"`
+#' `"Liritzis_et_al_2013"`, `Cresswell_et_al_2018`,
+#' `NULL` triggers the default, which is `"Carb2007"`
 #'
 #' @param length_step [numeric] (with default): step length used for the calculation
 #'
