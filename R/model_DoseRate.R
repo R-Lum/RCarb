@@ -116,7 +116,6 @@ model_DoseRate <- function(
 
 
 # Self-call -----------------------------------------------------------------------------------
-
   ##we keep it as simple as possible, only a data.frame is allowed, all subsequent tests
   ##are handed over to the code below
   if(inherits(data, "data.frame") &&
@@ -132,7 +131,6 @@ model_DoseRate <- function(
     ##remove first (the function name) and 'data'
     args[[1]] <- NULL
     args$data <- NULL
-
 
     ##run function
     results_list <- lapply(data_list, function(x){
@@ -161,7 +159,6 @@ model_DoseRate <- function(
   }
 
 # Integrity tests -----------------------------------------------------------------------------
-
   ##NOTE: The integrity tests are done mainly here and not in the function '.calc_DoseRate' to
   ##avoid additional overhead
 
@@ -212,9 +209,7 @@ model_DoseRate <- function(
   ERROR <- n.MC[1]
   STEP1 <- length_step[1]
 
-
 # Prepare data --------------------------------------------------------------------------------
-
   ##load reference data here; we do not provide the option to the user to add it here
   Reference_Data <- NULL
   data("Reference_Data", envir = environment())
@@ -250,11 +245,10 @@ model_DoseRate <- function(
   method_control <- modifyList(x = method_control_default, val = method_control)
 
 # Run optimisation ----------------------------------------------------------------------------
-
   ##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   ##AGE
   ##find minimum
-  DATE <- nlminb(
+  DATE <- suppressWarnings(stats::nlminb(
     start = STEP1,
     objective = .calc_DoseRate,
     control = list(
@@ -266,7 +260,7 @@ model_DoseRate <- function(
     DR_conv_factors = set_DR_conv_factors,
     length_step = STEP1,
     mode_optim = TRUE
-  )
+  ))
 
   ##calculate values with minimum value
   DATE <- .calc_DoseRate(
@@ -343,10 +337,9 @@ model_DoseRate <- function(
   if(verbose && txtProgressBar)
     pb <- txtProgressBar(min = 1, max = n.MC, style = 3)
 
-
   ##start loop
   for(i in 1:n.MC){
-    DATE_MC <- suppressWarnings(nlminb(
+    DATE_MC <- suppressWarnings(stats::nlminb(
       start = STEP1,
       objective = .calc_DoseRate,
       control = list(
@@ -371,7 +364,6 @@ model_DoseRate <- function(
         max_time = max_time
       )
 
-
     ##fill variables
     DE_[i] <- data_MC[i,"DE"]
     DR_[,i] <- DATE_MC$DR
@@ -386,7 +378,6 @@ model_DoseRate <- function(
 
   ##close pb
   if(verbose && txtProgressBar) close(pb)
-
 
 # Extract final values ------------------------------------------------------------------------
   ##extract all values we want to return in the terimal and in the results data.frame
@@ -430,7 +421,6 @@ if(verbose){
 
 # Plotting ------------------------------------------------------------------------------------
 if(plot){
-
   ##set plot settings
   plot_settings <- modifyList(x = list(
     mfrow = c(2,1),
@@ -530,7 +520,6 @@ if(plot){
   density_De_x[density_De_x <= par()$usr[1]] <-  par()$usr[1] - 0.2
   lines(x = density_De_x, density_De_y, col = "red")
 
-
   ##centre lines horizontal (De)
   lines(
     x = c(0, DATE[["AGE"]]),
@@ -572,11 +561,9 @@ if(plot){
   ##add mtext
   mtext(side = 3, text = paste0("Age: ", round(DATE$AGE,2), " \u00b1 ", round(sd(AGE_),2), " ka"))
 
-
 }#end plot
 
 # Return value --------------------------------------------------------------------------------
-
   ##the return value is the input data.frame + added lines
   results <- cbind(
     data,
