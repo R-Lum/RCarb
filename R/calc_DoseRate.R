@@ -90,6 +90,9 @@
   T <- TA * (1 + data[["CC"]] / 100)
 
 # STEP 2: Derive carbonate model (daterlu1.m) -------------------------------------------------
+   ## check settings
+   if(max_time - data[["ONSET"]] <= 0)
+     stop("[.calc_DoseRate()] max_time setting to small!", call. = FALSE)
 
   ##2.1. - create vectors with variables, the maxium length is determined by max_time
   ##C >> CARBONATE
