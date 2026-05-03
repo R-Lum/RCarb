@@ -1,5 +1,6 @@
 test_that("Full function test", {
   testthat::skip_on_cran()
+  local_edition(3)
 
   ##load Example dataset
   data("Example_Data", envir = environment())
