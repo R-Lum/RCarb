@@ -114,6 +114,24 @@ model_DoseRate <- function(
   ...
 ){
 
+  ## RLumShiny
+  ## return empty table if input is NULL, this helps in the shiny app,
+  ## but we don't report it here.
+  if(is.null(data))
+    return(cbind(
+    write_InputTemplate(.set_rows_NA = TRUE),
+    data.frame(
+    AGE_CONV = NA,
+    AGE_CONV_X = NA,
+    AGE = NA,
+    AGE_X = NA,
+    DR_CONV = NA,
+    DR_CONV_X = NA,
+    DR_ONSET = NA,
+    DR_ONSET_X = NA,
+    DR_FINAL = NA,
+    DR_FINAL_X = NA,
+    n.MC = NA)))
 
 # Self-call -----------------------------------------------------------------------------------
   ##we keep it as simple as possible, only a data.frame is allowed, all subsequent tests
@@ -380,7 +398,7 @@ model_DoseRate <- function(
   if(verbose && txtProgressBar) close(pb)
 
 # Extract final values ------------------------------------------------------------------------
-  ##extract all values we want to return in the terimal and in the results data.frame
+  ##extract all values we want to return in the terminal and in the results data.frame
   data_results <- round(data.frame(
     AGE_CONV = DATE$AGEA,
     AGE_CONV_X = sd(AGEA_),

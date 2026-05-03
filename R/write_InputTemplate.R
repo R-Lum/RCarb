@@ -49,6 +49,11 @@ write_InputTemplate <- function(
   ##remove all rows, except the first
   df <- df[1,]
 
+  ## RLumShiny
+  ## add option for shiny app
+  if(!is.null(list(...)$.set_rows_NA))
+    df[,1:ncol(df)] <- NA_complex_
+
   ##replace name
   df$SAMP_NAME[1] <- "EXAMPLE"
 

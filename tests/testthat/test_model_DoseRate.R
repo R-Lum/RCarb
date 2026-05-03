@@ -65,11 +65,16 @@ test_that("Full function test", {
   type = "list")
 
   ##run with n.MC == 1
-  expect_type(model_DoseRate(
+  out <- expect_type(model_DoseRate(
     data = Example_Data[14, ],
     n.MC = 1,
+    plot = FALSE,
     txtProgressBar = FALSE
   ),
   type = "list")
+
+  ## compare this output with the one generate if we
+  ## set data to NULL to avoid regression bugs
+  expect_true(all(colnames(out) == colnames(model_DoseRate(data = NULL))))
 
 })
