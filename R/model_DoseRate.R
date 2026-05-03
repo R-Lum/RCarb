@@ -150,17 +150,19 @@ model_DoseRate <- function(
 
     ##run function
     results_list <- lapply(data_list, function(x){
-      temp <- try(do.call(model_DoseRate, c(list(data = x),args)))
+      temp <- tryCatch(
+         do.call(model_DoseRate, c(list(data = x),args)),
+         error = function(cond) {
+           message(
+             "[model_DoseRate()] Calculation for sample ", x[[1]], " failed: \n -> ",
+             conditionMessage(cond),
+             "\n -> NULL return!")
+           return(NULL)  # or whatever default value you want
+         }
+       )
 
-      if(inherits(temp, "try-error")){
-        try(stop(paste0("[model_DoseRate()] Calculation for sample ", x[[1]], " failed. NULL returned!"),
-                 call. = FALSE))
-        return(NULL)
+      return(temp)
 
-      }else{
-        return(temp)
-
-      }
     })
 
     ##remove NULL elements from failed attempts
