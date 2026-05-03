@@ -13,8 +13,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-<sup>1</sup>Institute of Geography, Universität Heidelberg, Germany<br>
-<sup>2</sup>Archéosciences Bordeaux, UMR 6034, CNRS-Université Bordeaux Montaigne (France)<br>
+<sup>1</sup>LIAG Institute for Applied Geophysics, Hannover, Germany<br>
+<sup>2</sup>Institute of Geography, Heidelberg University, Heidelberg, Germany<br>
 <sup>3</sup>Department of Geography and Geology, University of Salzburg, Salzburg (Austria)"
 
 ```{r, echo = FALSE, fig.align='center', out.width=100}
@@ -121,7 +121,8 @@ The procedure is sketched in the following.
 
 The function `write_InputTemplate()` was written to create a template table (a CSV-file) that 
 can be subsequently opened and filled. Using the function ensures that your input data have the 
-correct structure, e.g., the correct number for columns and column names. 
+correct structure, e.g., the correct number for columns and column names. The argument `nrows` in the
+functions enables you to generated as many rows you will need as input for your samples.
 
 ```{r}
 write_InputTemplate(file = "files/RCarb_Input.csv")
