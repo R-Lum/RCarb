@@ -44,4 +44,9 @@ write_InputTemplate(file = temp_file)
 }
 \author{
 Sebastian Kreutzer, Institute of Geography, Heidelberg University (Germany)
+} 
+
+\section{How to cite}{
+Kreutzer, S., 2026. write_InputTemplate(): Write table input template. Function version 0.1.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.8. https://r-lum.github.io/RCarb/
 }
+

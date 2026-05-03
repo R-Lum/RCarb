@@ -104,7 +104,12 @@ txtProgressBar = FALSE
 )
 
 
+} 
+
+\section{How to cite}{
+Kreutzer, S., 2026. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.8. https://r-lum.github.io/RCarb/
 }
+
 \references{
 Mauz, B., Hoffmann, D., 2014. What to do when carbonate replaced water: Carb, the model for estimating the
 dose rate of carbonate-rich samples. Ancient TL 32, 24-32. \doi{10.26034/la.atl.2014.481}
