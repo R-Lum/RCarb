@@ -11,7 +11,7 @@ model_DoseRate(
   max_time = 500L,
   n.MC = 100,
   method_control = list(),
-  txtProgressBar = TRUE,
+  multicore = FALSE,
   verbose = TRUE,
   plot = TRUE,
   par_local = TRUE,
@@ -37,7 +37,7 @@ allowed input values are \code{"Carb2007"}, \code{"Adamiec_Aitken_1998"}, \code{
 \item{method_control}{(\emph{optional}): additional arguments that can be provided to the control the
 the modelling. See details for further information.}
 
-\item{txtProgressBar}{\link{logical} (with default): enables/disables the \code{txtProgressBar} for the MC runs}
+\item{multicore}{\link{logical} \link{numeric} (with default): enables/disables multicore processing for MC runs}
 
 \item{verbose}{\link{logical} (with default): enables/disables verbose mode}
 
@@ -88,7 +88,7 @@ small values (close to 0) this can, however, lead to edge effects (similar in \c
 values below 0 are set to 0.
 }
 \section{Function version}{
- 0.2.1
+ 0.3.0
 }
 
 \examples{
@@ -100,14 +100,13 @@ data("Example_Data", envir = environment())
 model_DoseRate(
 data = Example_Data[14,],
 n.MC = 2,
-txtProgressBar = FALSE
-)
+multicores = 2)
 
 
 } 
 
 \section{How to cite}{
-Kreutzer, S., 2026. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.8. https://r-lum.github.io/RCarb/
+Kreutzer, S., 2026. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.3.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.8. https://r-lum.github.io/RCarb/
 }
 
 \references{

@@ -9,7 +9,7 @@ test_that("Full function test", {
   expect_error(model_DoseRate(data = "test"), regexp = "'data' is not a 'data.frame'")
   expect_error(model_DoseRate(data = data.frame(x = 1)), regexp = "The column names of your input data.frame do not match the requirements.")
   expect_error(model_DoseRate(data = data.frame()), regexp = "'data' is empty!")
-  expect_error(suppressWarnings(model_DoseRate(data = data.frame(x = NA)), regexp = "'data' is empty!"))
+  expect_error(suppressWarnings(model_DoseRate(data = data.frame(x = NA))), regexp = "'data' is empty\\!")
   expect_error(
     suppressWarnings(model_DoseRate(data = Example_Data[23,], n.MC = 10)),
     regexp = "Modelling failed, please check your input data, they may not be meaningful!")
@@ -22,15 +22,17 @@ test_that("Full function test", {
   expect_error(suppressWarnings(model_DoseRate(data = Example_Data[14,],
                              DR_conv_factors = "error",
                              n.MC = 2,
-                             txtProgressBar = FALSE
   )), regexp = "'error' does not correspond to an available dose rate conversion dataset.\n        Allowed are: Carb2007, Adamiec_Aitken_1998, Guerin_et_al_2011, Liritzis_et_al_2013, Cresswell_et_al_2018")
 
 
   ##run simple example
-  expect_type(suppressWarnings(model_DoseRate(data = Example_Data[14,],
-    n.MC = 2,
-    txtProgressBar = FALSE
+  set.seed(1234)
+  t <- expect_type(suppressWarnings(model_DoseRate(data = Example_Data[14,],
+    n.MC = 2
   )), type = "list")
+
+  ## simple regression check
+  expect_equal(sum(as.numeric(t[,-1])), expected = 862.032, tolerance = 0.1)
 
   ##run with different conversion factors
   expect_type(
@@ -38,7 +40,7 @@ test_that("Full function test", {
       data = Example_Data[14, ],
       DR_conv_factors = "Adamiec_Aitken_1998",
       n.MC = 2,
-      txtProgressBar = FALSE
+      verbose = FALSE
     )),
     type = "list"
   )
@@ -60,7 +62,7 @@ test_that("Full function test", {
   expect_type(model_DoseRate(
     data = Example_Data[13:14, ],
     n.MC = 5,
-    txtProgressBar = TRUE
+    verbose = FALSE
   ),
   type = "list")
 
@@ -68,10 +70,19 @@ test_that("Full function test", {
   out <- expect_type(model_DoseRate(
     data = Example_Data[14, ],
     n.MC = 1,
-    plot = FALSE,
-    txtProgressBar = FALSE
+    verbose = FALSE,
+    plot = FALSE
   ),
   type = "list")
+
+  ##run with parallel
+  expect_message(model_DoseRate(
+    data = Example_Data[14, ],
+    n.MC = 5,
+    plot = FALSE,
+    verbose = TRUE,
+    multicore = 2),
+    regexp = "\\[model\\_DoseRate\\(\\)\\] Running MC calculation with 2 core\\(s\\) ...")
 
   ## compare this output with the one generate if we
   ## set data to NULL to avoid regression bugs
