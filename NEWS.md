@@ -7,8 +7,6 @@
 
 ## RCarb 0.1.8 (2026-05-03)
 
-- Add conversion factors by Cresswell et al. (2018)
-- Internal changes CRAN message `Escaped LaTeX specials: \&`
 - The function `write_InputTemplate()` gained a new argument `nrows` to
   control the number of rows returned in the template.
 - Internal changes to better support the corresponding app in
