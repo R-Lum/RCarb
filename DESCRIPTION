@@ -29,3 +29,4 @@ Language: en-GB
 LazyData: true
 VignetteBuilder: R.rsp
 RoxygenNote: 7.3.3
+Config/testthat/parallel: true
