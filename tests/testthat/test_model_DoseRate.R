@@ -1,9 +1,10 @@
 test_that("Full function test", {
   testthat::skip_on_cran()
-  local_edition(3)
 
   ##load Example dataset
   data("Example_Data", envir = environment())
+
+  SW({
 
   ##break function
   expect_error(model_DoseRate(data = "test"), regexp = "'data' is not a 'data.frame'")
@@ -13,17 +14,17 @@ test_that("Full function test", {
   expect_error(
     suppressWarnings(model_DoseRate(data = Example_Data[23,], n.MC = 10)),
     regexp = "Modelling failed, please check your input data, they may not be meaningful!")
-  expect_type(suppressWarnings(model_DoseRate(
+
+  expect_message(model_DoseRate(
     data = Example_Data[23:24, ],
-    n.MC = 10,
+    n.MC = 2,
     verbose = FALSE
-  )), type = "list")
+  ), regexp = "[model_DoseRate()] Calculation for sample LV314 failed:", fixed = TRUE)
 
   expect_error(suppressWarnings(model_DoseRate(data = Example_Data[14,],
                              DR_conv_factors = "error",
                              n.MC = 2,
   )), regexp = "'error' does not correspond to an available dose rate conversion dataset.\n        Allowed are: Carb2007, Adamiec_Aitken_1998, Guerin_et_al_2011, Liritzis_et_al_2013, Cresswell_et_al_2018")
-
 
   ##run simple example
   set.seed(1234)
@@ -88,4 +89,5 @@ test_that("Full function test", {
   ## set data to NULL to avoid regression bugs
   expect_true(all(colnames(out) == colnames(model_DoseRate(data = NULL))))
 
+  })
 })

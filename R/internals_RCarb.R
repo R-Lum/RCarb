@@ -107,5 +107,31 @@
     ...
     )$z
 }
+## From: https://github.com/R-Lum/Luminescence/blob/c26821efffc391f011545da06c067504434ccc28/R/internals_RLum.R#L1132-L1155
+#' @title Silence Output and Warnings during Tests
+#'
+#' @description
+#' This is helpful so that during tests the terminal is not filled up by
+#' the output from the function tested, which is often left intentionally
+#' verbose to facilitate the coverage analysis.
+#'
+#' This was originally defined in `tests/testthat/setup.R`, but unfortunately
+#' that file is not sourced by `covr::file_coverage()` (as opposed to what
+#' happens with `testthat::test_file()` and `covr::package_coverage()`),
+#' which makes it harder to work iteratively with it.
+#'
+#' @param expr [expression] an R expression (often a function, but can be
+#'        any amount of code) the output of which needs to be silenced
+#'
+#' @examples
+#' SW({
+#'   template_DRAC(preset = "DRAC-example_quartz")
+#' })
+#'
+#' @noRd
+SW <- function(expr) {
+  capture.output(suppressMessages(suppressWarnings(expr)))
+}
+
 
 
