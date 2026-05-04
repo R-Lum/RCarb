@@ -156,7 +156,7 @@ model_DoseRate <- function(
            message(
              "[model_DoseRate()] Calculation for sample ", x[[1]], " failed: \n -> ",
              conditionMessage(cond),
-             "\n -> NULL return!")
+             "\n -> NULL returned!")
            return(NULL)  # or whatever default value you want
          }
        )
