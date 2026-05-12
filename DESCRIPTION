@@ -1,7 +1,7 @@
 Package: RCarb
 Type: Package
 Title: Dose Rate Modelling of Carbonate-Rich Samples 
-Version: 0.1.8
+Version: 0.1.8.9000
 Date: 2026-05-12
 Authors@R: c(
     person("Sebastian", "Kreutzer", role = c("aut", "trl", "cre", "dtc"), 

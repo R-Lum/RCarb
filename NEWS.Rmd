@@ -8,11 +8,4 @@ header-includes:
   
 ## RCarb `r RLumBuild::.get_pkg_version()` (`r Sys.Date()`)
 
-* The function `write_InputTemplate()` gained a new argument `nrows` to 
-control the number of rows returned in the template.
-* Internal changes to better support the corresponding app in `RLumShiny`
-* Remove logical argument `txtProgressBar`; this change will not break 
-the function if used. 
-* Add new argument `multicore` for parallel processing of the Monte Carlo runs; 
-with this change a new dependency to the package `parallel` was added. 
-This package should be available by default in any modern installation of R.
+* Dummy
