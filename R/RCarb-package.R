@@ -57,7 +57,7 @@
 #' @importFrom stats approx nlminb rnorm sd na.exclude density
 #'
 #' @md
-NULL
+"_PACKAGE"
 
 
 #' Example data

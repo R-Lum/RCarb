@@ -2,7 +2,7 @@ Package: RCarb
 Type: Package
 Title: Dose Rate Modelling of Carbonate-Rich Samples 
 Version: 0.1.8
-Date: 2026-05-04
+Date: 2026-05-12
 Authors@R: c(
     person("Sebastian", "Kreutzer", role = c("aut", "trl", "cre", "dtc"), 
      email = "sebastian.kreutzer@uni-heidelberg.de",
@@ -28,6 +28,6 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 VignetteBuilder: R.rsp
-RoxygenNote: 7.3.3
 Config/testthat/edition: 3
 Config/testthat/parallel: true
+Config/roxygen2/version: 8.0.0

@@ -56,6 +56,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Sebastian Kreutzer \email{sebastian.kreutzer@uni-heidelberg.de} (\href{https://orcid.org/0000-0002-0734-2199}{ORCID}) [translator, data contributor]
   \item Roger P. Nathan [copyright holder]
   \item Barbara Mauz (\href{https://orcid.org/0000-0003-1504-333X}{ORCID}) [copyright holder]
 }

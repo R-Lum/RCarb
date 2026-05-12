@@ -9,7 +9,7 @@ calculation internal functions are called."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">RCarb</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@ calculation internal functions are called.</p>
 <span>  max_time <span class="op">=</span> <span class="fl">500L</span>,</span>
 <span>  n.MC <span class="op">=</span> <span class="fl">100</span>,</span>
 <span>  method_control <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  txtProgressBar <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  multicore <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  par_local <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -74,7 +74,8 @@ one row (i.e. values for one sample). For multiple rows the function is automati
 <dt id="arg-dr-conv-factors">DR_conv_factors<a class="anchor" aria-label="anchor" href="#arg-dr-conv-factors"></a></dt>
 <dd><p><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a> (<em>optional</em>): applied dose rate conversion factors,
 allowed input values are <code>"Carb2007"</code>, <code>"Adamiec_Aitken_1998"</code>, <code>"Guerin_et_al_2011"</code>,
-<code>"Liritzis_et_al_2013"</code>. <code>NULL</code> triggers the default, which is <code>"Carb2007"</code></p></dd>
+<code>"Liritzis_et_al_2013"</code>, <code>Cresswell_et_al_2018</code>,
+<code>NULL</code> triggers the default, which is <code>"Carb2007"</code></p></dd>
 
 
 <dt id="arg-length-step">length_step<a class="anchor" aria-label="anchor" href="#arg-length-step"></a></dt>
@@ -94,8 +95,8 @@ allowed input values are <code>"Carb2007"</code>, <code>"Adamiec_Aitken_1998"</c
 the modelling. See details for further information.</p></dd>
 
 
-<dt id="arg-txtprogressbar">txtProgressBar<a class="anchor" aria-label="anchor" href="#arg-txtprogressbar"></a></dt>
-<dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> (with default): enables/disables the <code>txtProgressBar</code> for the MC runs</p></dd>
+<dt id="arg-multicore">multicore<a class="anchor" aria-label="anchor" href="#arg-multicore"></a></dt>
+<dd><p><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a> <a href="https://rdrr.io/r/base/numeric.html" class="external-link">numeric</a> (with default): enables/disables multicore processing for MC runs</p></dd>
 
 
 <dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
@@ -143,11 +144,11 @@ values below 0 are set to 0.</p>
     </div>
     <div class="section level2">
     <h2 id="function-version">Function version<a class="anchor" aria-label="anchor" href="#function-version"></a></h2>
-    <p>0.2.1</p>
+    <p>0.3.0</p>
     </div>
     <div class="section level2">
     <h2 id="how-to-cite">How to cite<a class="anchor" aria-label="anchor" href="#how-to-cite"></a></h2>
-    <p>Kreutzer, S., 2025. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.2.1. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2025. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.7. https://r-lum.github.io/RCarb/</p>
+    <p>Kreutzer, S., 2026. model_DoseRate(): Model dose rate evolution in carbonate-rich samples. Function version 0.3.0. In: Kreutzer, S., Nathan, R.P., Mauz, B., 2026. RCarb: Dose Rate Modelling of Carbonate-Rich Samples . R package version 0.1.8. https://r-lum.github.io/RCarb/</p>
     </div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
@@ -178,8 +179,7 @@ on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 <span class="r-in"><span><span class="fu">model_DoseRate</span><span class="op">(</span></span></span>
 <span class="r-in"><span>data <span class="op">=</span> <span class="va">Example_Data</span><span class="op">[</span><span class="fl">14</span>,<span class="op">]</span>,</span></span>
 <span class="r-in"><span>n.MC <span class="op">=</span> <span class="fl">2</span>,</span></span>
-<span class="r-in"><span>txtProgressBar <span class="op">=</span> <span class="cn">FALSE</span></span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span>multicores <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [model_DoseRate()]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -188,12 +188,12 @@ on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Diameter:		 215 µm </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  MC runs error estim.:	 2  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ------------------------------------------------ </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (conv.):		 149.73  ±  9.077  ka</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (new):		 130.642  ±  6.226  ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (conv.):		 149.73  ±  0.417  ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Age (new):		 130.642  ±  6.354  ka</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (conv.):	 0.354  ±  0.012  Gy/ka</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (onset):	 0.518  ±  0.014  Gy/ka</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (final):	 0.375  ±  0.015  Gy/ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (onset):	 0.5  ±  0.02  Gy/ka</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Dose rate (final):	 0.361  ±  0.011  Gy/ka</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  ------------------------------------------------ </span>
 <span class="r-plt img"><img src="model_DoseRate-1.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    SAMP_NAME     K   K_X    T  T_X    U  U_X U238 U238_X U234_U238 U234_U238_X</span>
@@ -201,9 +201,9 @@ on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    WCI WCI_X WCF WCF_X CC CC_X DIAM DIAM_X COSMIC COSMIC_X INTERNAL INTERNAL_X</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14  10     2   5     5 60    2  215     35 0.0876   0.0044        0          0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    ONSET ONSET_X FINISH FINISH_X DE DE_X AGE_CONV AGE_CONV_X     AGE AGE_X</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   120      10     40       10 53    2   149.73      9.077 130.642 6.226</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   120      10     40       10 53    2   149.73      0.417 130.642 6.354</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    DR_CONV DR_CONV_X DR_ONSET DR_ONSET_X DR_FINAL DR_FINAL_X n.MC</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   0.354     0.012    0.518      0.014    0.375      0.015    2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14   0.354     0.012      0.5       0.02    0.361      0.011    2</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -217,7 +217,7 @@ on 'MATLAB' code given in file Carb_2007a.m of <em>Carb</em></p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>

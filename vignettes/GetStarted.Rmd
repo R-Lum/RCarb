@@ -11,6 +11,7 @@ output:
 standalone: yes
 vignette: >
   %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{Get started with RCarb}
 ---
 
 <sup>1</sup>LIAG Institute for Applied Geophysics, Hannover, Germany<br>
